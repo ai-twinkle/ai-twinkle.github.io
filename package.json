@@ -1,0 +1,30 @@
+{
+  "name": "index",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "1.10.0",
+    "@nuxt/image": "2.0.0",
+    "@nuxt/scripts": "0.13.0",
+    "@nuxt/test-utils": "3.20.1",
+    "@nuxt/ui": "4.1.0",
+    "@unhead/vue": "^2.0.3",
+    "eslint": "^9.0.0",
+    "jwt-decode": "^4.0.0",
+    "ky": "^1.7.2",
+    "nuxt": "^4.2.1",
+    "typescript": "^5.6.3",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3"
+  }
+}
