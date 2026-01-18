@@ -12,7 +12,7 @@
       <app-header-normal />
 
       <div class="flex items-center gap-3">
-        <UButton to="https://discord.gg/Cx737yw4ed" target="_blank" color="secondary" variant="ghost" icon="i-simple-icons-discord" />
+        <UButton to="/discord" target="_blank" color="secondary" variant="ghost" icon="i-simple-icons-discord" />
         <UButton class="md:hidden" icon="i-heroicons-bars-3" color="secondary" variant="ghost" @click="onClickMobileMenuBtnOpen" />
       </div>
     </UContainer>

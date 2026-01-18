@@ -19,4 +19,12 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   modules: ['@nuxt/ui', '@nuxt/image'],
+
+  runtimeConfig: {
+    externalUrls: {
+      discord: 'https://discord.gg/Cx737yw4ed',
+      github: 'https://github.com/ai-twinkle',
+      huggingface: 'https://huggingface.co/twinkle-ai',
+    },
+  },
 })

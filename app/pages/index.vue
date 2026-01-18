@@ -16,7 +16,7 @@
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <UButton 
             size="xl" 
-            to="https://discord.gg/Cx737yw4ed" 
+            to="/discord" 
             target="_blank"
             icon="i-simple-icons-discord"
             class="btn-twinkle-filled shadow-lg"
@@ -83,9 +83,9 @@ const features = [
 ]
 
 const socialLinks = [
-  { label: 'Discord', icon: 'i-simple-icons-discord', to: 'https://discord.gg/Cx737yw4ed', color: 'indigo' },
-  { label: 'Hugging Face', icon: 'i-simple-icons-huggingface', to: 'https://huggingface.co/twinkle-ai', color: 'yellow' },
-  { label: 'GitHub', icon: 'i-simple-icons-github', to: 'https://github.com/ai-twinkle', color: 'white' },
+  { label: 'Discord', icon: 'i-simple-icons-discord', to: '/discord', color: 'indigo' },
+  { label: 'Hugging Face', icon: 'i-simple-icons-huggingface', to: '/huggingface', color: 'yellow' },
+  { label: 'GitHub', icon: 'i-simple-icons-github', to: '/github', color: 'white' },
 ]
 </script>
 

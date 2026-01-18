@@ -6,9 +6,9 @@
           <div class="text-white font-semibold"><span class="text-twinkle">Twinkle AI</span></div>
           <div class="text-xs text-gray-400">正體中文開源語言模型社群 • 開源 • 協作 • 教學</div>
           <div class="mt-3 flex gap-3">
-            <a class="text-gray-400 hover:text-twinkle transition-colors" href="https://github.com/ai-twinkle" target="_blank">GitHub</a>
-            <a class="text-gray-400 hover:text-twinkle transition-colors" href="https://huggingface.co/twinkle-ai" target="_blank">Hugging Face</a>
-            <a class="text-gray-400 hover:text-twinkle transition-colors" href="https://discord.gg/Cx737yw4ed" target="_blank">Discord</a>
+            <a class="text-gray-400 hover:text-twinkle transition-colors" href="/github" target="_blank">GitHub</a>
+            <a class="text-gray-400 hover:text-twinkle transition-colors" href="/huggingface" target="_blank">Hugging Face</a>
+            <a class="text-gray-400 hover:text-twinkle transition-colors" href="/discord" target="_blank">Discord</a>
           </div>
         </div>
 
