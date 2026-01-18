@@ -77,11 +77,11 @@ const buttonClass = computed(() => {
     "text-base",
     "font-medium",
     "hover:text-gray-200",
-    "hover:bg-slate-800",
+    "hover:bg-gray-800",
     "focus:outline-none",
     "focus:ring-2",
     "focus:ring-offset-2",
-    "focus:ring-indigo-500",
+    "focus:ring-primary-500",
     "cursor-pointer",
   ];
   

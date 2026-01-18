@@ -1,6 +1,6 @@
 <template>
   <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-    <div class="rounded-lg shadow-lg divide-y-2 divide-gray-50">
+    <div class="rounded-lg shadow-lg divide-y-2 divide-gray-50 bg-gray-900">
       <div class="pt-5 pb-6 px-5">
         <div
           class="flex items-center justify-between"
@@ -13,7 +13,7 @@
           </div>
             <div class="-mr-2">
             <button
-              class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 cursor-pointer"
+              class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-300 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 cursor-pointer"
               type="button"
             >
               <span class="sr-only">Close menu</span>

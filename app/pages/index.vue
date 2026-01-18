@@ -83,7 +83,7 @@ const features = [
 ]
 
 const socialLinks = [
-  { label: 'Discord', icon: 'i-simple-icons-discord', to: '/discord', color: 'indigo' },
+  { label: 'Discord', icon: 'i-simple-icons-discord', to: '/discord', color: 'primary' },
   { label: 'Hugging Face', icon: 'i-simple-icons-huggingface', to: '/huggingface', color: 'yellow' },
   { label: 'GitHub', icon: 'i-simple-icons-github', to: '/github', color: 'white' },
 ]

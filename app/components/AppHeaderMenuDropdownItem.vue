@@ -48,7 +48,7 @@ const buttonClass = computed(() => ([
   "rounded-md",
   "text-gray-300",
   "hover:text-gray-200",
-  "hover:bg-slate-800",
+  "hover:bg-gray-800",
   "cursor-pointer",
 ]));
 </script>
