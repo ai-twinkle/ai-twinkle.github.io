@@ -3,11 +3,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "npm run build && wrangler dev",
+		"postinstall": "nuxt prepare",
+		"deploy": "npm run build && wrangler deploy",
+		"cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@nuxt/eslint": "1.10.0",
@@ -25,6 +27,9 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "@iconify-json/heroicons": "^1.2.3"
+    "@iconify-json/heroicons": "^1.2.3",
+		"nitro-cloudflare-dev": "^0.2.2",
+		"nitropack": "^2.13.1",
+		"wrangler": "^4.59.2"
   }
 }

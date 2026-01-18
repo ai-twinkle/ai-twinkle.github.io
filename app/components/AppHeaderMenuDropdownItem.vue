@@ -46,8 +46,9 @@ const buttonClass = computed(() => ([
   "w-full",
   "items-center",
   "rounded-md",
-  "text-gray-900",
-  "hover:text-gray-700",
+  "text-gray-300",
+  "hover:text-gray-200",
+  "hover:bg-slate-800",
   "cursor-pointer",
 ]));
 </script>

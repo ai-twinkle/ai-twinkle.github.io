@@ -1,9 +1,14 @@
 export default defineAppConfig({
   ui: {
+    // Brand colours: use exact HEX for consistent branding (primary = Twinkle star)
+    primary: '#ffd500',
+    gray: 'zinc',
     colors: {
-      primary: 'indigo',
+      // explicit hex primary so Nuxt UI and any consumers get the exact tint
+      primary: '#ffd500',
       secondary: 'white',
       neutral: 'zinc',
     },
-  },
+    notifications: { position: 'top-0 bottom-auto' }
+  }
 });

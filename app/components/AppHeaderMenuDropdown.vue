@@ -7,7 +7,7 @@
       @click="onClickDropdown"
     >
       <span>{{ props.name }}</span>
-      <UIcon name="i-heroicons-chevron-down" class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" />
+      <UIcon name="i-heroicons-chevron-down" class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-300" />
     </button>
     <div
       :class="dropdownContainerClass"
@@ -16,7 +16,7 @@
         v-show="isDropdownOpened"
         class="rounded-lg shadow-lg overflow-hidden"
       >
-        <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+        <div class="relative grid gap-6 px-5 py-6 sm:gap-8 sm:p-8">
           <app-header-menu-dropdown-item
             v-for="(child, index) in props.children"
             :key="index"
@@ -68,15 +68,16 @@ const onClickItem = (item: MenuDropdownChild): void => {
 
 const buttonClass = computed(() => {
   const base = [
-    "text-gray-500",
+    "text-gray-300",
     "group",
-    "bg-white",
+    "px-3",
     "rounded-md",
     "inline-flex",
     "items-center",
     "text-base",
     "font-medium",
-    "hover:text-gray-900",
+    "hover:text-gray-200",
+    "hover:bg-slate-800",
     "focus:outline-none",
     "focus:ring-2",
     "focus:ring-offset-2",

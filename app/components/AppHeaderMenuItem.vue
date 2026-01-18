@@ -40,13 +40,13 @@ const buttonClass = computed(() => {
     "flex",
     "items-center",
     "rounded-md",
-    "hover:text-gray-700",
+    "hover:text-gray-100",
     "cursor-pointer",
   ];
   
   if (props.variant === "mobile") {
     return [
-      "text-gray-900",
+      "text-gray-200",
       "-m-3",
       "p-3",
       "w-full",
@@ -56,12 +56,13 @@ const buttonClass = computed(() => {
   
   return [
     "h-8",
-    "text-gray-500",
-    "bg-white",
+    "px-3",
+    "text-gray-300",
     "inline-flex",
     "text-base",
     "font-medium",
-    "hover:text-gray-900",
+    "hover:text-gray-200",
+    "hover:bg-slate-800",
     "focus:outline-none",
     "focus:ring-2",
     "focus:ring-offset-2",

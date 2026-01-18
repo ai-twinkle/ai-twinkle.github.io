@@ -1,70 +1,96 @@
 <template>
-  <div>
-    <div>
-      <div class="mt-10 mx-auto py-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-        <div class="sm:text-center lg:text-left">
-          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900">
-            <span class="block xl:inline">這裡是</span>
-            <span class="block text-indigo-600 xl:inline xl:ml-2">Wings 系統</span>
-            <span class="block xl:inline">
-              <loading-circle-icon class="inline-block h-8 w-8 ml-3 animate-spin text-indigo-300" />
-            </span>
-          </h1>
-          <p class="mt-3 text-base text-gray-500">
-            Nuxt.js 4 + Vue.js 3 + Tailwind CSS，為了快速發展專案而生，請自行修改內容。
-          </p>
-          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-            <div class="rounded-md shadow">
-              <button
-                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10 cursor-pointer"
-                @click="onClickHello">
-                Hello!
-              </button>
-            </div>
-            <div class="mt-3 sm:mt-0 sm:ml-3">
-              <nuxt-link
-                :external="true"
-                to="https://github.com/web-tech-tw/wings"
-                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-                Wings GitHub
-              </nuxt-link>
-            </div>
-          </div>
+  <div class="relative starry-bg text-white">
+    <UContainer class="py-24 sm:py-32">
+      <div class="text-center">
+        <UBadge variant="subtle" size="lg" class="mb-4 rounded-full badge-twinkle">
+          🌟 台灣生成式 AI 開源社群
+        </UBadge>
+        <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
+          點亮 <span class="text-twinkle">正體中文 AI</span> 的星空
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
+          Twinkle AI 是一個專注於構建開源正體中文語言模型的研究社群。
+          我們匯聚各界熱情夥伴，透過實作與分享，共同推動 AI 技術在台灣的落地與發展。
+        </p>
+
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <UButton 
+            size="xl" 
+            to="https://discord.gg/Cx737yw4ed" 
+            target="_blank"
+            icon="i-simple-icons-discord"
+            class="btn-twinkle-filled shadow-lg"
+          >
+            加入 Discord 社群
+          </UButton>
+          <UButton 
+            size="xl" 
+            variant="ghost" 
+            to="/projects"
+            trailing-icon="i-heroicons-arrow-right"
+          >
+            探索專案
+          </UButton>
+        </div>
+
+        <div class="mt-12 flex justify-center gap-6">
+          <UButton
+            v-for="social in socialLinks"
+            :key="social.label"
+            :to="social.to"
+            target="_blank"
+            variant="link"
+            :icon="social.icon"
+            class="text-gray-400 hover:text-white transition-colors"
+          />
         </div>
       </div>
-      <div class="mt-10 mx-auto py-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-        <div class="sm:text-center lg:text-right">
-          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900">
-            <span class="block xl:inline">你是</span>
-            <span class="block text-indigo-600 xl:inline">前端&#47;後端</span>
-            <span class="block xl:inline">工程師嗎？</span>
-          </h1>
-          <p class="mt-3 text-base text-gray-500">
-            沒有問題！ Wings 什麼端都能寫！
-          </p>
-          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-end">
-            <div class="rounded-md shadow">
-              <nuxt-link
-                :external="true"
-                to="https://nuxt.com/docs/4.x/getting-started"
-                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                Documentation
-              </nuxt-link>
-            </div>
-          </div>
+    </UContainer>
+
+    <div class="bg-gray-900/30 py-24">
+      <UContainer>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <UCard v-for="feat in features" :key="feat.title" class="hover:border-primary-500/50 transition-all duration-300 bg-gray-900 ring-1 ring-gray-800">
+            <template #header>
+              <UIcon :name="feat.icon" class="w-8 h-8 text-primary-400" />
+            </template>
+            <h3 class="text-xl font-semibold text-white mb-2">{{ feat.title }}</h3>
+            <p class="text-gray-400">{{ feat.description }}</p>
+          </UCard>
         </div>
-      </div>
+      </UContainer>
     </div>
-    <toast-modal v-model="toastMessage" />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
+<script setup lang="ts">
+const features = [
+  {
+    title: '正體中文最佳化',
+    description: '專注於收集繁中語料庫並微調 LLaMA 類模型，打造最適合台灣在地文化的語言模型。',
+    icon: 'i-heroicons-language'
+  },
+  {
+    title: '開源與協作',
+    description: '從 Dataset 到 Model 訓練權重完全開源，致力於降低 AI 研究門檻並促進社群貢獻。',
+    icon: 'i-heroicons-code-bracket-square'
+  },
+  {
+    title: '實戰評測工具',
+    description: '開發 Twinkle Eval 與 TwinRAD，提供高效且準確的模型評測與紅隊測試框架。',
+    icon: 'i-heroicons-chart-bar'
+  }
+]
 
-const toastMessage = ref("");
-
-const onClickHello = () => {
-  toastMessage.value = "Hello!";
-};
+const socialLinks = [
+  { label: 'Discord', icon: 'i-simple-icons-discord', to: 'https://discord.gg/Cx737yw4ed', color: 'indigo' },
+  { label: 'Hugging Face', icon: 'i-simple-icons-huggingface', to: 'https://huggingface.co/twinkle-ai', color: 'yellow' },
+  { label: 'GitHub', icon: 'i-simple-icons-github', to: 'https://github.com/ai-twinkle', color: 'white' },
+]
 </script>
+
+<style scoped>
+.relative.starry-bg {
+  background-color: #0b1220; /* deep night */
+}
+</style>

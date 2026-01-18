@@ -1,39 +1,29 @@
 <template>
-  <footer class="mt-16 pb-16 text-sm leading-6 text-black">
-    <div class="max-w-7xl mx-auto mt-11 divide-y divide-gray-200 px-4 sm:px-6 md:px-8">
-      「wings」是前端 Web 通用模板，請自行修改內容。
-    </div>
-    <div class="max-w-7xl mx-auto mt-5 divide-y divide-gray-200 px-4 sm:px-6 md:px-8 text-sky-700">
-      <a
-        class="mr-3"
-        href="https://github.com/web-tech-tw/wings"
-      >網站原始碼</a>
-      <a
-        class="mr-3"
-        href="https://web-tech.tw/#/privacy"
-      >隱私權政策</a>
-    </div>
-    <div class="max-w-7xl mx-auto mt-5 divide-y divide-gray-200 px-4 sm:px-6 md:px-8">
-      &copy; {{ year }}
-      <a
-        class="ml-1 hover:text-slate-900"
-        :href="homeInteHost"
-      >
-        臺灣網際網路技術推廣組織
-        Taiwan Web Technology Promotion Organization (Web Tech TW)
-      </a>
+  <footer class="mt-16 pb-12 text-sm leading-6 text-gray-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 border-t border-gray-800 pt-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <div class="text-white font-semibold"><span class="text-twinkle">Twinkle AI</span></div>
+          <div class="text-xs text-gray-400">正體中文開源語言模型社群 • 開源 • 協作 • 教學</div>
+          <div class="mt-3 flex gap-3">
+            <a class="text-gray-400 hover:text-twinkle transition-colors" href="https://github.com/ai-twinkle" target="_blank">GitHub</a>
+            <a class="text-gray-400 hover:text-twinkle transition-colors" href="https://huggingface.co/twinkle-ai" target="_blank">Hugging Face</a>
+            <a class="text-gray-400 hover:text-twinkle transition-colors" href="https://discord.gg/Cx737yw4ed" target="_blank">Discord</a>
+          </div>
+        </div>
+
+        <div class="text-sm text-gray-400">
+          <div>推薦：查看
+            <NuxtLink to="/projects" class="text-white hover:underline">開源專案</NuxtLink> 與
+            <a class="text-white hover:underline" href="/">教學文章</a>
+          </div>
+          <div class="mt-3">&copy; {{ year }} Twinkle AI</div>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-const {
-  public: publicConfig
-} = useRuntimeConfig();
-
-const {
-  homeInteHost,
-} = publicConfig;
-
 const year = new Date().getFullYear();
 </script>

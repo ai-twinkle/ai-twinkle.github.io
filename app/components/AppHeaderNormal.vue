@@ -17,7 +17,6 @@
         @click="onClickItem(item)"
       />
     </div>
-    <app-header-menu-sara v-if="isSaraEnabled" variant="normal" />
   </nav>
 </template>
 
@@ -25,7 +24,6 @@
 import {inject, type Ref} from "vue";
 
 import {
-  isSaraEnabled,
   menuItems,
   type MenuFunctionItem,
 } from "../data/AppHeaderMenuData";
