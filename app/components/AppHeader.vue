@@ -1,13 +1,13 @@
 <template>
   <header class="border-b border-gray-800 bg-gray-900/70 backdrop-blur-md sticky top-0 z-50 app-header">
     <UContainer class="flex h-16 items-center justify-between">
-      <NuxtLink to="/" class="flex items-center gap-3">
+      <NuxtLinkLocale to="/" class="flex items-center gap-3">
         <NuxtImg src="/logo.png" alt="Logo" width="40" height="40" />
         <div class="leading-tight">
           <div class="font-bold text-lg text-twinkle">{{ $t('site.title') }}</div>
           <div class="text-xs text-gray-400">{{ $t('site.subtitle') }}</div>
         </div>
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <app-header-normal />
 

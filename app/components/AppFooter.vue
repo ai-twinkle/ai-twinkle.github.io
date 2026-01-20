@@ -20,9 +20,9 @@
 
         <div class="text-sm text-gray-400">
           <div>{{ $t('footer.recommendedPrefix') }}
-            <NuxtLink to="/projects" class="text-white hover:underline">
+            <NuxtLinkLocale to="/projects" class="text-white hover:underline">
               {{ $t('footer.projects') }}
-            </NuxtLink>
+            </NuxtLinkLocale>
             {{ $t('footer.recommendedConjunction') }}
             <a class="text-white hover:underline" href="/">{{ $t('footer.articles') }}</a>
           </div>

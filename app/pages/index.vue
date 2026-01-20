@@ -13,7 +13,7 @@
         </p>
 
         <div class="mt-10 flex items-center justify-center gap-x-6">
-          <UButton 
+          <UButton
             size="xl" 
             to="/discord" 
             target="_blank"
@@ -22,14 +22,14 @@
           >
             {{ $t('actions.join_discord') }}
           </UButton>
-          <UButton 
+          <UButtonLocale
             size="xl" 
             variant="ghost" 
             to="/projects"
             trailing-icon="i-heroicons-arrow-right"
           >
             {{ $t('actions.explore_projects') }}
-          </UButton>
+          </UButtonLocale>
         </div>
 
         <div class="mt-12 flex justify-center gap-6">

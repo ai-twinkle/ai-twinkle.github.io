@@ -38,6 +38,7 @@ export default defineNuxtConfig({
     defaultLocale: 'zh-TW',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: {
+      redirectOn: 'no prefix',
       useCookie: true,
       cookieKey: 'i18n_redirected',
     }
