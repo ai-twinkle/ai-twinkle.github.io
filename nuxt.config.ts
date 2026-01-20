@@ -18,7 +18,30 @@ export default defineNuxtConfig({
   colorMode: { preference: 'dark', fallback: 'dark' },
   css: ['~/assets/css/main.css'],
 
-  modules: ['@nuxt/ui', '@nuxt/image'],
+  modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n'],
+
+  i18n: {
+    locales: [
+      {
+        code: 'zh-TW',
+        iso: 'zh-TW',
+        file: 'zh-TW.json',
+        name: '中文 (繁體)',
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.json',
+        name: 'English',
+      }
+    ],
+    defaultLocale: 'zh-TW',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+    }
+  },
 
   runtimeConfig: {
     externalUrls: {

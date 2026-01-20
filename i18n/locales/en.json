@@ -1,0 +1,44 @@
+{
+  "site": {
+    "title": "Twinkle AI",
+    "subtitle": "Open-source Traditional Chinese LLM community from Taiwan"
+  },
+  "actions": {
+    "join_discord": "Discord",
+    "explore_projects": "Explore projects"
+  },
+  "home": {
+    "badge": "🌟 Taiwan open-source LLM community",
+    "titleStart": "Light up the starry sky of ",
+    "titleHighlight": "Traditional Chinese AI",
+    "titleEnd": "",
+    "lead": "Twinkle AI is a community focused on building open-source Traditional Chinese language models. We bring together passionate contributors to implement, share, and drive the adoption of AI technologies in Taiwan."
+  },
+  "features": {
+    "optimized": {
+      "title": "Optimized for Traditional Chinese",
+      "description": "We collect Traditional Chinese datasets and fine-tune LLaMA-like models to better fit Taiwan's local culture and usage."
+    },
+    "open_source": {
+      "title": "Open & Collaborative",
+      "description": "From datasets to model weights, we keep things open to lower barriers and encourage community contributions."
+    },
+    "tools": {
+      "title": "Evaluation & Tools",
+      "description": "We develop Twinkle Eval and TwinRAD to provide efficient and accurate model evaluation and red-team testing frameworks."
+    }
+  },
+  "social": {
+    "discord": "Discord",
+    "huggingface": "Hugging Face",
+    "github": "GitHub"
+  },
+  "footer": {
+    "tagline": "Open-source Traditional Chinese LLM community • Open • Collaboration • Teaching",
+    "recommendedPrefix": "Recommended: see",
+    "recommendedConjunction": "and",
+    "projects": "Open-source projects",
+    "articles": "Articles",
+    "copyright": "© {year} Twinkle AI"
+  }
+}

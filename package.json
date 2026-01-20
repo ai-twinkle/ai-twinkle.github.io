@@ -3,13 +3,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
-		"generate": "nuxt generate",
-		"preview": "npm run build && wrangler dev",
-		"postinstall": "nuxt prepare",
-		"deploy": "npm run build && wrangler deploy",
-		"cf-typegen": "wrangler types"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "npm run build && wrangler dev",
+    "postinstall": "nuxt prepare",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@nuxt/eslint": "1.10.0",
@@ -17,6 +17,7 @@
     "@nuxt/scripts": "0.13.0",
     "@nuxt/test-utils": "3.20.1",
     "@nuxt/ui": "4.1.0",
+    "@nuxtjs/i18n": "^10.2.1",
     "@unhead/vue": "^2.0.3",
     "eslint": "^9.0.0",
     "jwt-decode": "^4.0.0",
@@ -28,8 +29,8 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
-		"nitro-cloudflare-dev": "^0.2.2",
-		"nitropack": "^2.13.1",
-		"wrangler": "^4.59.2"
+    "nitro-cloudflare-dev": "^0.2.2",
+    "nitropack": "^2.13.1",
+    "wrangler": "^4.59.2"
   }
 }
