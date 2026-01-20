@@ -58,6 +58,7 @@
 import { computed } from 'vue'
 
 const {
+  githubAccessToken,
   githubOrgName,
 } = useRuntimeConfig()
 
@@ -76,7 +77,16 @@ const toGitHubReposUrl = (username: string, perPage: number = 100) => {
 
 const { data: repositories, pending, error, refresh } = useAsyncData<GitHubRepository[]>(
   'githubRepos',
-  () => $fetch<GitHubRepository[]>(toGitHubReposUrl(githubOrgName))
+  () => {
+    const headers: Record<string, string> = {
+      'Accept': 'application/vnd.github.v3+json'
+    }
+    if (githubAccessToken && import.meta.server) {
+      headers['Authorization'] = `Bearer ${githubAccessToken}`
+    }
+
+    return $fetch<GitHubRepository[]>(toGitHubReposUrl(githubOrgName), { headers })
+  }
 )
 
 const projects = computed(() => {
