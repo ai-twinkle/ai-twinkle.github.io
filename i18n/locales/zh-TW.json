@@ -47,6 +47,22 @@
     "loading": "載入中...",
     "errorTitle": "載入專案時發生錯誤：",
     "retry": "重新載入",
-    "noProjects": "沒有可顯示的專案"
+    "noProjects": "沒有可顯示的專案",
+    "hf": {
+      "title": "Hugging Face 模型",
+      "lead": "由該組織在 Hugging Face 上最受歡迎的模型。",
+      "loading": "載入模型中...",
+      "errorTitle": "載入模型時發生錯誤：",
+      "retry": "重新載入",
+      "noModels": "沒有可顯示的模型"
+    },
+    "github": {
+      "title": "GitHub 倉庫",
+      "lead": "該組織在 GitHub 上依 star 排名前幾的專案。",
+      "loading": "載入倉庫中...",
+      "errorTitle": "載入倉庫時發生錯誤：",
+      "retry": "重新載入",
+      "noProjects": "沒有可顯示的倉庫"
+    }
   }
 } 

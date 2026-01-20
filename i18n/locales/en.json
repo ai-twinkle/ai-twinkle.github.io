@@ -47,6 +47,22 @@
     "loading": "Loading...",
     "errorTitle": "Error loading projects:",
     "retry": "Retry",
-    "noProjects": "No projects to display"
+    "noProjects": "No projects to display",
+    "hf": {
+      "title": "Hugging Face models",
+      "lead": "Popular models by the organization on Hugging Face.",
+      "loading": "Loading models...",
+      "errorTitle": "Error loading models:",
+      "retry": "Retry",
+      "noModels": "No models to display"
+    },
+    "github": {
+      "title": "GitHub repositories",
+      "lead": "Top repositories from the organization on GitHub.",
+      "loading": "Loading repositories...",
+      "errorTitle": "Error loading repositories:",
+      "retry": "Retry",
+      "noProjects": "No repositories to display"
+    }
   }
 } 

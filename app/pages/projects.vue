@@ -5,62 +5,62 @@
       <p class="mt-2 text-gray-400">{{ $t('projects.lead') }}</p>
     </div>
 
-    <!-- Loading state -->
-    <div v-if="pending" class="flex justify-center items-center py-12">
-      <LoadingCircleIcon class="h-8 w-8 text-gray-400 animate-spin" />
-      <p class="ml-3 text-gray-400">{{ $t('projects.loading') }}</p> 
+    <!-- Source tabs -->
+    <div class="mb-6 flex items-center gap-3">
+      <button @click="setSource('github')" :class="activeSource === 'github' ? 'px-3 py-1 rounded bg-twinkle text-white' : 'px-3 py-1 rounded bg-gray-800 text-gray-300'">
+        {{ $t('projects.github.title') }}
+      </button>
+      <button @click="setSource('hf')" :class="activeSource === 'hf' ? 'px-3 py-1 rounded bg-twinkle text-white' : 'px-3 py-1 rounded bg-gray-800 text-gray-300'">
+        {{ $t('projects.hf.title') }}
+      </button>
     </div>
 
-    <!-- Error state -->
-    <div v-else-if="error" class="p-6 bg-red-50 rounded text-red-600">
-      <p class="font-medium">{{ $t('projects.errorTitle') }}</p>
-      <p class="mt-2 text-sm text-red-600">{{ error.message ?? error }}</p>
-      <div class="mt-4">
-        <UButton @click="onClickRetry">{{ $t('projects.retry') }}</UButton>
-      </div> 
-    </div>
+    <ProjectTab
+      v-if="activeSource === 'hf'"
+      :title="$t('projects.hf.title')"
+      :lead="$t('projects.hf.lead')"
+      :items="hfProjects"
+      :pending="hfPending"
+      :error="hfError"
+      :onRetry="onClickRetryHF"
+      :emptyText="$t('projects.hf.noModels')"
+      :loadingText="$t('projects.hf.loading')"
+      :retryLabel="$t('projects.hf.retry')"
+      :errorTitle="$t('projects.hf.errorTitle')"
+    />  
 
-    <!-- No projects -->
-    <div v-else-if="!projects.length" class="p-6 text-gray-400">
-      {{ $t('projects.noProjects') }}
-    </div>
-
-    <!-- Content -->
-    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
-      <UCard 
-        v-for="project in projects" 
-        :key="project.name"
-        class="flex flex-col h-full hover:ring-primary-500 transition-all cursor-pointer"
-        @click="onClickLink(project.link)"
-      >
-        <div class="flex justify-between items-start mb-4">
-          <h3 class="text-xl font-bold text-twinkle">{{ project.name }}</h3>
-          <UBadge variant="soft" color="neutral" size="sm" class="border-twinkle/30">
-            <UIcon name="i-heroicons-star" class="mr-1 text-twinkle" /> {{ project.stars }}
-          </UBadge>
-        </div>
-        
-        <p class="text-gray-300 text-sm grow mb-6">
-          {{ project.desc }}
-        </p>
-
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <UBadge v-for="t in project.tech" :key="t" color="neutral" variant="solid" size="xs" class="text-gray-300 bg-gray-800/40">
-            {{ t }}
-          </UBadge>
-        </div>
-      </UCard>
-    </div>
+    <ProjectTab
+      v-if="activeSource === 'github'"
+      :title="$t('projects.github.title')"
+      :lead="$t('projects.github.lead')"
+      :items="projects"
+      :pending="pending"
+      :error="error"
+      :onRetry="onClickRetry"
+      :emptyText="$t('projects.github.noProjects')"
+      :loadingText="$t('projects.github.loading')"
+      :retryLabel="$t('projects.github.retry')"
+      :errorTitle="$t('projects.github.errorTitle')"
+    />
   </UContainer>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import ProjectTab from '~/components/ProjectTab.vue'
 
 const {
   githubAccessToken,
   githubOrgName,
+  hfOrgName,
+  huggingfaceAccessToken,
 } = useRuntimeConfig()
+
+// Tab state: 'github' or 'hf'
+const activeSource = ref<'github' | 'hf'>('github')
+const setSource = (s: 'github' | 'hf') => {
+  activeSource.value = s
+} 
 
 interface GitHubRepository {
   name: string;
@@ -88,6 +88,58 @@ const { data: repositories, pending, error, refresh } = useAsyncData<GitHubRepos
     return $fetch<GitHubRepository[]>(toGitHubReposUrl(githubOrgName), { headers })
   }
 )
+
+// --- Hugging Face models ---
+interface HuggingFaceModel {
+  id: string;
+  likes?: number;
+  tags?: string[];
+  pipeline_tag?: string | null;
+}
+
+const HF_LIMIT = 10
+
+const { data: hfModels, pending: hfPending, error: hfError, refresh: hfRefresh } = useAsyncData<HuggingFaceModel[]>(
+  'hfModels',
+  () => {
+    const headers: Record<string, string> = { 'Accept': 'application/json' }
+    if (huggingfaceAccessToken && import.meta.server) {
+      headers['Authorization'] = `Bearer ${huggingfaceAccessToken}`
+    }
+    const url = `https://huggingface.co/api/models?author=${hfOrgName}&sort=likes&limit=${HF_LIMIT}`
+    return $fetch<HuggingFaceModel[]>(url, { headers })
+  }
+)
+
+const hfProjects = computed(() => {
+  const models = hfModels?.value ?? []
+  if (models.length) {
+    return models
+      .slice()
+      .sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0))
+      .map((m) => ({
+        name: m.id.split('/').pop() ?? m.id,
+        desc: '',
+        tech: (() => {
+          const s = new Set<string>()
+          if (m.pipeline_tag) s.add(String(m.pipeline_tag).trim())
+          if (m.tags && m.tags.length) for (const t of m.tags) if (t) s.add(String(t).trim())
+          return Array.from(s)
+        })(),
+        stars: String(m.likes ?? 0),
+        link: `https://huggingface.co/${m.id}`
+      }))
+  }
+  return []
+})
+
+const onClickRetryHF = async () => {
+  try {
+    await hfRefresh?.()
+  } catch (e) {
+    console.error('HF retry failed', e)
+  }
+}
 
 const projects = computed(() => {
   const repos = repositories?.value ?? []
