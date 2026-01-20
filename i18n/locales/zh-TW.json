@@ -1,0 +1,44 @@
+{
+  "site": {
+    "title": "Twinkle AI",
+    "subtitle": "來自臺灣的正體中文 AI 社群"
+  },
+  "actions": {
+    "join_discord": "加入 Discord",
+    "explore_projects": "探索專案"
+  },
+  "home": {
+    "badge": "🌟 台灣生成式 AI 開源社群",
+    "titleStart": "點亮 ",
+    "titleHighlight": "正體中文 AI",
+    "titleEnd": " 的星空",
+    "lead": "Twinkle AI 是一個專注於構建開源正體中文語言模型的研究社群。我們匯聚各界熱情夥伴，透過實作與分享，共同推動 AI 技術在台灣的落地與發展。"
+  },
+  "features": {
+    "optimized": {
+      "title": "正體中文最佳化",
+      "description": "專注於收集繁中語料庫並微調 LLaMA 類模型，打造最適合台灣在地文化的語言模型。"
+    },
+    "open_source": {
+      "title": "開源與協作",
+      "description": "從 Dataset 到 Model 訓練權重完全開源，致力於降低 AI 研究門檻並促進社群貢獻。"
+    },
+    "tools": {
+      "title": "實戰評測工具",
+      "description": "開發 Twinkle Eval 與 TwinRAD，提供高效且準確的模型評測與紅隊測試框架。"
+    }
+  },
+  "social": {
+    "discord": "Discord",
+    "huggingface": "Hugging Face",
+    "github": "GitHub"
+  },
+  "footer": {
+    "tagline": "正體中文開源語言模型社群 • 開源 • 協作 • 教學",
+    "recommendedPrefix": "推薦：查看",
+    "recommendedConjunction": "與",
+    "projects": "開源專案",
+    "articles": "教學文章",
+    "copyright": "© {year} Twinkle AI"
+  }
+}

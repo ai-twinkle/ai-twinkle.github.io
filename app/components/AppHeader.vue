@@ -4,15 +4,31 @@
       <NuxtLink to="/" class="flex items-center gap-3">
         <NuxtImg src="/logo.png" alt="Logo" width="40" height="40" />
         <div class="leading-tight">
-          <div class="font-bold text-lg text-twinkle">{{ title }}</div>
-          <div class="text-xs text-gray-400">{{ subtitle }}</div>
+          <div class="font-bold text-lg text-twinkle">{{ $t('site.title') }}</div>
+          <div class="text-xs text-gray-400">{{ $t('site.subtitle') }}</div>
         </div>
       </NuxtLink>
 
       <app-header-normal />
 
       <div class="flex items-center gap-3">
-        <UButton to="/discord" target="_blank" color="secondary" variant="ghost" icon="i-simple-icons-discord" />
+        <UButton
+          to="/discord"
+          target="_blank"
+          color="secondary"
+          variant="ghost" icon="i-simple-icons-discord"
+          :label="$t('actions.join_discord')"
+        />
+        <div class="flex items-center space-x-2">
+          <button
+            v-for="l in localeCodes"
+            :key="l"
+            class="text-sm px-2 py-1 rounded hover:brightness-90 active:brightness-75 cursor-pointer"
+            :class="{ 'bg-gray-700': currentLocale === l }" @click="setLocale(l)"
+          >
+            {{ l === 'zh-TW' ? '中' : 'EN' }}
+          </button>
+        </div>
         <UButton class="md:hidden" icon="i-heroicons-bars-3" color="secondary" variant="ghost" @click="onClickMobileMenuBtnOpen" />
       </div>
     </UContainer>
@@ -23,12 +39,11 @@
 
 
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted, provide, type Ref} from "vue";
+import {ref, onMounted, onUnmounted, provide, type Ref, computed} from "vue";
+import { useI18n } from 'vue-i18n';
 
-import {
-  title,
-  subtitle,
-} from "../data/AppHeaderMenuData";
+const { locale, localeCodes, setLocale } = useI18n();
+const currentLocale = computed(() => locale.value);
 
 const isMobileMenuOpened = ref(false);
 

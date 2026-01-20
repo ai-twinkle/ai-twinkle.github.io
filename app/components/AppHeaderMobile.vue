@@ -8,7 +8,7 @@
         >
           <div>
             <h1 class="flex-auto text-lg font-semibold text-gray-300 sm:hidden">
-              {{ title }}
+              {{ $t('site.title') }}
             </h1>
           </div>
             <div class="-mr-2">
@@ -52,7 +52,6 @@
 import {inject, watch, type Ref} from "vue";
 
 import {
-  title,
   menuItems,
   type MenuFunctionItem,
 } from "../data/AppHeaderMenuData";

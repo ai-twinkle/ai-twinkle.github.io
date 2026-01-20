@@ -3,14 +3,13 @@
     <UContainer class="py-24 sm:py-32">
       <div class="text-center">
         <UBadge variant="subtle" size="lg" class="mb-4 rounded-full badge-twinkle">
-          🌟 台灣生成式 AI 開源社群
+          {{ $t('home.badge') }}
         </UBadge>
         <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
-          點亮 <span class="text-twinkle">正體中文 AI</span> 的星空
+          {{ $t('home.titleStart') }}<span class="text-twinkle">{{ $t('home.titleHighlight') }}</span>{{ $t('home.titleEnd') }}
         </h1>
         <p class="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-          Twinkle AI 是一個專注於構建開源正體中文語言模型的研究社群。
-          我們匯聚各界熱情夥伴，透過實作與分享，共同推動 AI 技術在台灣的落地與發展。
+          {{ $t('home.lead') }}
         </p>
 
         <div class="mt-10 flex items-center justify-center gap-x-6">
@@ -21,7 +20,7 @@
             icon="i-simple-icons-discord"
             class="btn-twinkle-filled shadow-lg"
           >
-            加入 Discord 社群
+            {{ $t('actions.join_discord') }}
           </UButton>
           <UButton 
             size="xl" 
@@ -29,7 +28,7 @@
             to="/projects"
             trailing-icon="i-heroicons-arrow-right"
           >
-            探索專案
+            {{ $t('actions.explore_projects') }}
           </UButton>
         </div>
 
@@ -64,28 +63,32 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 const features = [
   {
-    title: '正體中文最佳化',
-    description: '專注於收集繁中語料庫並微調 LLaMA 類模型，打造最適合台灣在地文化的語言模型。',
+    title: t('features.optimized.title'),
+    description: t('features.optimized.description'),
     icon: 'i-heroicons-language'
   },
   {
-    title: '開源與協作',
-    description: '從 Dataset 到 Model 訓練權重完全開源，致力於降低 AI 研究門檻並促進社群貢獻。',
+    title: t('features.open_source.title'),
+    description: t('features.open_source.description'),
     icon: 'i-heroicons-code-bracket-square'
   },
   {
-    title: '實戰評測工具',
-    description: '開發 Twinkle Eval 與 TwinRAD，提供高效且準確的模型評測與紅隊測試框架。',
+    title: t('features.tools.title'),
+    description: t('features.tools.description'),
     icon: 'i-heroicons-chart-bar'
   }
 ]
 
 const socialLinks = [
-  { label: 'Discord', icon: 'i-simple-icons-discord', to: '/discord', color: 'primary' },
-  { label: 'Hugging Face', icon: 'i-simple-icons-huggingface', to: '/huggingface', color: 'yellow' },
-  { label: 'GitHub', icon: 'i-simple-icons-github', to: '/github', color: 'white' },
+  { label: t('social.discord'), icon: 'i-simple-icons-discord', to: '/discord', color: 'primary' },
+  { label: t('social.huggingface'), icon: 'i-simple-icons-huggingface', to: '/huggingface', color: 'yellow' },
+  { label: t('social.github'), icon: 'i-simple-icons-github', to: '/github', color: 'white' },
 ]
 </script>
 
