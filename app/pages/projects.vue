@@ -1,16 +1,37 @@
 <template>
   <UContainer class="py-16">
     <div class="mb-12">
-      <h2 class="text-3xl font-bold text-white">開源專案</h2>
-      <p class="mt-2 text-gray-400">我們致力於開源所有研究成果，包含模型權重、訓練數據與評測工具。</p>
+      <h2 class="text-3xl font-bold text-white">{{ $t('projects.title') }}</h2>
+      <p class="mt-2 text-gray-400">{{ $t('projects.lead') }}</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Loading state -->
+    <div v-if="pending" class="flex justify-center items-center py-12">
+      <LoadingCircleIcon class="h-8 w-8 text-gray-400 animate-spin" />
+      <p class="ml-3 text-gray-400">{{ $t('projects.loading') }}</p> 
+    </div>
+
+    <!-- Error state -->
+    <div v-else-if="error" class="p-6 bg-red-50 rounded text-red-600">
+      <p class="font-medium">{{ $t('projects.errorTitle') }}</p>
+      <p class="mt-2 text-sm text-red-600">{{ error.message ?? error }}</p>
+      <div class="mt-4">
+        <UButton @click="onClickRetry">{{ $t('projects.retry') }}</UButton>
+      </div> 
+    </div>
+
+    <!-- No projects -->
+    <div v-else-if="!projects.length" class="p-6 text-gray-400">
+      {{ $t('projects.noProjects') }}
+    </div>
+
+    <!-- Content -->
+    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
       <UCard 
         v-for="project in projects" 
         :key="project.name"
         class="flex flex-col h-full hover:ring-primary-500 transition-all cursor-pointer"
-        @click="openProject(project.link)"
+        @click="onClickLink(project.link)"
       >
         <div class="flex justify-between items-start mb-4">
           <h3 class="text-xl font-bold text-twinkle">{{ project.name }}</h3>
@@ -34,46 +55,70 @@
 </template>
 
 <script setup lang="ts">
-const projects = [
-  {
-    name: 'Twinkle Eval',
-    desc: '高效且準確的 AI 評測工具，專為正體中文模型設計。',
-    tech: ['Python', 'Evaluation'],
-    stars: '84',
-    link: 'https://github.com/ai-twinkle/eval'
-  },
-  {
-    name: 'llm-lab',
-    desc: '繁中模型研究與實作的 Lab，包含大量 Jupyter Notebook 教學。',
-    tech: ['Jupyter', 'Tutorial'],
-    stars: '52',
-    link: 'https://github.com/ai-twinkle/llm-lab'
-  },
-  {
-    name: 'TwinRAD',
-    desc: '多代理紅隊測試框架 (Multi-agent red teaming framework)，測試 LLM 安全性。',
-    tech: ['Python', 'Security'],
-    stars: '6',
-    link: 'https://github.com/ai-twinkle/TwinRAD'
-  },
-  {
-    name: 'AiyoDesk',
-    desc: '以最低硬體成本打造的專用 AI 伺服器整合軟體 (C#)。',
-    tech: ['C#', 'Desktop App'],
-    stars: '10',
-    link: 'https://github.com/ai-twinkle/AiyoDesk'
-  },
-  {
-    name: 'tw-leetcode',
-    desc: 'LeetCode 正體中文解題資料集。',
-    tech: ['TypeScript', 'Dataset'],
-    stars: '8',
-    link: 'https://github.com/ai-twinkle/tw-leetcode'
-  }
-]
+import { computed } from 'vue'
 
-const openProject = (url: string) => {
-  // explicitly use window in a method so template type-checking is happy
+const {
+  githubOrgName,
+} = useRuntimeConfig()
+
+interface GitHubRepository {
+  name: string;
+  stargazers_count: number;
+  html_url: string;
+  language?: string | null;
+  topics?: string[];
+  description?: string | null;
+} 
+
+const toGitHubReposUrl = (username: string, perPage: number = 100) => {
+  return `https://api.github.com/users/${username}/repos?sort=stars&per_page=${perPage}`;
+}
+
+const { data: repositories, pending, error, refresh } = useAsyncData<GitHubRepository[]>(
+  'githubRepos',
+  () => $fetch<GitHubRepository[]>(toGitHubReposUrl(githubOrgName))
+)
+
+const projects = computed(() => {
+  const repos = repositories?.value ?? []
+  if (repos.length) {
+    return repos
+      .slice()
+      .sort((a, b) => (
+        (b.stargazers_count ?? 0) -
+        (a.stargazers_count ?? 0)
+      ))
+      .map((r) => ({
+        name: r.name,
+        desc: r.description ?? '',
+        tech: (() => {
+          const s = new Set<string>()
+          if (r.language) s.add(String(r.language).trim())
+          if (r.topics && r.topics.length) {
+            for (const t of r.topics) {
+              if (t) s.add(String(t).trim())
+            }
+          }
+          return Array.from(s)
+        })(),
+        stars: String(r.stargazers_count ?? 0),
+        link: r.html_url
+      }))
+  }
+  return []
+})
+
+// Click handler to retry fetching data
+const onClickRetry = async () => {
+  try {
+    await refresh?.()
+  } catch (e) {
+    console.error('Retry failed', e)
+  }
+}
+
+// Click handler to open project link
+const onClickLink = (url: string) => {
   window.open(url, '_blank')
 }
 </script>

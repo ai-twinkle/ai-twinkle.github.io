@@ -40,5 +40,13 @@
     "projects": "Open-source projects",
     "articles": "Articles",
     "copyright": "© {year} Twinkle AI"
+  },
+  "projects": {
+    "title": "Open-source projects",
+    "lead": "We commit to open-source all our research outputs, including model weights, training data, and evaluation tools.",
+    "loading": "Loading...",
+    "errorTitle": "Error loading projects:",
+    "retry": "Retry",
+    "noProjects": "No projects to display"
   }
-}
+} 

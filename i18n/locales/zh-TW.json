@@ -40,5 +40,13 @@
     "projects": "開源專案",
     "articles": "教學文章",
     "copyright": "© {year} Twinkle AI"
+  },
+  "projects": {
+    "title": "開源專案",
+    "lead": "我們致力於開源所有研究成果，包含模型權重、訓練數據與評測工具。",
+    "loading": "載入中...",
+    "errorTitle": "載入專案時發生錯誤：",
+    "retry": "重新載入",
+    "noProjects": "沒有可顯示的專案"
   }
-}
+} 
