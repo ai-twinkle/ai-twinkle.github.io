@@ -20,11 +20,13 @@
 
         <div class="text-sm text-gray-400">
           <div>{{ $t('footer.recommendedPrefix') }}
-            <NuxtLinkLocale to="/projects" class="text-white hover:underline">
-              {{ $t('footer.projects') }}
-            </NuxtLinkLocale>
-            {{ $t('footer.recommendedConjunction') }}
-            <a class="text-white hover:underline" href="/">{{ $t('footer.articles') }}</a>
+            <NuxtLink to="/huggingface" class="text-white hover:underline">
+              {{ $t('social.huggingface') }}
+            </NuxtLink>
+            <span class="mx-2 border-l border-gray-600/50"></span>
+            <NuxtLink to="/github" class="text-white hover:underline">
+              {{ $t('social.github') }}
+            </NuxtLink>
           </div>
           <div class="mt-3">{{ $t('footer.copyright', { year }) }}</div>
         </div>
@@ -37,8 +39,8 @@
 const year = new Date().getFullYear();
 
 const socialLinks = [
-  { id: 'github', href: '/github', labelKey: 'social.github' },
   { id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface' },
+  { id: 'github', href: '/github', labelKey: 'social.github' },
   { id: 'discord', href: '/discord', labelKey: 'social.discord' },
 ] as const;
 </script>

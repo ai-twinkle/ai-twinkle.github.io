@@ -35,10 +35,7 @@
   },
   "footer": {
     "tagline": "Open-source Traditional Chinese LLM community • Open • Collaboration • Teaching",
-    "recommendedPrefix": "Recommended: see",
-    "recommendedConjunction": "and",
-    "projects": "Open-source projects",
-    "articles": "Articles",
+    "recommendedPrefix": "You might be interested in our:",
     "copyright": "© {year} Twinkle AI"
   },
   "projects": {
@@ -50,7 +47,7 @@
     "noProjects": "No projects to display",
     "hf": {
       "title": "Hugging Face models",
-      "lead": "Popular models by the organization on Hugging Face.",
+      "lead": "Popular models by us on Hugging Face.",
       "loading": "Loading models...",
       "errorTitle": "Error loading models:",
       "retry": "Retry",
@@ -58,7 +55,7 @@
     },
     "github": {
       "title": "GitHub repositories",
-      "lead": "Top repositories from the organization on GitHub.",
+      "lead": "Top repositories by us on GitHub.",
       "loading": "Loading repositories...",
       "errorTitle": "Error loading repositories:",
       "retry": "Retry",
