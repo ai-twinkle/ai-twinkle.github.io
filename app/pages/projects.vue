@@ -1,47 +1,43 @@
 <template>
   <UContainer class="py-16">
-    <div class="mb-12">
+    <div class="mb-6">
       <h2 class="text-3xl font-bold text-white">{{ $t('projects.title') }}</h2>
       <p class="mt-2 text-gray-400">{{ $t('projects.lead') }}</p>
     </div>
 
-    <!-- Source tabs -->
-    <div class="mb-6 flex items-center gap-3">
-      <button @click="setSource('github')" :class="activeSource === 'github' ? 'px-3 py-1 rounded bg-twinkle text-white' : 'px-3 py-1 rounded bg-gray-800 text-gray-300'">
-        {{ $t('projects.github.title') }}
-      </button>
-      <button @click="setSource('hf')" :class="activeSource === 'hf' ? 'px-3 py-1 rounded bg-twinkle text-white' : 'px-3 py-1 rounded bg-gray-800 text-gray-300'">
-        {{ $t('projects.hf.title') }}
-      </button>
+    <!-- Source tabs (framework UTabs) -->
+    <div class="mb-6">
+      <UTabs :items="activeSource" color="warning">
+        <template #huggingface>
+          <ProjectTab
+            :title="$t('projects.hf.title')"
+            :lead="$t('projects.hf.lead')"
+            :items="hfProjects"
+            :pending="hfPending"
+            :error="hfError"
+            :onRetry="onClickRetryHF"
+            :emptyText="$t('projects.hf.noModels')"
+            :loadingText="$t('projects.hf.loading')"
+            :retryLabel="$t('projects.hf.retry')"
+            :errorTitle="$t('projects.hf.errorTitle')"
+          /> 
+        </template>
+        <template #github>
+          <ProjectTab
+            :title="$t('projects.github.title')"
+            :lead="$t('projects.github.lead')"
+            :items="projects"
+            :pending="pending"
+            :error="error"
+            :onRetry="onClickRetry"
+            :emptyText="$t('projects.github.noProjects')"
+            :loadingText="$t('projects.github.loading')"
+            :retryLabel="$t('projects.github.retry')"
+            :errorTitle="$t('projects.github.errorTitle')"
+          /> 
+        </template>
+      </UTabs>
     </div>
-
-    <ProjectTab
-      v-if="activeSource === 'hf'"
-      :title="$t('projects.hf.title')"
-      :lead="$t('projects.hf.lead')"
-      :items="hfProjects"
-      :pending="hfPending"
-      :error="hfError"
-      :onRetry="onClickRetryHF"
-      :emptyText="$t('projects.hf.noModels')"
-      :loadingText="$t('projects.hf.loading')"
-      :retryLabel="$t('projects.hf.retry')"
-      :errorTitle="$t('projects.hf.errorTitle')"
-    />  
-
-    <ProjectTab
-      v-if="activeSource === 'github'"
-      :title="$t('projects.github.title')"
-      :lead="$t('projects.github.lead')"
-      :items="projects"
-      :pending="pending"
-      :error="error"
-      :onRetry="onClickRetry"
-      :emptyText="$t('projects.github.noProjects')"
-      :loadingText="$t('projects.github.loading')"
-      :retryLabel="$t('projects.github.retry')"
-      :errorTitle="$t('projects.github.errorTitle')"
-    />
   </UContainer>
 </template>
 
@@ -56,11 +52,18 @@ const {
   huggingfaceAccessToken,
 } = useRuntimeConfig()
 
-// Tab state: 'github' or 'hf'
-const activeSource = ref<'github' | 'hf'>('github')
-const setSource = (s: 'github' | 'hf') => {
-  activeSource.value = s
-} 
+const activeSource = [
+  {
+    label: 'GitHub',
+    icon: 'i-lucide-github',
+    slot: 'github'
+  },
+  {
+    label: 'Hugging Face',
+    icon: 'i-lucide-smile',
+    slot: 'huggingface'
+  }
+]
 
 interface GitHubRepository {
   name: string;
@@ -89,7 +92,6 @@ const { data: repositories, pending, error, refresh } = useAsyncData<GitHubRepos
   }
 )
 
-// --- Hugging Face models ---
 interface HuggingFaceModel {
   id: string;
   likes?: number;
@@ -177,10 +179,5 @@ const onClickRetry = async () => {
   } catch (e) {
     console.error('Retry failed', e)
   }
-}
-
-// Click handler to open project link
-const onClickLink = (url: string) => {
-  window.open(url, '_blank')
 }
 </script>
