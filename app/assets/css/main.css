@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Brand tokens + Twinkle AI — starry background and dark defaults */
+:root {
+  color-scheme: dark;
+  --twinkle-50:  #fffbe6;
+  --twinkle-100: #fff4bf;
+  --twinkle-200: #ffee99;
+  --twinkle-300: #ffe873;
+  --twinkle-400: #ffe040;
+  --twinkle-500: #ffd500; /* brand base */
+  --twinkle-600: #e6c000;
+  --twinkle-700: #bfa000;
+  --twinkle-800: #8c7500;
+  --twinkle-900: #665500;
+
+  --twinkle-primary: var(--twinkle-500);
+  --twinkle-on-primary: #0b1220; /* dark site background — good contrast on primary */
+  --twinkle-on-dark: var(--twinkle-50); /* use very light tone when placed on dark primary */
+}
+
+body {
+  background-color: #0b1220;
+  color: #e6eef8;
+  font-family: 'Cabin', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.starry-bg {
+  background-image:
+    radial-gradient(2px 2px at 5% 10%, rgba(255,235,179,0.08) 0%, transparent 20%),
+    radial-gradient(1.5px 1.5px at 20% 40%, rgba(255,255,255,0.04) 0%, transparent 20%),
+    radial-gradient(1px 1px at 80% 30%, rgba(255,209,102,0.06) 0%, transparent 20%),
+    linear-gradient(180deg, rgba(10,12,20,0.6), rgba(2,6,23,0.9));
+  background-size: cover;
+}
+
+/* subtle glass for header */
+.backdrop-blur-md { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
+/* Branding utilities (accessible patterns) */
+.text-twinkle { color: var(--twinkle-500) !important; }
+.text-twinkle-700 { color: var(--twinkle-700) !important; }
+.bg-twinkle { background-color: var(--twinkle-500) !important; color: var(--twinkle-on-primary) !important; }
+.bg-twinkle-700 { background-color: var(--twinkle-700) !important; color: #ffffff !important; }
+.border-twinkle { border-color: var(--twinkle-500) !important; }
+
+/* Preferred button patterns on dark site background:
+   - Outline/ghost: yellow text or border on dark bg (high contrast)
+   - Filled: yellow background with dark text (use --twinkle-on-primary)
+   Avoid white text on yellow backgrounds unless contrast has been verified.
+*/
+.btn-twinkle-outline { background: transparent; border: 1px solid var(--twinkle-500); color: var(--twinkle-500); }
+.btn-twinkle-filled { background: var(--twinkle-500); color: var(--twinkle-on-primary); border: none; }
+.badge-twinkle { background: rgba(255,213,0,0.08); color: var(--twinkle-500); border-radius: 9999px; padding: 0.125rem 0.5rem; font-weight: 600; }
+
+/* helper classes when using primary as background */
+.on-primary-dark { color: var(--twinkle-on-primary) !important; }
+.on-primary-light { color: var(--twinkle-on-dark) !important; }
+

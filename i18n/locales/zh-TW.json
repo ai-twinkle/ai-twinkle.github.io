@@ -1,0 +1,65 @@
+{
+  "site": {
+    "title": "Twinkle AI",
+    "subtitle": "來自臺灣的正體中文 AI 社群"
+  },
+  "actions": {
+    "join_discord": "加入 Discord",
+    "explore_projects": "探索專案"
+  },
+  "home": {
+    "badge": "🌟 台灣生成式 AI 開源社群",
+    "titleStart": "點亮 ",
+    "titleHighlight": "正體中文 AI",
+    "titleEnd": " 的星空",
+    "lead": "Twinkle AI 是一個專注於構建開源正體中文語言模型的研究社群。我們匯聚各界熱情夥伴，透過實作與分享，共同推動 AI 技術在台灣的落地與發展。"
+  },
+  "features": {
+    "optimized": {
+      "title": "正體中文最佳化",
+      "description": "專注於收集繁中語料庫並微調 LLaMA 類模型，打造最適合台灣在地文化的語言模型。"
+    },
+    "open_source": {
+      "title": "開源與協作",
+      "description": "從 Dataset 到 Model 訓練權重完全開源，致力於降低 AI 研究門檻並促進社群貢獻。"
+    },
+    "tools": {
+      "title": "實戰評測工具",
+      "description": "開發 Twinkle Eval 與 TwinRAD，提供高效且準確的模型評測與紅隊測試框架。"
+    }
+  },
+  "social": {
+    "discord": "Discord",
+    "huggingface": "Hugging Face",
+    "github": "GitHub"
+  },
+  "footer": {
+    "tagline": "正體中文開源語言模型社群 • 開源 • 協作 • 教學",
+    "recommendedPrefix": "或許你會有興趣... 我們的：",
+    "copyright": "© {year} Twinkle AI"
+  },
+  "projects": {
+    "title": "開源專案",
+    "lead": "我們致力於開源所有研究成果，包含模型權重、訓練數據與評測工具。",
+    "loading": "載入中...",
+    "errorTitle": "載入專案時發生錯誤：",
+    "retry": "重新載入",
+    "noProjects": "沒有可顯示的專案",
+    "hf": {
+      "title": "Hugging Face 模型",
+      "lead": "我們在 Hugging Face 上最受歡迎的模型。",
+      "loading": "載入模型中...",
+      "errorTitle": "載入模型時發生錯誤：",
+      "retry": "重新載入",
+      "noModels": "沒有可顯示的模型"
+    },
+    "github": {
+      "title": "GitHub 倉庫",
+      "lead": "我們在 GitHub 上依 star 排名前幾的專案。",
+      "loading": "載入倉庫中...",
+      "errorTitle": "載入倉庫時發生錯誤：",
+      "retry": "重新載入",
+      "noProjects": "沒有可顯示的倉庫"
+    }
+  }
+} 
