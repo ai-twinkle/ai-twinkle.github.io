@@ -1,7 +1,7 @@
 const {
-    externalUrls: { github: url },
+  externalUrls: {github: url},
 } = useRuntimeConfig();
 
 export default defineEventHandler(
     () => Response.redirect(url, 302),
-)
+);

@@ -15,12 +15,12 @@
             :items="hfProjects"
             :pending="hfPending"
             :error="hfError"
-            :onRetry="onClickRetryHF"
-            :emptyText="$t('projects.hf.noModels')"
-            :loadingText="$t('projects.hf.loading')"
-            :retryLabel="$t('projects.hf.retry')"
-            :errorTitle="$t('projects.hf.errorTitle')"
-          /> 
+            :on-retry="onClickRetryHF"
+            :empty-text="$t('projects.hf.noModels')"
+            :loading-text="$t('projects.hf.loading')"
+            :retry-label="$t('projects.hf.retry')"
+            :error-title="$t('projects.hf.errorTitle')"
+          />
         </template>
         <template #github>
           <ProjectTab
@@ -29,12 +29,12 @@
             :items="projects"
             :pending="pending"
             :error="error"
-            :onRetry="onClickRetry"
-            :emptyText="$t('projects.github.noProjects')"
-            :loadingText="$t('projects.github.loading')"
-            :retryLabel="$t('projects.github.retry')"
-            :errorTitle="$t('projects.github.errorTitle')"
-          /> 
+            :on-retry="onClickRetry"
+            :empty-text="$t('projects.github.noProjects')"
+            :loading-text="$t('projects.github.loading')"
+            :retry-label="$t('projects.github.retry')"
+            :error-title="$t('projects.github.errorTitle')"
+          />
         </template>
       </UTabs>
     </div>
@@ -42,28 +42,28 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import ProjectTab from '~/components/ProjectTab.vue'
+import {computed} from 'vue';
+import ProjectTab from '~/components/ProjectTab.vue';
 
 const {
   githubAccessToken,
   githubOrgName,
   hfOrgName,
   huggingfaceAccessToken,
-} = useRuntimeConfig()
+} = useRuntimeConfig();
 
 const activeSource = [
   {
     label: 'GitHub',
     icon: 'i-lucide-github',
-    slot: 'github'
+    slot: 'github',
   },
   {
     label: 'Hugging Face',
     icon: 'i-lucide-smile',
-    slot: 'huggingface'
-  }
-]
+    slot: 'huggingface',
+  },
+];
 
 interface GitHubRepository {
   name: string;
@@ -72,25 +72,25 @@ interface GitHubRepository {
   language?: string | null;
   topics?: string[];
   description?: string | null;
-} 
+}
 
 const toGitHubReposUrl = (username: string, perPage: number = 100) => {
   return `https://api.github.com/users/${username}/repos?sort=stars&per_page=${perPage}`;
-}
+};
 
-const { data: repositories, pending, error, refresh } = useAsyncData<GitHubRepository[]>(
-  'githubRepos',
-  () => {
-    const headers: Record<string, string> = {
-      'Accept': 'application/vnd.github.v3+json'
-    }
-    if (githubAccessToken && import.meta.server) {
-      headers['Authorization'] = `Bearer ${githubAccessToken}`
-    }
+const {data: repositories, pending, error, refresh} = useAsyncData<GitHubRepository[]>(
+    'githubRepos',
+    () => {
+      const headers: Record<string, string> = {
+        'Accept': 'application/vnd.github.v3+json',
+      };
+      if (githubAccessToken && import.meta.server) {
+        headers['Authorization'] = `Bearer ${githubAccessToken}`;
+      }
 
-    return $fetch<GitHubRepository[]>(toGitHubReposUrl(githubOrgName), { headers })
-  }
-)
+      return $fetch<GitHubRepository[]>(toGitHubReposUrl(githubOrgName), {headers});
+    },
+);
 
 interface HuggingFaceModel {
   id: string;
@@ -99,85 +99,85 @@ interface HuggingFaceModel {
   pipeline_tag?: string | null;
 }
 
-const HF_LIMIT = 10
+const HF_LIMIT = 10;
 
-const { data: hfModels, pending: hfPending, error: hfError, refresh: hfRefresh } = useAsyncData<HuggingFaceModel[]>(
-  'hfModels',
-  () => {
-    const headers: Record<string, string> = { 'Accept': 'application/json' }
-    if (huggingfaceAccessToken && import.meta.server) {
-      headers['Authorization'] = `Bearer ${huggingfaceAccessToken}`
-    }
-    const url = `https://huggingface.co/api/models?author=${hfOrgName}&sort=likes&limit=${HF_LIMIT}`
-    return $fetch<HuggingFaceModel[]>(url, { headers })
-  }
-)
+const {data: hfModels, pending: hfPending, error: hfError, refresh: hfRefresh} = useAsyncData<HuggingFaceModel[]>(
+    'hfModels',
+    () => {
+      const headers: Record<string, string> = {'Accept': 'application/json'};
+      if (huggingfaceAccessToken && import.meta.server) {
+        headers['Authorization'] = `Bearer ${huggingfaceAccessToken}`;
+      }
+      const url = `https://huggingface.co/api/models?author=${hfOrgName}&sort=likes&limit=${HF_LIMIT}`;
+      return $fetch<HuggingFaceModel[]>(url, {headers});
+    },
+);
 
 const hfProjects = computed(() => {
-  const models = hfModels?.value ?? []
+  const models = hfModels?.value ?? [];
   if (models.length) {
     return models
-      .slice()
-      .sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0))
-      .map((m) => ({
-        name: m.id.split('/').pop() ?? m.id,
-        desc: '',
-        tech: (() => {
-          const s = new Set<string>()
-          if (m.pipeline_tag) s.add(String(m.pipeline_tag).trim())
-          if (m.tags && m.tags.length) for (const t of m.tags) if (t) s.add(String(t).trim())
-          return Array.from(s)
-        })(),
-        stars: String(m.likes ?? 0),
-        link: `https://huggingface.co/${m.id}`
-      }))
+        .slice()
+        .sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0))
+        .map((m) => ({
+          name: m.id.split('/').pop() ?? m.id,
+          desc: '',
+          tech: (() => {
+            const s = new Set<string>();
+            if (m.pipeline_tag) s.add(String(m.pipeline_tag).trim());
+            if (m.tags && m.tags.length) for (const t of m.tags) if (t) s.add(String(t).trim());
+            return Array.from(s);
+          })(),
+          stars: String(m.likes ?? 0),
+          link: `https://huggingface.co/${m.id}`,
+        }));
   }
-  return []
-})
+  return [];
+});
 
 const onClickRetryHF = async () => {
   try {
-    await hfRefresh?.()
+    await hfRefresh?.();
   } catch (e) {
-    console.error('HF retry failed', e)
+    console.error('HF retry failed', e);
   }
-}
+};
 
 const projects = computed(() => {
-  const repos = repositories?.value ?? []
+  const repos = repositories?.value ?? [];
   if (repos.length) {
     return repos
-      .slice()
-      .sort((a, b) => (
-        (b.stargazers_count ?? 0) -
+        .slice()
+        .sort((a, b) => (
+          (b.stargazers_count ?? 0) -
         (a.stargazers_count ?? 0)
-      ))
-      .map((r) => ({
-        name: r.name,
-        desc: r.description ?? '',
-        tech: (() => {
-          const s = new Set<string>()
-          if (r.language) s.add(String(r.language).trim())
-          if (r.topics && r.topics.length) {
-            for (const t of r.topics) {
-              if (t) s.add(String(t).trim())
+        ))
+        .map((r) => ({
+          name: r.name,
+          desc: r.description ?? '',
+          tech: (() => {
+            const s = new Set<string>();
+            if (r.language) s.add(String(r.language).trim());
+            if (r.topics && r.topics.length) {
+              for (const t of r.topics) {
+                if (t) s.add(String(t).trim());
+              }
             }
-          }
-          return Array.from(s)
-        })(),
-        stars: String(r.stargazers_count ?? 0),
-        link: r.html_url
-      }))
+            return Array.from(s);
+          })(),
+          stars: String(r.stargazers_count ?? 0),
+          link: r.html_url,
+        }));
   }
-  return []
-})
+  return [];
+});
 
 // Click handler to retry fetching data
 const onClickRetry = async () => {
   try {
-    await refresh?.()
+    await refresh?.();
   } catch (e) {
-    console.error('Retry failed', e)
+    console.error('Retry failed', e);
   }
-}
+};
 </script>

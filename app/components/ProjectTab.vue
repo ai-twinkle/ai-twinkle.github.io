@@ -12,7 +12,7 @@
 
     <div v-else-if="error" class="p-4 bg-red-50 rounded text-red-600">
       <p class="font-medium">{{ errorTitle }}</p>
-      <p class="mt-2 text-sm text-red-600">{{ (error as any).message ?? error }}</p>
+      <p class="mt-2 text-sm text-red-600">{{ errorMessage || error }}</p>
       <div class="mt-2">
         <UButton v-if="onRetry" @click="onRetry">{{ retryLabel }}</UButton>
       </div>
@@ -38,20 +38,30 @@
 </template>
 
 <script setup lang="ts">
+import {computed} from 'vue';
+
 const props = defineProps<{
   title: string,
   lead?: string,
   items?: Array<{ name: string; desc: string; tech: string[]; stars: string; link: string }>,
   pending?: boolean,
-  error?: any,
-  onRetry?: (() => void) | null,
+  error?: Error | string | { message?: string },
+  onRetry?:(() => void) | null,
   emptyText?: string,
   loadingText?: string,
   retryLabel?: string,
   errorTitle?: string,
-}>()
+}>();
+
+const errorMessage = computed(() => {
+  if (!props.error) return '';
+  if (typeof props.error === 'string') return props.error;
+  if (props.error instanceof Error) return props.error.message;
+  if ('message' in props.error && typeof props.error.message === 'string') return props.error.message;
+  return '';
+});
 
 const open = (url: string) => {
-  window.open(url, '_blank')
-}
+  window.open(url, '_blank');
+};
 </script>

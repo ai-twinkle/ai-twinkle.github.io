@@ -28,27 +28,27 @@
 </template>
 
 <script setup lang="ts">
-import {computed} from "vue";
+import {computed} from 'vue';
 
 const props = defineProps<{
   name: string;
   description: string;
   icon?: string;
-  variant?: "mobile" | "normal";
+  variant?: 'mobile' | 'normal';
 }>();
 
-const isHeroIcon = props.icon?.endsWith("Icon") ?? false;
+const isHeroIcon = props.icon?.endsWith('Icon') ?? false;
 
 const buttonClass = computed(() => ([
-  "-m-3",
-  "p-3",
-  "flex",
-  "w-full",
-  "items-center",
-  "rounded-md",
-  "text-gray-300",
-  "hover:text-gray-200",
-  "hover:bg-gray-800",
-  "cursor-pointer",
+  '-m-3',
+  'p-3',
+  'flex',
+  'w-full',
+  'items-center',
+  'rounded-md',
+  'text-gray-300',
+  'hover:text-gray-200',
+  'hover:bg-gray-800',
+  'cursor-pointer',
 ]));
 </script>

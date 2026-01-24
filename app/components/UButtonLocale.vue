@@ -10,7 +10,7 @@ const props = defineProps<{
 }>();
 
 const localRoute = computed(() => {
-    const localePath = useLocalePath();
-    return localePath(props.to);
+  const localePath = useLocalePath();
+  return localePath(props.to);
 });
 </script>

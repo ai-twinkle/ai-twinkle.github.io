@@ -14,8 +14,8 @@
 
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <UButton
-            size="xl" 
-            to="/discord" 
+            size="xl"
+            to="/discord"
             target="_blank"
             icon="i-simple-icons-discord"
             class="btn-twinkle-filled shadow-lg"
@@ -23,8 +23,8 @@
             {{ $t('actions.join_discord') }}
           </UButton>
           <UButtonLocale
-            size="xl" 
-            variant="ghost" 
+            size="xl"
+            variant="ghost"
             to="/projects"
             trailing-icon="i-heroicons-arrow-right"
           >
@@ -63,33 +63,33 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
+import {useI18n} from 'vue-i18n';
 
-const { t } = useI18n();
+const {t} = useI18n();
 
 const features = [
   {
     title: t('features.optimized.title'),
     description: t('features.optimized.description'),
-    icon: 'i-heroicons-language'
+    icon: 'i-heroicons-language',
   },
   {
     title: t('features.open_source.title'),
     description: t('features.open_source.description'),
-    icon: 'i-heroicons-code-bracket-square'
+    icon: 'i-heroicons-code-bracket-square',
   },
   {
     title: t('features.tools.title'),
     description: t('features.tools.description'),
-    icon: 'i-heroicons-chart-bar'
-  }
-]
+    icon: 'i-heroicons-chart-bar',
+  },
+];
 
 const socialLinks = [
-  { label: t('social.discord'), icon: 'i-simple-icons-discord', to: '/discord', color: 'primary' },
-  { label: t('social.huggingface'), icon: 'i-simple-icons-huggingface', to: '/huggingface', color: 'yellow' },
-  { label: t('social.github'), icon: 'i-simple-icons-github', to: '/github', color: 'white' },
-]
+  {label: t('social.discord'), icon: 'i-simple-icons-discord', to: '/discord', color: 'primary'},
+  {label: t('social.huggingface'), icon: 'i-simple-icons-huggingface', to: '/huggingface', color: 'yellow'},
+  {label: t('social.github'), icon: 'i-simple-icons-github', to: '/github', color: 'white'},
+];
 </script>
 
 <style scoped>
