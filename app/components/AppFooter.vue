@@ -5,7 +5,7 @@
         <div class="flex flex-col items-center md:items-start">
           <div class="text-white font-semibold flex items-center gap-2">
              <NuxtImg src="/logo.png" alt="Logo" width="24" height="24" class="inline-block md:hidden opacity-80" />
-             <span class="text-twinkle">{{ $t('site.title') }}</span>
+            <span class="text-twinkle">{{ $t('site.title') }}</span>
           </div>
           <div class="text-xs text-gray-400 mt-1">{{ $t('footer.tagline') }}</div>
           
