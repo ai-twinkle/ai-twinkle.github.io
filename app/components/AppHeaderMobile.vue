@@ -45,7 +45,7 @@
         </div>
         <div class="mt-6 border-t border-gray-700 pt-6">
           <div class="flex flex-col gap-4">
-             <UButton
+            <UButton
               to="/discord"
               target="_blank"
               color="secondary"
