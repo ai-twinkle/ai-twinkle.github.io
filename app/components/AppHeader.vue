@@ -5,7 +5,7 @@
         <NuxtImg src="/logo.png" alt="Logo" width="40" height="40" />
         <div class="leading-tight">
           <div class="font-bold text-lg text-twinkle">{{ $t('site.title') }}</div>
-          <div class="text-xs text-gray-400">{{ $t('site.subtitle') }}</div>
+          <div class="text-xs text-gray-400 !hidden md:!block">{{ $t('site.subtitle') }}</div>
         </div>
       </NuxtLinkLocale>
 
@@ -18,8 +18,9 @@
           color="secondary"
           variant="ghost" icon="i-simple-icons-discord"
           :label="$t('actions.join_discord')"
+          class="!hidden md:!inline-flex"
         />
-        <div class="flex items-center space-x-2">
+        <div class="!hidden md:!flex items-center space-x-2">
           <button
             v-for="l in localeCodes"
             :key="l"
@@ -29,6 +30,14 @@
             {{ l === 'zh-TW' ? '中' : 'EN' }}
           </button>
         </div>
+        <UButton
+          to="/discord"
+          target="_blank"
+          color="secondary"
+          variant="ghost"
+          icon="i-simple-icons-discord"
+          class="md:hidden"
+        />
         <UButton class="md:hidden" icon="i-heroicons-bars-3" color="secondary" variant="ghost" @click="onClickMobileMenuBtnOpen" />
       </div>
     </UContainer>
