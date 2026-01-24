@@ -28,13 +28,13 @@
           <div class="flex items-center gap-2 justify-center md:justify-end flex-wrap">
             <span>{{ $t('footer.recommendedPrefix') }}</span>
             <div class="flex items-center gap-2">
-               <NuxtLink to="/huggingface" class="text-white hover:text-twinkle transition-colors">
-                  {{ $t('social.huggingface') }}
-               </NuxtLink>
-               <span class="text-gray-600">|</span>
-               <NuxtLink to="/github" class="text-white hover:text-twinkle transition-colors">
-                  {{ $t('social.github') }}
-               </NuxtLink>
+              <NuxtLink to="/huggingface" class="text-white hover:text-twinkle transition-colors">
+                {{ $t('social.huggingface') }}
+              </NuxtLink>
+              <span class="text-gray-600">|</span>
+              <NuxtLink to="/github" class="text-white hover:text-twinkle transition-colors">
+                {{ $t('social.github') }}
+              </NuxtLink>
             </div>
           </div>
           <div class="mt-3">{{ $t('footer.copyright', { year }) }}</div>
