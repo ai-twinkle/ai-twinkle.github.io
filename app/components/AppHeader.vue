@@ -37,6 +37,7 @@
           variant="ghost"
           icon="i-simple-icons-discord"
           class="md:hidden"
+          :aria-label="$t('actions.join_discord')"
         />
         <UButton class="md:hidden" icon="i-heroicons-bars-3" color="secondary" variant="ghost" @click="onClickMobileMenuBtnOpen" />
       </div>
