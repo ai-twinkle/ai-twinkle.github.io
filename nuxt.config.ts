@@ -44,10 +44,6 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro: {
-    preset: 'bun',
-  },
-
   runtimeConfig: {
     githubAccessToken: '',
     githubOrgName: 'ai-twinkle',
