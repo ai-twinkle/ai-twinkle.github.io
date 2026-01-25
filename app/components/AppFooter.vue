@@ -208,8 +208,8 @@ const socialLinks = [
 ] as const;
 
 const navigationLinks = [
-  {name: 'nav.leaderboard', to: '/leaderboard', external: true},
   {name: 'nav.models', to: '/models', external: false},
+  {name: 'nav.leaderboard', to: '/leaderboard', external: true},
   {name: 'nav.news', to: '/news', external: false},
 ] as const;
 

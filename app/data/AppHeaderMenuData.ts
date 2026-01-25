@@ -31,15 +31,15 @@ export type MenuItem = MenuDropdownItem | MenuFunctionItem | MenuLinkItem;
 
 export const menuItems: MenuItem[] = [
   {
+    name: 'nav.models',
+    type: 'link',
+    to: '/models',
+  },
+  {
     name: 'nav.leaderboard',
     type: 'link',
     to: '/leaderboard',
     external: true, // Server redirect, don't add locale prefix
-  },
-  {
-    name: 'nav.models',
-    type: 'link',
-    to: '/models',
   },
   {
     name: 'nav.community',
