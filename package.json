@@ -22,7 +22,8 @@
   },
   "lint-staged": {
     "*.ts": "eslint",
-    "*.vue": "eslint"
+    "*.vue": "eslint",
+    "*.{js,mjs,cjs}": "eslint"
   },
   "dependencies": {
     "@nuxt/eslint": "1.10.0",
