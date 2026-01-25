@@ -47,9 +47,11 @@ import ProjectTab from '~/components/ProjectTab.vue';
 
 const {
   githubAccessToken,
-  githubOrgName,
-  hfOrgName,
   huggingfaceAccessToken,
+  public: {
+    githubOrgName,
+    hfOrgName,
+  },
 } = useRuntimeConfig();
 
 const activeSource = [
