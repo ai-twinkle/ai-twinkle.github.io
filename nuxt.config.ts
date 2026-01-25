@@ -15,7 +15,10 @@ export default defineNuxtConfig({
   },
 
   // prefer dark by default for the Twinkle (starry) theme
-  colorMode: {preference: 'dark', fallback: 'dark'},
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+  },
   css: ['~/assets/css/main.css'],
 
   modules: ['@nuxt/ui', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/i18n'],
