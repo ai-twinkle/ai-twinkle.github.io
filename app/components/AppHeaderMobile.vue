@@ -76,8 +76,8 @@
 </template>
 
 <script setup lang="ts">
-import {inject, watch, type Ref, computed} from "vue";
-import { useI18n } from 'vue-i18n';
+import {inject, watch, type Ref, computed} from 'vue';
+import {useI18n} from 'vue-i18n';
 
 import {
   menuItems,
@@ -104,6 +104,6 @@ const onClickItem = (item: MenuFunctionItem): void => {
   item.onClick();
 };
 
-const { locale, localeCodes, setLocale } = useI18n();
+const {locale, localeCodes, setLocale} = useI18n();
 const currentLocale = computed(() => locale.value);
 </script>
