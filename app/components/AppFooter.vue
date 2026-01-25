@@ -17,25 +17,21 @@
               target="_blank"
               color="neutral"
               variant="ghost"
-              :icon="link.icon"
               :aria-label="$t(link.labelKey)"
               class="hover:text-twinkle transition-colors"
             />
           </div>
         </div>
 
-        <div class="text-sm text-gray-400 flex flex-col items-center md:items-end">
-          <div class="flex items-center gap-2 justify-center md:justify-end flex-wrap">
-            <span>{{ $t('footer.recommendedPrefix') }}</span>
-            <div class="flex items-center gap-2">
-              <NuxtLink to="/huggingface" class="text-white hover:text-twinkle transition-colors">
-                {{ $t('social.huggingface') }}
-              </NuxtLink>
-              <span class="text-gray-600">|</span>
-              <NuxtLink to="/github" class="text-white hover:text-twinkle transition-colors">
-                {{ $t('social.github') }}
-              </NuxtLink>
-            </div>
+        <div class="text-sm text-gray-400">
+          <div>{{ $t('footer.recommendedPrefix') }}
+            <NuxtLink to="/huggingface" class="text-white hover:underline">
+              {{ $t('social.huggingface') }}
+            </NuxtLink>
+            <span class="mx-2 border-l border-gray-600/50"></span>
+            <NuxtLink to="/github" class="text-white hover:underline">
+              {{ $t('social.github') }}
+            </NuxtLink>
           </div>
           <div class="mt-3">{{ $t('footer.copyright', { year }) }}</div>
         </div>
@@ -48,8 +44,8 @@
 const year = new Date().getFullYear();
 
 const socialLinks = [
-  { id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface', icon: 'i-simple-icons-huggingface' },
-  { id: 'github', href: '/github', labelKey: 'social.github', icon: 'i-simple-icons-github' },
-  { id: 'discord', href: '/discord', labelKey: 'social.discord', icon: 'i-simple-icons-discord' },
+  { id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface' },
+  { id: 'github', href: '/github', labelKey: 'social.github' },
+  { id: 'discord', href: '/discord', labelKey: 'social.discord' },
 ] as const;
 </script>

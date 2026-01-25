@@ -1,6 +1,6 @@
 export default defineAppConfig({
   ui: {
-    // Brand colours: use exact HEX for consistent branding (primary = Twinkle star)
+    // Brand colours: use exact HEX for consistent branding
     primary: '#ffd500',
     gray: 'zinc',
     colors: {
@@ -9,6 +9,6 @@ export default defineAppConfig({
       secondary: 'white',
       neutral: 'zinc',
     },
-    notifications: { position: 'top-0 bottom-auto' }
-  }
+    notifications: {position: 'top-0 bottom-auto'},
+  },
 });

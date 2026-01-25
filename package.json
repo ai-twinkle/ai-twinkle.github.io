@@ -9,7 +9,21 @@
     "preview": "npm run build && wrangler dev",
     "postinstall": "nuxt prepare",
     "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "lint": "lint-staged",
+    "lint:es:fix": "eslint . --fix",
+    "lint:es:check": "eslint . --max-warnings 0",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint",
+    "*.vue": "eslint",
+    "*.{js,mjs,cjs}": "eslint"
   },
   "dependencies": {
     "@nuxt/eslint": "1.10.0",
@@ -28,7 +42,14 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "@iconify-json/heroicons": "^1.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint-config-nymph": "^0.15.3",
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "nitro-cloudflare-dev": "^0.2.2",
     "nitropack": "^2.13.1",
     "wrangler": "^4.59.2"
