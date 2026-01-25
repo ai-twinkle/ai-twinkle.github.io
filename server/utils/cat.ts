@@ -10,8 +10,8 @@ export interface UseCatParams {
  * returning a Response.
  * @param [params.message] - A message to prefix the ASCII
  * art.
- * @returns A Response when returning a Response,
- * otherwise a string.
+ * @returns A Response object (default) or a string,
+ * depending on the type parameter T.
  */
 export function useCat<T extends Response | string = Response>({
   status = 200,
