@@ -40,13 +40,14 @@
 <script setup lang="ts">
 import {computed} from 'vue';
 
+type ReplyCallback = (() => void) | null;
 const props = defineProps<{
   title: string,
   lead?: string,
   items?: Array<{ name: string; desc: string; tech: string[]; stars: string; link: string }>,
   pending?: boolean,
   error?: Error | string | { message?: string },
-  onRetry?: (() => void) | null,
+  onRetry? :ReplyCallback,
   emptyText?: string,
   loadingText?: string,
   retryLabel?: string,
