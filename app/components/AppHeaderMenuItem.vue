@@ -33,7 +33,9 @@ const props = defineProps<{
   variant?: 'mobile' | 'normal';
 }>();
 
-const isHeroIcon = props.icon?.endsWith('Icon') ?? false;
+const isHeroIcon = props.icon?.endsWith('Icon') ||
+  props.icon?.startsWith('i-heroicons-') ||
+  false;
 
 const buttonClass = computed(() => {
   const base = [
