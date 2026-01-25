@@ -47,6 +47,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     githubAccessToken: '',
     githubOrgName: 'ai-twinkle',
+    hfOrgName: 'twinkle-ai',
     externalUrls: {
       discord: 'https://discord.gg/Cx737yw4ed',
       github: 'https://github.com/ai-twinkle',
