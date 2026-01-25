@@ -1,6 +1,6 @@
 <template>
   <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-    <div class="rounded-lg shadow-lg divide-y-2 divide-gray-50 bg-gray-900">
+    <div class="rounded-lg shadow-lg divide-y-2 divide-gray-800 bg-gray-900 ring-1 ring-gray-800 max-h-[calc(100vh-1rem)] overflow-y-auto">
       <div class="pt-5 pb-6 px-5">
         <div
           class="flex items-center justify-between"
@@ -43,13 +43,41 @@
             </div>
           </nav>
         </div>
+        <div class="mt-6 border-t border-gray-700 pt-6">
+          <div class="flex flex-col gap-4">
+            <UButton
+              to="/discord"
+              target="_blank"
+              color="secondary"
+              block
+              icon="i-simple-icons-discord"
+              :label="$t('actions.join_discord')"
+              @click="onClickMobileMenuClose"
+            />
+            <div class="flex items-center justify-between px-2">
+              <span class="text-base font-medium text-gray-300">Language</span>
+              <div class="flex items-center space-x-2">
+                <button
+                  v-for="l in localeCodes"
+                  :key="l"
+                  class="text-sm px-3 py-1.5 rounded transition-colors"
+                  :class="currentLocale === l ? 'bg-primary-600 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'"
+                  @click="setLocale(l)"
+                >
+                  {{ l === 'zh-TW' ? '中文' : 'English' }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {inject, watch, type Ref} from "vue";
+import {inject, watch, type Ref, computed} from "vue";
+import { useI18n } from 'vue-i18n';
 
 import {
   menuItems,
@@ -75,4 +103,7 @@ const onClickItem = (item: MenuFunctionItem): void => {
   parentMenuState.value = false;
   item.onClick();
 };
+
+const { locale, localeCodes, setLocale } = useI18n();
+const currentLocale = computed(() => locale.value);
 </script>
