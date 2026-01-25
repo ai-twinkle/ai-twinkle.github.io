@@ -51,7 +51,11 @@
   "footer": {
     "tagline": "正體中文開源語言模型社群 • 開源 • 協作 • 教學",
     "recommendedPrefix": "或許你會有興趣... 我們的：",
-    "copyright": "© {year} Twinkle AI"
+    "copyright": "© {year} Twinkle AI",
+    "navigation": "導覽",
+    "resources": "資源",
+    "connect": "社群連結",
+    "open_source": "開源專案"
   },
   "projects": {
     "title": "開源專案",

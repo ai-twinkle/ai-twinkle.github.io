@@ -51,7 +51,11 @@
   "footer": {
     "tagline": "Open-source Traditional Chinese LLM community • Open • Collaboration • Teaching",
     "recommendedPrefix": "You might be interested in our:",
-    "copyright": "© {year} Twinkle AI"
+    "copyright": "© {year} Twinkle AI",
+    "navigation": "Navigation",
+    "resources": "Resources",
+    "connect": "Connect",
+    "open_source": "Open Source"
   },
   "projects": {
     "title": "Open-source projects",
