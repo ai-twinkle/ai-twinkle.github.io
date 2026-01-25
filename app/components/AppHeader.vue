@@ -5,7 +5,7 @@
         <NuxtImg src="/logo.png" alt="Logo" width="40" height="40" />
         <div class="leading-tight">
           <div class="font-bold text-lg text-twinkle">{{ $t('site.title') }}</div>
-          <div class="text-xs text-gray-400">{{ $t('site.subtitle') }}</div>
+          <div class="text-xs text-gray-400 !hidden md:!block">{{ $t('site.subtitle') }}</div>
         </div>
       </NuxtLinkLocale>
 
@@ -18,8 +18,9 @@
           color="secondary"
           variant="ghost" icon="i-simple-icons-discord"
           :label="$t('actions.join_discord')"
+          class="!hidden md:!inline-flex"
         />
-        <div class="flex items-center space-x-2">
+        <div class="!hidden md:!flex items-center space-x-2">
           <button
             v-for="l in localeCodes"
             :key="l"
@@ -29,11 +30,29 @@
             {{ l === 'zh-TW' ? '中' : 'EN' }}
           </button>
         </div>
+        <UButton
+          to="/discord"
+          target="_blank"
+          color="secondary"
+          variant="ghost"
+          icon="i-simple-icons-discord"
+          class="md:hidden"
+          :aria-label="$t('actions.join_discord')"
+        />
         <UButton class="md:hidden" icon="i-heroicons-bars-3" color="secondary" variant="ghost" @click="onClickMobileMenuBtnOpen" />
       </div>
     </UContainer>
 
-    <app-header-mobile v-show="isMobileMenuOpened" @close="onClickMobileMenuBtnClose" />
+    <Transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+    >
+      <app-header-mobile v-if="isMobileMenuOpened" @close="onClickMobileMenuBtnClose" />
+    </Transition>
   </header>
 </template>
 
