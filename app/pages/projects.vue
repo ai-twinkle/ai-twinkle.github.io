@@ -126,6 +126,7 @@ const {data: hfModels, pending: hfPending, error: hfError, refresh: hfRefresh} =
 );
 
 const hfProjects = computed(() => {
+  console.log('HF Models:', hfModels?.value);
   const models = hfModels?.value ?? [];
   if (models.length) {
     return models
@@ -133,12 +134,23 @@ const hfProjects = computed(() => {
         .sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0))
         .map((m) => ({
           name: m.id.split('/').pop() ?? m.id,
-          desc: '',
+          desc: (() => {
+            const parts: string[] = [];
+            if (m.pipeline_tag) parts.push(String(m.pipeline_tag).trim());
+            if (m.tags && m.tags.length) {
+              for (const t of m.tags) {
+                if (t) parts.push(String(t).trim());
+              }
+            }
+            // return up to three unique keywords as a short sentence
+            const keywords = Array.from(new Set(parts)).slice(0, 3);
+            return keywords.length ? `Supports ${keywords.join(', ')}.` : '';
+          })(),
           tech: (() => {
             const s = new Set<string>();
             if (m.pipeline_tag) s.add(String(m.pipeline_tag).trim());
             if (m.tags && m.tags.length) for (const t of m.tags) if (t) s.add(String(t).trim());
-            return Array.from(s);
+            return Array.from(s).slice(0, 5);
           })(),
           stars: String(m.likes ?? 0),
           link: `https://huggingface.co/${m.id}`,
@@ -175,7 +187,7 @@ const projects = computed(() => {
                 if (t) s.add(String(t).trim());
               }
             }
-            return Array.from(s);
+            return Array.from(s).slice(0, 5);
           })(),
           stars: String(r.stargazers_count ?? 0),
           link: r.html_url,

@@ -26,7 +26,9 @@
         </div>
         <p class="text-gray-300 text-sm grow mb-6">{{ item.desc }}</p>
         <div class="flex flex-wrap gap-2 mt-auto">
-          <UBadge v-for="t in item.tech" :key="t" color="neutral" variant="solid" size="xs" class="text-gray-300 bg-gray-800/40">{{ t }}</UBadge>
+          <UBadge v-for="t in item.tech" :key="t" color="neutral" variant="solid" size="md" class="text-gray-300 bg-gray-800/40">
+            {{ t }}
+          </UBadge>
         </div>
       </UCard>
     </div>
