@@ -84,6 +84,11 @@ const {data: repositories, pending, error, refresh} = useAsyncData<GitHubReposit
       const headers: Record<string, string> = {
         'Accept': 'application/vnd.github.v3+json',
       };
+      // GitHub requires a User-Agent header for API requests
+      if (import.meta.server) {
+        headers['User-Agent'] = 'curl/8.14.1';
+      }
+      // Add Authorization header if access token is provided
       if (githubAccessToken && import.meta.server) {
         headers['Authorization'] = `Bearer ${githubAccessToken}`;
       }
@@ -105,6 +110,11 @@ const {data: hfModels, pending: hfPending, error: hfError, refresh: hfRefresh} =
     'hfModels',
     () => {
       const headers: Record<string, string> = {'Accept': 'application/json'};
+      // Hugging Face requires a User-Agent header for API requests
+      if (import.meta.server) {
+        headers['User-Agent'] = 'curl/8.14.1';
+      }
+      // Add Authorization header if access token is provided
       if (huggingfaceAccessToken && import.meta.server) {
         headers['Authorization'] = `Bearer ${huggingfaceAccessToken}`;
       }
