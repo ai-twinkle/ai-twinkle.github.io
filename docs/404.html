@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="/favicon.ico" rel="icon">
+    <title>Not Found - Twinkle AI</title>
+    <style>
+        #app {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #app .modal {
+            margin: 30px 10%;
+            text-align: left;
+        }
+
+        #app .modal .action {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #app .modal a {
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        const prefix = "https://twinkleai.tw";
+        const suffixPath = location.pathname.replace(/^\//, "");
+        const suffixHash = location.hash.replace(/^\#/, "");
+        location.replace(`${prefix}/${suffixPath}#${suffixHash}`);
+    </script>
+</head>
+<body>
+<div id="app">
+    <div class="modal">
+        <h1>Auto Redirecting...</h1>
+        <div class="action">
+            <a href="https://twinkleai.tw">Go Home</a>
+        </div>
+        <p>&copy; Twinkle AI</p>
+    </div>
+</div>
+</body>
+</html>

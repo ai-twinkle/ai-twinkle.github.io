@@ -1,2 +1,4 @@
-# ai-twinkle.github.io
-🌐 Twinkle AI Official Website
+# Twinkle AI Redirection
+
+This is the repository, is used for redirecting to
+<https://twinkleai.tw> from `https://ai-twinkle.github.io`.
