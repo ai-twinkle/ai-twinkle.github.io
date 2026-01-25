@@ -39,16 +39,16 @@
 
 
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted, provide, type Ref, computed} from "vue";
-import { useI18n } from 'vue-i18n';
+import {ref, onMounted, onUnmounted, provide, type Ref, computed} from 'vue';
+import {useI18n} from 'vue-i18n';
 
-const { locale, localeCodes, setLocale } = useI18n();
+const {locale, localeCodes, setLocale} = useI18n();
 const currentLocale = computed(() => locale.value);
 
 const isMobileMenuOpened = ref(false);
 
 const parentMenuState: Ref<boolean> = ref(true);
-provide("parent-menu-state", parentMenuState);
+provide('parent-menu-state', parentMenuState);
 
 const onClickMobileMenuBtnOpen = (): void => {
   isMobileMenuOpened.value = true;
@@ -62,16 +62,16 @@ const onClickMobileMenuBtnClose = (): void => {
 
 const onDocumentClick = (e: MouseEvent): void => {
   const target = e.target as HTMLElement;
-  if (!document.querySelector(".app-header")?.contains(target)) {
+  if (!document.querySelector('.app-header')?.contains(target)) {
     parentMenuState.value = false;
   }
 };
 
 onMounted(() => {
-  document.addEventListener("click", onDocumentClick);
+  document.addEventListener('click', onDocumentClick);
 });
 
 onUnmounted(() => {
-  document.removeEventListener("click", onDocumentClick);
+  document.removeEventListener('click', onDocumentClick);
 });
 </script>

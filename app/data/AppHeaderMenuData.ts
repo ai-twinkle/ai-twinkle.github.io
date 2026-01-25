@@ -7,14 +7,14 @@ export interface MenuDropdownChild {
 
 export interface MenuDropdownItem {
   name: string;
-  type: "dropdown";
+  type: 'dropdown';
   status: string;
   children: MenuDropdownChild[];
 }
 
 export interface MenuFunctionItem {
   name: string;
-  type: "function";
+  type: 'function';
   icon: string;
   onClick: () => void;
 }

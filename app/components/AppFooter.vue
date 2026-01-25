@@ -23,7 +23,7 @@
             <NuxtLink to="/huggingface" class="text-white hover:underline">
               {{ $t('social.huggingface') }}
             </NuxtLink>
-            <span class="mx-2 border-l border-gray-600/50"></span>
+            <span class="mx-2 border-l border-gray-600/50"/>
             <NuxtLink to="/github" class="text-white hover:underline">
               {{ $t('social.github') }}
             </NuxtLink>
@@ -39,8 +39,8 @@
 const year = new Date().getFullYear();
 
 const socialLinks = [
-  { id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface' },
-  { id: 'github', href: '/github', labelKey: 'social.github' },
-  { id: 'discord', href: '/discord', labelKey: 'social.discord' },
+  {id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface'},
+  {id: 'github', href: '/github', labelKey: 'social.github'},
+  {id: 'discord', href: '/discord', labelKey: 'social.discord'},
 ] as const;
 </script>
