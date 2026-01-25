@@ -7,7 +7,7 @@
           @click="onClickMobileMenuClose"
         >
           <div>
-            <h1 class="flex-auto text-lg font-semibold text-gray-300 sm:hidden">
+            <h1 class="flex-auto text-lg font-semibold text-gray-300">
               {{ $t('site.title') }}
             </h1>
           </div>
@@ -48,10 +48,12 @@
             <UButton
               to="/discord"
               target="_blank"
-              color="secondary"
+              color="primary"
+              variant="solid"
               block
               icon="i-simple-icons-discord"
               :label="$t('actions.join_discord')"
+              class="bg-twinkle on-primary-dark"
               @click="onClickMobileMenuClose"
             />
             <div class="flex items-center justify-between px-2">
