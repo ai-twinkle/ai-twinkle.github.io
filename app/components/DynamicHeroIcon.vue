@@ -15,7 +15,12 @@ const props = defineProps<{
 
 // Convert heroicon name like "BeakerIcon" to "i-heroicons-beaker"
 const iconName = computed(() => {
-  const name = props.name.replace(/Icon$/, ''); // Remove "Icon" suffix
+  // If already in icon format, return as is
+  if (props.name.startsWith('i-heroicons-')) {
+    return props.name;
+  }
+  // Remove "Icon" suffix
+  const name = props.name.replace(/Icon$/, '');
   // Convert PascalCase to kebab-case
   const kebabCase = name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
   return `i-heroicons-${kebabCase}`;
