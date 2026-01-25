@@ -8,12 +8,13 @@
             <span class="text-twinkle">{{ $t('site.title') }}</span>
           </div>
           <div class="text-xs text-gray-400 mt-1">{{ $t('footer.tagline') }}</div>
-          
+
           <div class="mt-4 flex gap-3">
             <UButton
               v-for="link in socialLinks"
               :key="link.id"
               :to="link.href"
+              :icon="link.icon"
               target="_blank"
               color="neutral"
               variant="ghost"
@@ -44,8 +45,8 @@
 const year = new Date().getFullYear();
 
 const socialLinks = [
-  { id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface' },
-  { id: 'github', href: '/github', labelKey: 'social.github' },
-  { id: 'discord', href: '/discord', labelKey: 'social.discord' },
+  {id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface', icon: 'i-simple-icons-huggingface'},
+  {id: 'github', href: '/github', labelKey: 'social.github', icon: 'i-simple-icons-github'},
+  {id: 'discord', href: '/discord', labelKey: 'social.discord', icon: 'i-simple-icons-discord'},
 ] as const;
 </script>
