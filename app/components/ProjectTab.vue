@@ -46,7 +46,7 @@ const props = defineProps<{
   items?: Array<{ name: string; desc: string; tech: string[]; stars: string; link: string }>,
   pending?: boolean,
   error?: Error | string | { message?: string },
-  onRetry?:(() => void) | null,
+  onRetry?: (() => void) | null,
   emptyText?: string,
   loadingText?: string,
   retryLabel?: string,
