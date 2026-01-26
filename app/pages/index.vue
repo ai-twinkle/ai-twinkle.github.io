@@ -123,13 +123,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
           <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800">
              <UIcon name="i-heroicons-academic-cap" class="w-12 h-12 text-primary-400 mb-4 mx-auto" />
-             <UButton to="/education" size="xl" variant="soft" block>
+             <UButton :to="localePath('/education')" size="xl" variant="soft" block>
                {{ $t('home.teaser.education') }}
              </UButton>
           </div>
           <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800">
              <UIcon name="i-heroicons-newspaper" class="w-12 h-12 text-gray-400 mb-4 mx-auto" />
-             <UButton to="/news" size="xl" variant="soft" color="neutral" block>
+             <UButton :to="localePath('/news')" size="xl" variant="soft" color="neutral" block>
                {{ $t('home.teaser.media') }}
              </UButton>
           </div>
@@ -143,6 +143,7 @@
 import {useI18n} from 'vue-i18n';
 
 const {t} = useI18n();
+const localePath = useLocalePath();
 
 
 const socialLinks = [
