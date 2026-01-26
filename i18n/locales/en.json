@@ -7,6 +7,21 @@
     "join_discord": "Discord",
     "explore_projects": "Explore projects"
   },
+  "nav": {
+    "leaderboard": "Leaderboard",
+    "models": "Models",
+    "community": "Community",
+    "resources": "Resources",
+    "education": "Education",
+    "education_desc": "Tutorials, workshops, and promotional content",
+    "news": "News & Events",
+    "news_desc": "Latest news, events, and announcements",
+    "media": "Media",
+    "media_desc": "Press releases, media kit, and resources"
+  },
+  "pages": {
+    "coming_soon": "Coming soon..."
+  },
   "home": {
     "badge": "🌟 Taiwan open-source LLM community",
     "titleStart": "Light up the starry sky of ",
@@ -36,7 +51,11 @@
   "footer": {
     "tagline": "Open-source Traditional Chinese LLM community • Open • Collaboration • Teaching",
     "recommendedPrefix": "You might be interested in our:",
-    "copyright": "© {year} Twinkle AI"
+    "copyright": "© {year} Twinkle AI",
+    "navigation": "Navigation",
+    "resources": "Resources",
+    "connect": "Connect",
+    "open_source": "Open Source"
   },
   "projects": {
     "title": "Open-source projects",
@@ -62,4 +81,4 @@
       "noProjects": "No repositories to display"
     }
   }
-} 
+}

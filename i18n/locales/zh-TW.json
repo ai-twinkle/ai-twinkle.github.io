@@ -7,6 +7,21 @@
     "join_discord": "加入 Discord",
     "explore_projects": "探索專案"
   },
+  "nav": {
+    "leaderboard": "排行榜",
+    "models": "模型",
+    "community": "社群",
+    "resources": "資源",
+    "education": "教育與推廣",
+    "education_desc": "教學、工作坊與推廣內容",
+    "news": "新聞與活動",
+    "news_desc": "最新消息、活動與公告",
+    "media": "媒體專區",
+    "media_desc": "新聞稿、媒體素材與資源"
+  },
+  "pages": {
+    "coming_soon": "即將推出..."
+  },
   "home": {
     "badge": "🌟 台灣生成式 AI 開源社群",
     "titleStart": "點亮 ",
@@ -36,7 +51,11 @@
   "footer": {
     "tagline": "正體中文開源語言模型社群 • 開源 • 協作 • 教學",
     "recommendedPrefix": "或許你會有興趣... 我們的：",
-    "copyright": "© {year} Twinkle AI"
+    "copyright": "© {year} Twinkle AI",
+    "navigation": "導覽",
+    "resources": "資源",
+    "connect": "社群連結",
+    "open_source": "開源專案"
   },
   "projects": {
     "title": "開源專案",
@@ -62,4 +81,4 @@
       "noProjects": "沒有可顯示的倉庫"
     }
   }
-} 
+}
