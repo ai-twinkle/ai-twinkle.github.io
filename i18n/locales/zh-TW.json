@@ -5,7 +5,10 @@
   },
   "actions": {
     "join_discord": "加入 Discord",
-    "explore_projects": "探索專案"
+    "explore_projects": "探索專案",
+    "explore_models": "探索模型",
+    "huggingface": "Hugging Face",
+    "explore_datasets": "探索資料集"
   },
   "nav": {
     "leaderboard": "排行榜",
@@ -20,7 +23,8 @@
     "media_desc": "新聞稿、媒體素材與資源"
   },
   "pages": {
-    "coming_soon": "即將推出..."
+    "coming_soon": "即將推出...",
+    "coming_soon_badge": "即將推出"
   },
   "news": {
     "description": "最新消息、活動與公告"

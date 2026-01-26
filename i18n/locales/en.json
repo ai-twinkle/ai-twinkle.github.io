@@ -5,7 +5,10 @@
   },
   "actions": {
     "join_discord": "Discord",
-    "explore_projects": "Explore projects"
+    "explore_projects": "Explore projects",
+    "explore_models": "Explore Models",
+    "huggingface": "Hugging Face",
+    "explore_datasets": "Explore Datasets"
   },
   "nav": {
     "leaderboard": "Leaderboard",
@@ -20,7 +23,8 @@
     "media_desc": "Press releases, media kit, and resources"
   },
   "pages": {
-    "coming_soon": "Coming soon..."
+    "coming_soon": "Coming soon...",
+    "coming_soon_badge": "Coming Soon"
   },
   "news": {
     "description": "Latest news, events, and announcements"
