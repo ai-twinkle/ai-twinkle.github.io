@@ -143,5 +143,17 @@
       "retry": "重新載入",
       "noProjects": "沒有可顯示的倉庫"
     }
+  },
+  "models": {
+    "description": "針對繁體中文優化的指令微調模型",
+    "explore_hf": "在 Hugging Face 上探索",
+    "table": {
+      "name": "名稱",
+      "version": "版本",
+      "parameters": "參數量",
+      "quantised": "量化版本",
+      "model_type": "模型類型",
+      "context_length": "上下文長度"
+    }
   }
 }

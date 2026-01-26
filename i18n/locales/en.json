@@ -144,5 +144,17 @@
       "retry": "Retry",
       "noProjects": "No repositories to display"
     }
+  },
+  "models": {
+    "description": "Instruction-tuned models optimized for Traditional Chinese",
+    "explore_hf": "Explore on Hugging Face",
+    "table": {
+      "name": "Name",
+      "version": "Version",
+      "parameters": "Parameters",
+      "quantised": "Quantised Versions",
+      "model_type": "Model Type",
+      "context_length": "Context Length"
+    }
   }
 }
