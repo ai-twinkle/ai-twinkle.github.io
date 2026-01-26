@@ -10,7 +10,7 @@ links:
     url: https://conf2025.aiacademy.tw/signup/
 ---
 
-**Topic: Art of GRPO Training (Lighting talk)**
+**Topic: Art of GRPO Training (Lightning talk)**
 
 At Taiwan's premier annual AI gathering at **Academia Sinica**, we took the stage for a lightning talk on the **Art of GRPO Training**. We focused on how Reinforcement Learning can be used to sharpen a model’s logical reasoning, while swapping technical notes on the fine-tuning process with experts and fellow researchers across the field.
 
