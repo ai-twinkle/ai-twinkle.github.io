@@ -26,6 +26,7 @@
     "*.{js,mjs,cjs}": "eslint"
   },
   "dependencies": {
+    "@nuxt/content": "^3.11.0",
     "@nuxt/eslint": "1.10.0",
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.0",
@@ -33,6 +34,7 @@
     "@nuxt/ui": "4.1.0",
     "@nuxtjs/i18n": "^10.2.1",
     "@unhead/vue": "^2.0.3",
+    "better-sqlite3": "^12.6.2",
     "eslint": "^9.0.0",
     "jwt-decode": "^4.0.0",
     "ky": "^1.7.2",

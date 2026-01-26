@@ -22,12 +22,69 @@
   "pages": {
     "coming_soon": "Coming soon..."
   },
+  "news": {
+    "description": "Latest news, events, and announcements"
+  },
+  "education": {
+    "description": "Tutorials, workshops, and promotional content"
+  },
+  "media": {
+    "description": "Press releases, media kit, and resources"
+  },
   "home": {
     "badge": "🌟 Taiwan open-source LLM community",
     "titleStart": "Light up the starry sky of ",
     "titleHighlight": "Traditional Chinese AI",
     "titleEnd": "",
-    "lead": "Twinkle AI is a community focused on building open-source Traditional Chinese language models. We bring together passionate contributors to implement, share, and drive the adoption of AI technologies in Taiwan."
+    "lead": "Twinkle AI is a community focused on building open-source Traditional Chinese language models. We bring together passionate contributors to implement, share, and drive the adoption of AI technologies in Taiwan.",
+    "about": {
+      "title": "About Twinkle AI: Why Are We Doing This?",
+      "content": "AI is moving faster than a scooter in Taipei rush hour. While global models are geniuses, they often talk to us using a vocabulary that sounds like it’s from across the sea—filled with terms that just don't belong in Taiwan. At Twinkle AI, we’re fixing that cultural mismatch to build AI that actually speaks our language.\n\nWe believe Language is Life. If AI doesn't get our local vibe, our unique way of speaking will just fade into the algorithm. Since 2025, we’ve been curating data and fine-tuning models so they actually \"get\" us—natural, precise, and distinctly local."
+    },
+    "models": {
+      "title": "Training Traditional Chinese Models",
+      "description": "We’re a bit obsessed with making AI that’s both smart and lightweight—because your hardware shouldn’t have to break a sweat just to understand the local culture.",
+      "items": [
+        {
+          "title": "T1 Model",
+          "description": "Built on Gemma-3-4B with a local tune-up. It handles our logic surprisingly well for a model of its size."
+        },
+        {
+          "title": "Formosa-1",
+          "description": "Based on Llama-3.2-3B. Our first real step toward fixing the \"translation\" feel in AI."
+        },
+        {
+          "title": "Twinkle Voice",
+          "description": "A voice-first branch. Because sometimes, your hands deserve a break from typing."
+        }
+      ]
+    },
+    "datasets": {
+      "title": "Open Source Datasets",
+      "content": "High-quality data is everything. We prioritize \"Data Cleansing and Linguistic Calibration\" over sheer volume.\n\nOur sources range from public government archives to local community discussions and literature. We use an automated pipeline to filter out non-local idioms."
+    },
+    "eval": {
+      "title": "Evaluation & Benchmarking",
+      "content": "International benchmarks often miss the nuances of local life. We built our own ecosystem to bridge the gap between global AI and our actual lived experience.",
+      "items": [
+        {
+          "title": "Twinkle Eval",
+          "description": "A benchmark suite for local law, geography, and general knowledge."
+        },
+        {
+          "title": "Eval-analyzer",
+          "description": "A diagnostic tool that spots weird grammar or cultural mismatches so we can refine our models."
+        },
+        {
+          "title": "Leaderboard",
+          "description": "A visual platform to see how models actually perform in a local context at a glance."
+        }
+      ]
+    },
+    "teaser": {
+      "education": "Explore Education Programs",
+      "media": "Visit Media Zone"
+    }
   },
   "features": {
     "optimized": {

@@ -46,16 +46,93 @@
       </div>
     </UContainer>
 
-    <div class="bg-gray-900/30 py-24">
+    <!-- About Twinkle AI -->
+    <div class="py-24 bg-gray-900/50">
       <UContainer>
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
-          <UCard v-for="feat in features" :key="feat.title" class="hover:border-primary-500/50 transition-all duration-300 bg-gray-900 ring-1 ring-gray-800">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+             <h2 class="text-3xl font-bold text-white mb-6">{{ $t('home.about.title') }}</h2>
+             <div class="text-gray-300 whitespace-pre-line">
+               {{ $t('home.about.content') }}
+             </div>
+          </div>
+          <div class="relative">
+             <div class="aspect-video bg-gray-800 rounded-xl ring-1 ring-gray-700 flex items-center justify-center">
+               <!-- Placeholder for Image 1 -->
+               <div class="text-center">
+                 <UIcon name="i-heroicons-photo" class="w-12 h-12 text-gray-600 mb-2" />
+                 <span class="text-gray-500 text-sm">Design Image 1</span>
+               </div>
+             </div>
+          </div>
+        </div>
+      </UContainer>
+    </div>
+
+    <!-- Models -->
+    <div class="py-24">
+      <UContainer>
+        <SectionHeading :title="$t('home.models.title')" :description="$t('home.models.description')" />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <UCard v-for="(item, index) in $tm('home.models.items')" :key="index" class="bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500/50 transition-all">
             <template #header>
-              <UIcon :name="feat.icon" class="w-8 h-8 text-primary-400" />
+              <UIcon name="i-heroicons-cpu-chip" class="w-8 h-8 text-primary-400" />
             </template>
-            <h3 class="text-xl font-semibold text-white mb-2">{{ feat.title }}</h3>
-            <p class="text-gray-400">{{ feat.description }}</p>
+            <h3 class="text-xl font-bold text-white mb-2">{{ $rt(item.title) }}</h3>
+            <p class="text-gray-400">{{ $rt(item.description) }}</p>
           </UCard>
+        </div>
+      </UContainer>
+    </div>
+
+    <!-- Datasets -->
+    <div class="py-24 bg-gray-900/50">
+      <UContainer>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-row-reverse">
+           <div class="lg:order-2">
+             <h2 class="text-3xl font-bold text-white mb-6">{{ $t('home.datasets.title') }}</h2>
+             <div class="text-gray-300 whitespace-pre-line">
+               {{ $t('home.datasets.content') }}
+             </div>
+          </div>
+          <div class="lg:order-1 relative">
+             <div class="aspect-video bg-gray-800 rounded-xl ring-1 ring-gray-700 flex items-center justify-center">
+               <UIcon name="i-heroicons-circle-stack" class="w-16 h-16 text-primary-500/20" />
+             </div>
+          </div>
+        </div>
+      </UContainer>
+    </div>
+
+     <!-- Evaluation -->
+    <div class="py-24">
+      <UContainer>
+        <SectionHeading :title="$t('home.eval.title')" :description="$t('home.eval.content')" />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+           <div v-for="(item, index) in $tm('home.eval.items')" :key="index" class="p-6 rounded-xl bg-gray-800/50 ring-1 ring-gray-700 hover:bg-gray-800 transition-colors">
+             <h3 class="text-lg font-bold text-white mb-2">{{ $rt(item.title) }}</h3>
+             <p class="text-gray-400 text-sm">{{ $rt(item.description) }}</p>
+           </div>
+        </div>
+      </UContainer>
+    </div>
+
+    <!-- Teasers -->
+    <div class="py-24 bg-primary-900/10 border-t border-gray-800">
+      <UContainer>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+          <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800">
+             <UIcon name="i-heroicons-academic-cap" class="w-12 h-12 text-primary-400 mb-4 mx-auto" />
+             <UButton to="/education" size="xl" variant="soft" block>
+               {{ $t('home.teaser.education') }}
+             </UButton>
+          </div>
+          <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800">
+             <UIcon name="i-heroicons-newspaper" class="w-12 h-12 text-gray-400 mb-4 mx-auto" />
+             <UButton to="/news" size="xl" variant="soft" color="neutral" block>
+               {{ $t('home.teaser.media') }}
+             </UButton>
+          </div>
         </div>
       </UContainer>
     </div>
@@ -67,23 +144,6 @@ import {useI18n} from 'vue-i18n';
 
 const {t} = useI18n();
 
-const features = [
-  {
-    title: t('features.optimized.title'),
-    description: t('features.optimized.description'),
-    icon: 'i-heroicons-language',
-  },
-  {
-    title: t('features.open_source.title'),
-    description: t('features.open_source.description'),
-    icon: 'i-heroicons-code-bracket-square',
-  },
-  {
-    title: t('features.tools.title'),
-    description: t('features.tools.description'),
-    icon: 'i-heroicons-chart-bar',
-  },
-];
 
 const socialLinks = [
   {label: t('social.discord'), icon: 'i-simple-icons-discord', to: '/discord', color: 'primary'},
