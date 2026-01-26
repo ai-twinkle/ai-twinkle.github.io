@@ -43,6 +43,7 @@
     "lead": "Twinkle AI is a community focused on building open-source Traditional Chinese language models. We bring together passionate contributors to implement, share, and drive the adoption of AI technologies in Taiwan.",
     "about": {
       "title": "About Twinkle AI: Why Are We Doing This?",
+      "description": "Building AI that speaks our language and understands our culture.",
       "content": "AI is moving faster than a scooter in Taipei rush hour. While global models are geniuses, they often talk to us using a vocabulary that sounds like it’s from across the sea—filled with terms that just don't belong in Taiwan. At Twinkle AI, we’re fixing that cultural mismatch to build AI that actually speaks our language.\n\nWe believe Language is Life. If AI doesn't get our local vibe, our unique way of speaking will just fade into the algorithm. Since 2025, we’ve been curating data and fine-tuning models so they actually \"get\" us—natural, precise, and distinctly local."
     },
     "models": {
@@ -87,7 +88,9 @@
     },
     "teaser": {
       "education": "Explore Education Programs",
-      "media": "Visit Media Zone"
+      "media": "Visit Media Zone",
+      "title": "Explore Our Ecosystem",
+      "description": "Dive deeper into our community resources and programs."
     }
   },
   "features": {

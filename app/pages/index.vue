@@ -49,9 +49,9 @@
     <!-- About Twinkle AI -->
     <div class="py-24 bg-gray-900/50">
       <UContainer>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <SectionHeading :title="$t('home.about.title')" :description="$t('home.about.description')" />
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-             <h2 class="text-3xl font-bold text-white mb-6">{{ $t('home.about.title') }}</h2>
              <div class="text-gray-300 whitespace-pre-line">
                {{ $t('home.about.content') }}
              </div>
@@ -188,7 +188,8 @@
     <!-- Teasers -->
     <div class="py-24 bg-primary-900/10 border-t border-gray-800">
       <UContainer>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+        <SectionHeading :title="$t('home.teaser.title')" :description="$t('home.teaser.description')" />
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
           <NuxtLink :to="localePath('/education')" class="group p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all block">
              <UIcon name="i-heroicons-academic-cap" class="w-12 h-12 text-primary-400 mb-4 mx-auto group-hover:scale-110 transition-transform" />
              <div class="w-full py-3 rounded-xl bg-primary-500/20 text-primary-300 font-semibold group-hover:bg-primary-500 group-hover:text-white transition-colors">

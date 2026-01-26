@@ -87,7 +87,9 @@
     },
     "teaser": {
       "education": "了解更多教育推廣",
-      "media": "探索媒體專區"
+      "media": "探索媒體專區",
+      "title": "探索我們的生態",
+      "description": "深入了解我們的社群資源與計劃。"
     }
   },
   "features": {
