@@ -80,5 +80,11 @@
       "retry": "Retry",
       "noProjects": "No repositories to display"
     }
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Page not found",
+    "message": "The page you requested is gone, or never existed.",
+    "home": "Back to home"
   }
 }
