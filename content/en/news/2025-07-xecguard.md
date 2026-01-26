@@ -1,5 +1,5 @@
 ---
-title: Strengthening AI Resilience: XecGuard Launch & F1 Benchmarks
+title: "Strengthening AI Resilience: XecGuard Launch & F1 Benchmarks"
 date: 2025-07-02
 category: Product
 image: 

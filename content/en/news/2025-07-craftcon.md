@@ -1,5 +1,5 @@
 ---
-title: CraftCon Taiwan: CyCraft AI Security Conference
+title: "CraftCon Taiwan: CyCraft AI Security Conference"
 date: 2025-07-04
 category: Event
 image: 

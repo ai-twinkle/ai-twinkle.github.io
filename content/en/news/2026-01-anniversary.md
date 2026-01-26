@@ -1,5 +1,5 @@
 ---
-title: Twinkle AI 1st Anniversary: Taking the Sync Offline
+title: "Twinkle AI 1st Anniversary: Taking the Sync Offline"
 date: 2026-01-03
 category: Community
 image: 

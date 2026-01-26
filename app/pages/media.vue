@@ -23,9 +23,13 @@
 <script setup lang="ts">
 const {locale} = useI18n();
 
-const {data: page} = await useAsyncData(`media-${locale.value}`, () => {
-  const path = locale.value === 'en' ? '/en/pages/media' : '/zh-TW/pages/media';
-  return queryCollection('pages').path(path).first();
+const {data: page} = await useAsyncData(`media-${locale.value}`, async () => {
+  const pathPrefix = locale.value === 'en' ? '/en/pages' : '/zh-TW/pages';
+  const result = await queryCollection('pages')
+      .where('path', 'LIKE', `${pathPrefix}%`)
+      .where('path', 'LIKE', '%media%')
+      .first();
+  return result;
 });
 </script>
 

@@ -1,5 +1,5 @@
 ---
-title: Introducing Formosa Vision: A Visual Dataset for Local Context
+title: "Introducing Formosa Vision: A Visual Dataset for Local Context"
 date: 2025-11-14
 category: Project
 image: 

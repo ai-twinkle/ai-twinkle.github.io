@@ -1,5 +1,5 @@
 ---
-title: IT Matters Awards: Open Source Community Contribution
+title: "IT Matters Awards: Open Source Community Contribution"
 date: 2025-12-01
 category: Awards
 image: 
