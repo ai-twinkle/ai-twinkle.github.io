@@ -1,5 +1,4 @@
-import {defineContentConfig, defineCollection} from '@nuxt/content';
-import {z} from 'zod';
+import {defineContentConfig, defineCollection, z} from '@nuxt/content';
 
 export default defineContentConfig({
   collections: {
@@ -9,7 +8,7 @@ export default defineContentConfig({
       type: 'page',
       schema: z.object({
         title: z.string(),
-        date: z.string(),
+        date: z.coerce.date(),
         category: z.string().optional(),
         image: z.string().optional(),
         links: z.array(z.object({
