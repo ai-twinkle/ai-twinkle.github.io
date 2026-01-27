@@ -1,3 +1,10 @@
+// Log which Nitro preset is being used
+const isProduction = process.env.NODE_ENV === 'production';
+const nitroPreset = process.env.NITRO_PRESET ?? (
+  isProduction ? 'cloudflare-module' : 'bun'
+);
+console.info(`Using Nitro preset: ${nitroPreset}`);
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -23,13 +30,15 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/i18n'],
 
+  nitro: {preset: nitroPreset},
+
   i18n: {
     locales: [
       {
         code: 'zh-TW',
         iso: 'zh-TW',
         file: 'zh-TW.json',
-        name: '中文 (繁體)',
+        name: '中文 (正體)',
       },
       {
         code: 'en',

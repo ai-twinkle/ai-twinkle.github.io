@@ -22,20 +22,36 @@
           </div>
         </div>
         <div class="mt-6">
-          <nav class="grid gap-y-8">
+          <nav class="grid gap-y-6">
             <div
               v-for="(item, index) in menuItems"
               :key="index"
             >
               <app-header-menu-dropdown
                 v-if="item.type === 'dropdown'"
-                :name="item.name"
+                :name="$t(item.name)"
                 :children="item.children"
                 variant="mobile"
               />
+              <a
+                v-else-if="item.type === 'link' && item.external"
+                :href="getExternalUrl(item.to)"
+                class="-ml-3 py-1 px-3 flex items-center rounded-md text-gray-200 hover:text-gray-100 hover:bg-gray-800 cursor-pointer"
+                @click="onClickMobileMenuClose"
+              >
+                <span class="text-base font-medium">{{ $t(item.name) }}</span>
+              </a>
+              <NuxtLinkLocale
+                v-else-if="item.type === 'link'"
+                :to="item.to"
+                class="-ml-3 py-1 px-3 flex items-center rounded-md text-gray-200 hover:text-gray-100 hover:bg-gray-800 cursor-pointer"
+                @click="onClickMobileMenuClose"
+              >
+                <span class="text-base font-medium">{{ $t(item.name) }}</span>
+              </NuxtLinkLocale>
               <app-header-menu-item
                 v-else
-                :name="item.name"
+                :name="$t(item.name)"
                 :icon="item.icon"
                 variant="mobile"
                 @click="onClickItem(item)"
@@ -90,12 +106,19 @@ const emit = defineEmits<{
   close: [];
 }>();
 
+const {locale, localeCodes, setLocale} = useI18n();
+const currentLocale = computed(() => locale.value);
+
 const parentMenuState = inject<Ref<boolean>>('parent-menu-state')!;
 watch(parentMenuState, (value) => {
   if (!value) {
     emit('close');
   }
 });
+
+const getExternalUrl = (path: string): string => {
+  return `${path}?lang=${locale.value}`;
+};
 
 const onClickMobileMenuClose = (): void => {
   emit('close');
@@ -106,6 +129,4 @@ const onClickItem = (item: MenuFunctionItem): void => {
   item.onClick();
 };
 
-const {locale, localeCodes, setLocale} = useI18n();
-const currentLocale = computed(() => locale.value);
 </script>
