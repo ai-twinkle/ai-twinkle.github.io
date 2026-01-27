@@ -79,5 +79,7 @@ const buttonClass = computed(() => ([
   'hover:bg-gray-800',
   'cursor-pointer',
   'transition-colors',
+  'md:py-5',
+  'md:px-4',
 ]));
 </script>
