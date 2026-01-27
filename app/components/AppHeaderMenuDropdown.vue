@@ -55,7 +55,7 @@
           v-show="isDropdownOpened"
           class="rounded-lg shadow-lg overflow-hidden bg-gray-900 ring-1 ring-gray-800"
         >
-          <div class="relative grid gap-4 px-4 py-4 sm:gap-6 sm:p-6">
+          <div class="relative grid">
             <app-header-menu-dropdown-item
               v-for="(child, index) in props.children"
               :key="index"
