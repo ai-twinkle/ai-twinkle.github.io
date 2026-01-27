@@ -16,30 +16,29 @@
       />
     </button>
 
-    <!-- Mobile: Collapse/Accordion style -->
     <div
       v-if="props.variant === 'mobile'"
-      ref="collapseContent"
-      class="overflow-hidden transition-all duration-300 ease-in-out"
-      :style="{ maxHeight: collapseMaxHeight }"
+      class="grid transition-[grid-template-rows] duration-300 ease-in-out"
+      :class="isDropdownOpened ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'"
     >
-      <div class="pt-2 pl-4">
-        <div class="border-l-2 border-gray-700 pl-4 space-y-3">
-          <app-header-menu-dropdown-item
-            v-for="(child, index) in props.children"
-            :key="index"
-            :name="$t(child.name)"
-            :description="$t(child.description)"
-            :icon="child.icon"
-            :to="child.to"
-            :variant="props.variant"
-            @click="onClickItem(child)"
-          />
+      <div class="overflow-hidden min-h-0">
+        <div class="pt-1 pl-4">
+          <div class="border-l-2 border-gray-700 pl-4">
+            <app-header-menu-dropdown-item
+              v-for="(child, index) in props.children"
+              :key="index"
+              :name="$t(child.name)"
+              :description="$t(child.description)"
+              :icon="child.icon"
+              :to="child.to"
+              :variant="props.variant"
+              @click="onClickItem(child)"
+            />
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Desktop: Absolute positioned dropdown -->
     <div
       v-else
       :class="dropdownContainerClass"
@@ -75,7 +74,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref, inject, watch, computed, type Ref, nextTick} from 'vue';
+import {ref, inject, watch, computed, type Ref} from 'vue';
 
 import type {
   MenuDropdownChild,
@@ -88,9 +87,6 @@ const props = defineProps<{
 }>();
 
 const isDropdownOpened = ref(false);
-const collapseContent = ref<HTMLElement | null>(null);
-const collapseMaxHeight = ref('0px');
-
 const parentMenuState = inject<Ref<boolean>>('parent-menu-state')!;
 const activeDropdown = inject<Ref<string | null>>('active-dropdown')!;
 
@@ -98,7 +94,6 @@ const activeDropdown = inject<Ref<string | null>>('active-dropdown')!;
 watch(parentMenuState, (value) => {
   if (!value) {
     isDropdownOpened.value = false;
-    collapseMaxHeight.value = '0px';
   }
 });
 
@@ -108,17 +103,6 @@ watch(activeDropdown, (newActiveDropdown) => {
     isDropdownOpened.value = false;
   }
 });
-
-const updateCollapseHeight = async () => {
-  if (props.variant === 'mobile') {
-    await nextTick();
-    if (isDropdownOpened.value && collapseContent.value) {
-      collapseMaxHeight.value = `${collapseContent.value.scrollHeight}px`;
-    } else {
-      collapseMaxHeight.value = '0px';
-    }
-  }
-};
 
 const onClickDropdown = (): void => {
   isDropdownOpened.value = !isDropdownOpened.value;
@@ -134,7 +118,6 @@ const onClickDropdown = (): void => {
       activeDropdown.value = null;
     }
   }
-  updateCollapseHeight();
 };
 
 const onClickItem = (item: MenuDropdownChild): void => {
@@ -165,7 +148,7 @@ const buttonClass = computed(() => {
 
   if (props.variant === 'mobile') {
     return [
-      '-m-3',
+      '-ml-3',
       'p-3',
       'flex',
       'items-center',
