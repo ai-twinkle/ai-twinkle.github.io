@@ -2,10 +2,50 @@
   <div class="relative starry-bg text-white min-h-[calc(100vh-4rem)]">
     <UContainer class="py-24 sm:py-32">
       <SectionHeading
-        :title="$t('nav.models')"
+        :title="$t('models.title')"
         :description="$t('models.description')"
         icon="i-heroicons-cube"
       />
+
+      <!-- Model Series Highlights -->
+      <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+         <!-- T1 -->
+         <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all">
+            <UIcon name="i-heroicons-cpu-chip" class="w-10 h-10 text-primary-400 mb-4" />
+            <h3 class="text-xl font-bold text-white mb-2">{{ $t('models.intro.t1.title') }}</h3>
+            <p class="text-gray-400">{{ $t('models.intro.t1.description') }}</p>
+         </div>
+         <!-- Formosa -->
+         <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all">
+            <UIcon name="i-heroicons-chat-bubble-left-right" class="w-10 h-10 text-primary-400 mb-4" />
+            <h3 class="text-xl font-bold text-white mb-2">{{ $t('models.intro.formosa.title') }}</h3>
+            <p class="text-gray-400">{{ $t('models.intro.formosa.description') }}</p>
+         </div>
+         <!-- Voice -->
+         <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all">
+            <UIcon name="i-heroicons-microphone" class="w-10 h-10 text-primary-400 mb-4" />
+            <h3 class="text-xl font-bold text-white mb-2">{{ $t('models.intro.voice.title') }}</h3>
+            <p class="text-gray-400">{{ $t('models.intro.voice.description') }}</p>
+         </div>
+      </div>
+
+      <!-- Eval System -->
+      <div class="mt-24 bg-gray-900/50 p-12 rounded-2xl ring-1 ring-gray-800 text-center">
+         <h2 class="text-3xl font-bold text-white mb-4">{{ $t('models.eval.title') }}</h2>
+         <p class="text-gray-300 max-w-2xl mx-auto mb-8">{{ $t('models.eval.description') }}</p>
+         <UButton
+            to="/leaderboard"
+            target="_blank"
+            size="xl"
+            icon="i-heroicons-chart-bar"
+            color="white"
+            variant="solid"
+         >
+            {{ $t('models.eval.leaderboard_action') }}
+         </UButton>
+      </div>
+
+      <UDivider class="my-24" />
 
       <!-- Explore on HuggingFace Button -->
       <div class="mt-8 flex justify-center">

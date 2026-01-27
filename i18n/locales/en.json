@@ -8,11 +8,19 @@
     "explore_projects": "Explore projects",
     "explore_models": "Explore Models",
     "huggingface": "Hugging Face",
-    "explore_datasets": "Explore Datasets"
+    "explore_datasets": "Explore Datasets",
+    "read_more": "Read More",
+    "download_press_kit": "Download Press Kit",
+    "download_pdf_zh": "Traditional Chinese - PDF",
+    "download_pdf_en": "English - PDF"
   },
   "nav": {
+    "about": "About Us",
     "leaderboard": "Leaderboard",
     "models": "Models",
+    "models_desc": "Instruction-tuned models optimized for Traditional Chinese",
+    "datasets": "Datasets",
+    "datasets_desc": "High-quality, curated local training datasets",
     "community": "Community",
     "resources": "Resources",
     "education": "Education",
@@ -25,15 +33,6 @@
   "pages": {
     "coming_soon": "Coming soon...",
     "coming_soon_badge": "Coming Soon"
-  },
-  "news": {
-    "description": "Latest news, events, and announcements"
-  },
-  "education": {
-    "description": "Tutorials, workshops, and promotional content"
-  },
-  "media": {
-    "description": "Press releases, media kit, and resources"
   },
   "home": {
     "badge": "🌟 Taiwan open-source LLM community",
@@ -91,7 +90,105 @@
       "media": "Visit Media Zone",
       "title": "Explore Our Ecosystem",
       "description": "Dive deeper into our community resources and programs."
+    },
+    "highlights": {
+        "models": "Local Models",
+        "datasets": "Curated Data",
+        "education": "Talent Incubator"
     }
+  },
+  "about": {
+    "vision": {
+      "title": "Our Vision",
+      "content": "Twinkle AI's idea is simple: Language is part of life. If future digital tools cannot understand these details, our familiar way of speaking will slowly fade in the algorithms.\n\nTherefore, starting from early 2025, we began organizing local data and investing in fine-tuning, with a clear goal: to create a model that truly understands us and responds naturally and smoothly."
+    },
+    "story": {
+        "title": "Origin Story",
+        "content": "From 2024 to 2025, the development of AI has been so fast that it's hard to keep up. Although current models are already very strong, we found in actual use that many models still cannot accurately capture our usual sense of language, common knowledge, or subtle logic when processing Traditional Chinese."
+    },
+    "timeline": {
+        "title": "Milestones",
+        "events": [
+            {
+                "date": "2025.01",
+                "title": "Community Origin (Llama Taiwan)",
+                "description": "Founded initially to collect user feedback for Llama-3.2-Taiwan model."
+            },
+            {
+                "date": "2025.04",
+                "title": "Formosa-1 Released",
+                "description": "Taiwan's first 3B parameter inference model executable on mobile devices."
+            },
+            {
+                "date": "2025.07",
+                "title": "Awards & Recognition",
+                "description": "Formosa-1 selected as the test basis for the Cyber Security Annual Conference."
+            },
+            {
+                "date": "2025.11",
+                "title": "Formosa Vision Released",
+                "description": "Addressing VLM cultural misinterpretation issues, combining with the National Cultural Memory Bank."
+            },
+             {
+                "date": "2025.11",
+                "title": "IT Matters Open Source Community Contribution Award",
+                "description": "Won the 2025 IT Matters Awards Open Source Community Contribution Award."
+            },
+            {
+                "date": "2026.01",
+                "title": "1st Anniversary Physical Meetup",
+                "description": "Moving from online to offline, gathering the power of local developers."
+            }
+        ]
+    }
+  },
+  "datasets": {
+    "title": "Open Source Datasets",
+    "description": "High-quality data is the soul of the model.",
+    "philosophy": {
+        "title": "Data Cleansing & Context Calibration",
+        "content": "We do not just accumulate data volume, but focus on 'Data Cleansing and Context Calibration'. Current data sources cover public government information, local community discussions, and Taiwanese literature archives. In data organization, we developed an automated filtering mechanism to precisely screen out non-local idioms (such as misuse of terms), and established a structured database to ensure the model learns the most authentic and correct Traditional Chinese."
+    },
+    "vision": {
+        "title": "Formosa Vision",
+        "content": "Combining with the National Cultural Memory Bank to solve the problem of VLM being unfamiliar with local images and prone to cultural misjudgment (such as historic trails, military villages, Matsu battlefield landscapes, etc.)."
+    }
+  },
+  "news": {
+    "description": "Latest news, events, and announcements",
+    "filters": {
+        "all": "All",
+        "media": "Media Reports",
+        "event": "Events",
+        "tech": "Tech Releases",
+        "award": "Awards"
+    },
+    "noNews": "No news to display",
+    "press_kit": {
+        "title": "Media Resources & Press Kit",
+        "description": "To facilitate reporting and citation by media friends, we provide high-resolution materials related to this news. All files are licensed under CC BY 4.0.",
+        "press_release": "Press Release",
+        "images": "High-Res Images",
+        "identity": "Brand Identity"
+    }
+  },
+  "education": {
+    "description": "Tutorials, workshops, and promotional content",
+    "podcast": {
+        "title": "Twinkle Podcast",
+        "description": "Practical experiences and insights from developers."
+    },
+    "labs": {
+        "title": "Late Night Labs",
+        "description": "Still at the computer at 22:00? Why not take a class? We focus on the research and implementation of Traditional Chinese models."
+    },
+    "book_club": {
+        "title": "Late Night Book Club",
+        "description": "Breaking down basic theories, regularly discussing books like 'Build a Large Language Model'."
+    }
+  },
+  "media": {
+    "description": "Press releases, media kit, and resources"
   },
   "features": {
     "optimized": {
@@ -146,8 +243,28 @@
     }
   },
   "models": {
+    "title": "Technology & Models",
     "description": "Instruction-tuned models optimized for Traditional Chinese",
     "explore_hf": "Explore on Hugging Face",
+    "intro": {
+        "t1": {
+            "title": "T1 Model",
+            "description": "Built on Gemma-3-4B with a local tune-up. It handles our logic surprisingly well for a model of its size."
+        },
+        "formosa": {
+            "title": "Formosa-1",
+            "description": "Based on Llama-3.2-3B. Our first real step toward fixing the 'translation' feel in AI."
+        },
+        "voice": {
+            "title": "Twinkle Voice",
+            "description": "A voice-first branch. Because sometimes, your hands deserve a break from typing."
+        }
+    },
+    "eval": {
+        "title": "Evaluation System",
+        "description": "To quantify the model's depth of understanding of Taiwanese culture, we developed specialized tools.",
+        "leaderboard_action": "View Leaderboard"
+    },
     "table": {
       "name": "Name",
       "version": "Version",
