@@ -36,7 +36,7 @@
               <a
                 v-else-if="item.type === 'link' && item.external"
                 :href="getExternalUrl(item.to)"
-                class="-m-3 p-3 flex items-center rounded-md text-gray-200 hover:text-gray-100 cursor-pointer"
+                class="-ml-3 py-1 px-3 flex items-center rounded-md text-gray-200 hover:text-gray-100 hover:bg-gray-800 cursor-pointer"
                 @click="onClickMobileMenuClose"
               >
                 <span class="text-base font-medium">{{ $t(item.name) }}</span>
@@ -44,7 +44,7 @@
               <NuxtLinkLocale
                 v-else-if="item.type === 'link'"
                 :to="item.to"
-                class="-m-3 p-3 flex items-center rounded-md text-gray-200 hover:text-gray-100 cursor-pointer"
+                class="-ml-3 py-1 px-3 flex items-center rounded-md text-gray-200 hover:text-gray-100 hover:bg-gray-800 cursor-pointer"
                 @click="onClickMobileMenuClose"
               >
                 <span class="text-base font-medium">{{ $t(item.name) }}</span>

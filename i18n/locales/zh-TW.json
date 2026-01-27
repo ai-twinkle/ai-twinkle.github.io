@@ -156,5 +156,11 @@
       "model_type": "模型類型",
       "context_length": "上下文長度"
     }
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "頁面不存在",
+    "message": "您所請求的頁面不見了，或者是從來沒有存在過。",
+    "home": "回首頁"
   }
 }

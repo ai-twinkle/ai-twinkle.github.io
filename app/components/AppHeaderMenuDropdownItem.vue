@@ -4,7 +4,7 @@
     :to="props.to"
     :class="buttonClass"
   >
-    <div v-if="props.icon" class="flex-shrink-0">
+    <div v-if="props.icon" class="shrink-0">
       <dynamic-hero-icon
         v-if="isHeroIcon"
         :name="props.icon"
@@ -31,7 +31,7 @@
     :class="buttonClass"
     type="button"
   >
-    <div v-if="props.icon" class="flex-shrink-0">
+    <div v-if="props.icon" class="shrink-0">
       <dynamic-hero-icon
         v-if="isHeroIcon"
         :name="props.icon"
@@ -71,7 +71,6 @@ const isHeroIcon = props.icon?.endsWith('Icon') ||
   false;
 
 const buttonClass = computed(() => ([
-  '-m-2',
   'p-2',
   'flex',
   'w-full',
@@ -80,5 +79,7 @@ const buttonClass = computed(() => ([
   'hover:bg-gray-800',
   'cursor-pointer',
   'transition-colors',
+  'md:py-5',
+  'md:px-4',
 ]));
 </script>

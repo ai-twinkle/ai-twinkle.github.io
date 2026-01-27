@@ -156,5 +156,11 @@
       "model_type": "Model Type",
       "context_length": "Context Length"
     }
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Page not found",
+    "message": "The page you requested is gone, or never existed.",
+    "home": "Back to home"
   }
 }

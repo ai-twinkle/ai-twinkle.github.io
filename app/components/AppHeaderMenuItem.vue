@@ -49,15 +49,16 @@ const buttonClass = computed(() => {
   if (props.variant === 'mobile') {
     return [
       'text-gray-200',
-      '-m-3',
-      'p-3',
+      '-ml-3',
+      'py-1',
+      'px-3',
       'w-full',
       ...base,
     ];
   }
 
   return [
-    'h-8',
+    'py-1',
     'px-3',
     'text-gray-300',
     'inline-flex',

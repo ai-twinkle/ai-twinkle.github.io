@@ -2,11 +2,11 @@
   <header class="border-b border-gray-800 bg-gray-900/70 backdrop-blur-md sticky top-0 z-50 app-header">
     <UContainer class="flex h-16 items-center justify-between gap-4">
       <!-- Logo and Title - constrained width -->
-      <NuxtLinkLocale to="/" class="flex items-center gap-3 flex-shrink-0">
+      <NuxtLinkLocale to="/" class="flex items-center gap-3 shrink-0">
         <NuxtImg src="/logo.png" alt="Logo" width="40" height="40" />
         <div class="leading-tight">
           <div class="font-bold text-lg text-twinkle whitespace-nowrap">{{ $t('site.title') }}</div>
-          <div class="text-xs text-gray-400 hidden lg:block whitespace-nowrap max-w-[200px] truncate">{{ $t('site.subtitle') }}</div>
+          <div class="text-xs text-gray-400 hidden lg:block whitespace-nowrap max-w-50 truncate">{{ $t('site.subtitle') }}</div>
         </div>
       </NuxtLinkLocale>
 
@@ -14,7 +14,7 @@
       <app-header-normal />
 
       <!-- Right side actions -->
-      <div class="flex items-center gap-2 flex-shrink-0">
+      <div class="flex items-center gap-2 shrink-0">
         <UButton
           to="/discord"
           target="_blank"
