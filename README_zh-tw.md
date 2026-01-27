@@ -1,10 +1,10 @@
 # Twinkle AI 官方網站
 
-> **繁體中文** | [English](README.md)
+> **正體中文** | [English](README.md)
 
 🌐 Twinkle AI 官方網站 - 致力於構建開源正體中文語言模型的研究社群。
 
-這是一個雙語（繁體中文與英文）網站，展示 Twinkle AI 的專案、研究與社群活動。
+這是一個雙語（正體中文與英文）網站，展示 Twinkle AI 的專案、研究與社群活動。
 
 ## 技術架構
 
@@ -12,7 +12,7 @@
 - **UI 函式庫**: [Nuxt UI](https://ui.nuxt.com/)
 - **部署平台**: [Cloudflare Workers](https://workers.cloudflare.com/)
 - **套件管理器**: [Bun](https://bun.sh/)
-- **國際化**: @nuxtjs/i18n (預設繁體中文，支援英文)
+- **國際化**: @nuxtjs/i18n (預設正體中文，支援英文)
 
 ## 環境需求
 
@@ -30,6 +30,8 @@ cd ai-twinkle.github.io
 
 ### 2. 安裝相依套件
 
+要安裝 Bun，請造訪 <https://bun.com> 以獲取更多詳細資訊。
+
 使用 Bun（推薦）：
 
 ```bash
@@ -45,7 +47,7 @@ npm install
 ### 3. 啟動開發伺服器
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 網站將在 `http://localhost:3000` 上運行
@@ -54,14 +56,14 @@ npm run dev
 
 | 指令 | 說明 |
 | ------- | ----------- |
-| `npm run dev` | 啟動開發伺服器 |
-| `npm run build` | 建置正式版本 |
-| `npm run generate` | 產生靜態網站 |
-| `npm run preview` | 使用 Wrangler 建置並預覽 |
-| `npm run deploy` | 部署至 Cloudflare Workers |
-| `npm run lint:es:fix` | 自動修正 ESLint 問題 |
-| `npm run lint:es:check` | 檢查 ESLint（有警告會失敗）|
-| `npm run cf-typegen` | 產生 Cloudflare 型別定義 |
+| `bun run dev` | 啟動開發伺服器 |
+| `bun run build` | 建置正式版本 |
+| `bun run generate` | 產生靜態網站 |
+| `bun run preview` | 使用 Wrangler 建置並預覽 |
+| `bun run deploy` | 部署至 Cloudflare Workers |
+| `bun run lint:es:fix` | 自動修正 ESLint 問題 |
+| `bun run lint:es:check` | 檢查 ESLint（有警告會失敗）|
+| `bun run cf-typegen` | 產生 Cloudflare 型別定義 |
 
 ## 專案結構
 
@@ -113,13 +115,13 @@ docs(readme): update setup instructions
 
 - 使用 **ESLint** 搭配 `eslint-config-nymph`
 - **JSDoc** 註解（不包含型別標註 - 使用 TypeScript 型別）
-- 提交前執行 `npm run lint:es:fix`
+- 提交前執行 `bun run lint:es:fix`
 
 ## 主要特色
 
 ### 國際化 (i18n)
 
-- 預設語系: **zh-TW**（繁體中文）
+- 預設語系: **zh-TW**（正體中文）
 - 次要語系: **en**（英文）
 - URL 策略: `prefix_except_default`
   - 中文: `/`（無前綴）
@@ -143,7 +145,7 @@ docs(readme): update setup instructions
 本網站部署至 **Cloudflare Workers**：
 
 ```bash
-npm run deploy
+bun run deploy
 ```
 
 部署設定於 `wrangler.jsonc` 檔案中管理。

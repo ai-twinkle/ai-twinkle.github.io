@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         code: 'zh-TW',
         iso: 'zh-TW',
         file: 'zh-TW.json',
-        name: '中文 (繁體)',
+        name: '中文 (正體)',
       },
       {
         code: 'en',

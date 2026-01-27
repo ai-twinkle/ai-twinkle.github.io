@@ -1,6 +1,6 @@
 # Twinkle AI Official Website
 
-> [繁體中文](README_zh-tw.md) | **English**
+> [正體中文](README_zh-tw.md) | **English**
 
 🌐 Official website for Twinkle AI - An open-source Traditional Chinese language model research community (致力於構建開源正體中文語言模型的研究社群).
 
@@ -30,6 +30,8 @@ cd ai-twinkle.github.io
 
 ### 2. Install Dependencies
 
+To install Bun, please visit to <https://bun.com> for more details.
+
 Using Bun (recommended):
 
 ```bash
@@ -45,7 +47,7 @@ npm install
 ### 3. Start Development Server
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 The site will be available at `http://localhost:3000`
@@ -54,14 +56,14 @@ The site will be available at `http://localhost:3000`
 
 | Command | Description |
 | ------- | ----------- |
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run generate` | Generate static site |
-| `npm run preview` | Build and preview with Wrangler |
-| `npm run deploy` | Deploy to Cloudflare Workers |
-| `npm run lint:es:fix` | Auto-fix ESLint issues |
-| `npm run lint:es:check` | Check ESLint (fails on warnings) |
-| `npm run cf-typegen` | Generate Cloudflare types |
+| `bun run dev` | Start development server |
+| `bun run build` | Build for production |
+| `bun run generate` | Generate static site |
+| `bun run preview` | Build and preview with Wrangler |
+| `bun run deploy` | Deploy to Cloudflare Workers |
+| `bun run lint:es:fix` | Auto-fix ESLint issues |
+| `bun run lint:es:check` | Check ESLint (fails on warnings) |
+| `bun run cf-typegen` | Generate Cloudflare types |
 
 ## Project Structure
 
@@ -113,7 +115,7 @@ docs(readme): update setup instructions
 
 - **ESLint** with `eslint-config-nymph`
 - **JSDoc** comments (without type annotations - use TypeScript types)
-- Run `npm run lint:es:fix` before committing
+- Run `bun run lint:es:fix` before committing
 
 ## Key Features
 
@@ -143,7 +145,7 @@ The project uses `DynamicHeroIcon.vue` component that converts PascalCase heroic
 The site is deployed to **Cloudflare Workers**:
 
 ```bash
-npm run deploy
+bun run deploy
 ```
 
 Configuration is managed in `wrangler.jsonc`.
