@@ -36,28 +36,47 @@ export const menuItems: MenuItem[] = [
     to: '/about',
   },
   {
-    name: 'nav.models',
-    type: 'link',
-    to: '/models',
+    name: 'nav.resources',
+    type: 'dropdown',
+    status: 'primary',
+    children: [
+      {
+        name: 'nav.models',
+        description: 'nav.models_desc',
+        icon: 'i-heroicons-cpu-chip',
+        to: '/models',
+      },
+      {
+        name: 'nav.datasets',
+        description: 'nav.datasets_desc',
+        icon: 'i-heroicons-circle-stack',
+        to: '/datasets',
+      },
+    ],
   },
   {
-    name: 'nav.datasets',
-    type: 'link',
-    to: '/datasets',
-  },
-  {
-    name: 'nav.education',
-    type: 'link',
-    to: '/education',
-  },
-  {
-    name: 'nav.news',
-    type: 'link',
-    to: '/news',
-  },
-  {
-    name: 'nav.media',
-    type: 'link',
-    to: '/media',
+    name: 'nav.community',
+    type: 'dropdown',
+    status: 'primary',
+    children: [
+      {
+        name: 'nav.news',
+        description: 'nav.news_desc',
+        icon: 'i-heroicons-newspaper',
+        to: '/news',
+      },
+      {
+        name: 'nav.education',
+        description: 'nav.education_desc',
+        icon: 'i-heroicons-academic-cap',
+        to: '/education',
+      },
+      {
+        name: 'nav.media',
+        description: 'nav.media_desc',
+        icon: 'i-heroicons-megaphone',
+        to: '/media',
+      },
+    ],
   },
 ];
