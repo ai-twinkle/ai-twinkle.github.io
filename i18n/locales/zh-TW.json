@@ -5,7 +5,10 @@
   },
   "actions": {
     "join_discord": "加入 Discord",
-    "explore_projects": "探索專案"
+    "explore_projects": "探索專案",
+    "explore_models": "探索模型",
+    "huggingface": "Hugging Face",
+    "explore_datasets": "探索資料集"
   },
   "nav": {
     "leaderboard": "排行榜",
@@ -20,14 +23,75 @@
     "media_desc": "新聞稿、媒體素材與資源"
   },
   "pages": {
-    "coming_soon": "即將推出..."
+    "coming_soon": "即將推出...",
+    "coming_soon_badge": "即將推出"
+  },
+  "news": {
+    "description": "最新消息、活動與公告"
+  },
+  "education": {
+    "description": "教學、工作坊與推廣內容"
+  },
+  "media": {
+    "description": "新聞稿、媒體素材與資源"
   },
   "home": {
     "badge": "🌟 台灣生成式 AI 開源社群",
     "titleStart": "點亮 ",
     "titleHighlight": "正體中文 AI",
     "titleEnd": " 的星空",
-    "lead": "Twinkle AI 是一個專注於構建開源正體中文語言模型的研究社群。我們匯聚各界熱情夥伴，透過實作與分享，共同推動 AI 技術在台灣的落地與發展。"
+    "lead": "Twinkle AI 是一個專注於構建開源正體中文語言模型的研究社群。我們匯聚各界熱情夥伴，透過實作與分享，共同推動 AI 技術在台灣的落地與發展。",
+    "about": {
+      "title": "關於 Twinkle AI：我們為什麼要做這件事？",
+      "description": "打造會說我們語言、理解我們文化的 AI。",
+      "content": "2024 到 2025 這兩年，AI 的發展快到讓人有點跟不上。雖然現在的模型已經很強，但我們在實際使用中發現，很多模型在處理繁體中文時，還是沒辦法精準抓到我們平常說話的語感、生活常識或那些細微的邏輯。\n\nTwinkle AI 的想法很簡單：語言就是生活的一部分。如果未來的數位工具沒辦法理解這些細節，我們熟悉的說話方式就會在演算法中慢慢變淡。因此從 2025 年初開始，我們著手整理在地資料並投入訓練調校，目標很明確，就是要做出一個真正聽得懂我們、對答起來自然且順手的模型。"
+    },
+    "models": {
+      "title": "訓練繁體中文模型",
+      "description": "我們專注於在效能與輕量化之間取得平衡，開發出符合在地需求的語言模型：",
+      "items": [
+        {
+          "title": "T1 模型",
+          "description": "基於 Gemma-3-4B 架構進行深入訓練調校，針對台灣在地知識與邏輯推理進行強化。"
+        },
+        {
+          "title": "Formosa-1",
+          "description": "以 Llama-3.2-3B 為核心基礎，是我們早期對繁體中文語境探索的重要里程碑。"
+        },
+        {
+          "title": "Twinkle Voice",
+          "description": "第四號太空人誕生：新的模型支線，專注於語音互動。"
+        }
+      ]
+    },
+    "datasets": {
+      "title": "打造開源繁體中文資料集",
+      "content": "高品質的資料是模型的靈魂。我們並非單純累積資料量，而是專注於「資料淨化與語境校準」。\n\n目前的資料來源涵蓋公開政府資訊、在地社群討論及台灣文學檔案。在資料整理上，我們開發了一套自動化過濾機制，精準篩選掉非在地慣用語，並建立結構化的資料庫，確保模型學習到的是最道地、最正確的台灣繁體中文。"
+    },
+    "eval": {
+      "title": "評測模型在繁體語境能力",
+      "content": "由於現有的國際評測多半缺乏對台灣文化與語言特性的考量，我們建立了這套貼近日常生活的評核標準。",
+      "items": [
+        {
+          "title": "Eval 框架",
+          "description": "針對台灣法律、地理、生活常識設計的評測集。"
+        },
+        {
+          "title": "Eval-analyzer",
+          "description": "能分析模型輸出的詞彙分佈與語法結構在台灣語境下的知識強弱之分。"
+        },
+        {
+          "title": "Leaderboard",
+          "description": "AI 評測視覺化平台，透過直觀的動態圖表與詳細的數據表格，輕鬆比較不同模型表現。"
+        }
+      ]
+    },
+    "teaser": {
+      "education": "了解更多教育推廣",
+      "media": "探索媒體專區",
+      "title": "探索我們的生態",
+      "description": "深入了解我們的社群資源與計劃。"
+    }
   },
   "features": {
     "optimized": {
@@ -79,6 +143,18 @@
       "errorTitle": "載入倉庫時發生錯誤：",
       "retry": "重新載入",
       "noProjects": "沒有可顯示的倉庫"
+    }
+  },
+  "models": {
+    "description": "針對繁體中文優化的指令微調模型",
+    "explore_hf": "在 Hugging Face 上探索",
+    "table": {
+      "name": "名稱",
+      "version": "版本",
+      "parameters": "參數量",
+      "quantised": "量化版本",
+      "model_type": "模型類型",
+      "context_length": "上下文長度"
     }
   },
   "notFound": {
