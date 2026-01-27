@@ -8,11 +8,17 @@
     "explore_projects": "探索專案",
     "explore_models": "探索模型",
     "huggingface": "Hugging Face",
-    "explore_datasets": "探索資料集"
+    "explore_datasets": "探索資料集",
+    "read_more": "閱讀更多",
+    "download_press_kit": "媒體資源下載",
+    "download_pdf_zh": "繁體中文版 - PDF",
+    "download_pdf_en": "英文版 - PDF"
   },
   "nav": {
+    "about": "關於我們",
     "leaderboard": "排行榜",
     "models": "模型",
+    "datasets": "資料集",
     "community": "社群",
     "resources": "資源",
     "education": "教育與推廣",
@@ -25,15 +31,6 @@
   "pages": {
     "coming_soon": "即將推出...",
     "coming_soon_badge": "即將推出"
-  },
-  "news": {
-    "description": "最新消息、活動與公告"
-  },
-  "education": {
-    "description": "教學、工作坊與推廣內容"
-  },
-  "media": {
-    "description": "新聞稿、媒體素材與資源"
   },
   "home": {
     "badge": "🌟 台灣生成式 AI 開源社群",
@@ -91,7 +88,105 @@
       "media": "探索媒體專區",
       "title": "探索我們的生態",
       "description": "深入了解我們的社群資源與計劃。"
+    },
+    "highlights": {
+        "models": "在地模型",
+        "datasets": "淨化資料",
+        "education": "人才孵化"
     }
+  },
+  "about": {
+    "vision": {
+      "title": "我們的願景",
+      "content": "Twinkle AI 的想法很簡單：語言就是生活的一部分。如果未來的數位工具沒辦法理解這些細節，我們熟悉的說話方式就會在演算法中慢慢變淡。\n\n因此從 2025 年初開始，我們著手整理在地資料並投入調校，目標很明確，就是要做出一個真正聽得懂我們、對答起來自然且順手的模型。"
+    },
+    "story": {
+        "title": "故事起源",
+        "content": "2024 到 2025 這兩年，AI 的發展快到讓人有點跟不上。雖然現在的模型已經很強，但我們在實際使用中發現，很多模型在處理繁體中文時，還是沒辦法精準抓到我們平常說話的語感、生活常識或那些細微的邏輯。"
+    },
+    "timeline": {
+        "title": "大事記",
+        "events": [
+            {
+                "date": "2025.01",
+                "title": "社群起源 (Llama Taiwan)",
+                "description": "最初以 Llama-3.2-Taiwan 模型回饋社群成立。"
+            },
+            {
+                "date": "2025.04",
+                "title": "發表 Formosa-1",
+                "description": "台灣首款可於行動裝置執行的 3B 參數推理模型。"
+            },
+            {
+                "date": "2025.07",
+                "title": "獲獎與肯定",
+                "description": "Formosa-1 獲選為資安年會實測基礎，並獲得社群廣泛關注。"
+            },
+            {
+                "date": "2025.11",
+                "title": "Formosa Vision 發表",
+                "description": "解決 VLM 文化誤判問題，結合國家文化記憶庫。"
+            },
+             {
+                "date": "2025.11",
+                "title": "IT Matters 開源社群貢獻獎",
+                "description": "榮獲 2025 IT Matters Awards 開源社群貢獻獎。"
+            },
+            {
+                "date": "2026.01",
+                "title": "一週年實體見面會",
+                "description": "從線上走向實體，凝聚在地開發者力量。"
+            }
+        ]
+    }
+  },
+  "datasets": {
+    "title": "開源資料集",
+    "description": "高品質的資料是模型的靈魂。",
+    "philosophy": {
+        "title": "資料淨化與語境校準",
+        "content": "我們並非單純累積資料量，而是專注於「資料淨化與語境校準」。目前的資料來源涵蓋公開政府資訊、在地社群討論及台灣文學檔案。在資料整理上，我們開發了一套自動化過濾機制，精準篩選掉非在地慣用語（例如將常用的「資訊」誤稱為「信息」的用法」），並建立結構化的資料庫，確保模型學習到的是最道地、最正確的台灣繁體中文。"
+    },
+    "vision": {
+        "title": "Formosa Vision",
+        "content": "結合國家文化記憶庫，解決 VLM 對在地影像陌生、容易產生文化誤判的問題（如古道、眷村、馬祖戰地等特有景觀）。"
+    }
+  },
+  "news": {
+    "description": "最新消息、活動與公告",
+    "filters": {
+        "all": "全部",
+        "media": "媒體報導",
+        "event": "活動紀錄",
+        "tech": "技術發表",
+        "award": "獲獎榮耀"
+    },
+    "noNews": "目前沒有相關消息",
+    "press_kit": {
+        "title": "媒體資源與素材下載",
+        "description": "為了方便媒體朋友報導與引用，我們提供了本篇新聞相關的高解析度素材。所有檔案均採用 CC BY 4.0 授權使用。",
+        "press_release": "新聞稿下載 (Press Release)",
+        "images": "高解析度圖片 (High-Res Images)",
+        "identity": "社群識別系統 (Brand Identity)"
+    }
+  },
+  "education": {
+    "description": "教學、工作坊與推廣內容",
+    "podcast": {
+        "title": "Twinkle Podcast",
+        "description": "開發者的實戰經驗與體會。"
+    },
+    "labs": {
+        "title": "深夜實堂",
+        "description": "晚上 22:00 還在電腦前？不如來上課吧。我們專注於繁中模型的研究與實作。"
+    },
+    "book_club": {
+        "title": "熬夜書坊",
+        "description": "把基礎理論拆開來看，固定討論《Build a Large Language Model》等書籍。"
+    }
+  },
+  "media": {
+    "description": "新聞稿、媒體素材與資源"
   },
   "features": {
     "optimized": {
@@ -146,8 +241,28 @@
     }
   },
   "models": {
+    "title": "技術與模型",
     "description": "針對繁體中文優化的指令微調模型",
     "explore_hf": "在 Hugging Face 上探索",
+    "intro": {
+        "t1": {
+            "title": "T1 模型",
+            "description": "基於 Gemma-3-4B 架構進行深入調校，針對台灣在地知識與邏輯推理進行強化，提供流暢且精準的互動體驗。"
+        },
+        "formosa": {
+            "title": "Formosa-1",
+            "description": "以 Llama-3.2-3B 為核心基礎。這款模型是我們早期對繁體中文語境探索的重要里程碑，展現了卓越的基礎對話能力。"
+        },
+        "voice": {
+            "title": "Twinkle Voice",
+            "description": "第四號太空人誕生：新的模型支線，專注於語音互動。"
+        }
+    },
+    "eval": {
+        "title": "評測系統",
+        "description": "為了量化模型對台灣文化的理解深度，我們開發了專門的工具。",
+        "leaderboard_action": "查看排行榜"
+    },
     "table": {
       "name": "名稱",
       "version": "版本",

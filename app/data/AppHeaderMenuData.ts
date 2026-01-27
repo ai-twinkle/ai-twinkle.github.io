@@ -31,46 +31,33 @@ export type MenuItem = MenuDropdownItem | MenuFunctionItem | MenuLinkItem;
 
 export const menuItems: MenuItem[] = [
   {
+    name: 'nav.about',
+    type: 'link',
+    to: '/about',
+  },
+  {
     name: 'nav.models',
     type: 'link',
     to: '/models',
   },
   {
-    name: 'nav.leaderboard',
+    name: 'nav.datasets',
     type: 'link',
-    to: '/leaderboard',
-    external: true, // Server redirect, don't add locale prefix
+    to: '/datasets',
   },
   {
-    name: 'nav.community',
-    type: 'dropdown',
-    status: '',
-    children: [
-      {
-        name: 'nav.news',
-        description: 'nav.news_desc',
-        icon: 'i-heroicons-newspaper',
-        to: '/news',
-      },
-    ],
+    name: 'nav.education',
+    type: 'link',
+    to: '/education',
   },
   {
-    name: 'nav.resources',
-    type: 'dropdown',
-    status: '',
-    children: [
-      {
-        name: 'nav.education',
-        description: 'nav.education_desc',
-        icon: 'i-heroicons-academic-cap',
-        to: '/education',
-      },
-      {
-        name: 'nav.media',
-        description: 'nav.media_desc',
-        icon: 'i-heroicons-photo',
-        to: '/media',
-      },
-    ],
+    name: 'nav.news',
+    type: 'link',
+    to: '/news',
+  },
+  {
+    name: 'nav.media',
+    type: 'link',
+    to: '/media',
   },
 ];
