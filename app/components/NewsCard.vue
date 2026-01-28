@@ -1,7 +1,8 @@
 <template>
   <UCard
     :id="slug"
-    class="bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500/50 transition-all duration-300"
+    class="bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500/50 transition-all duration-300 flex flex-col h-full"
+    :ui="{ body: 'flex-1 flex flex-col' }"
     :class="{ 'cursor-pointer': homePage }"
     @click="handleCardClick"
   >
@@ -14,33 +15,28 @@
 
     <h3
         class="text-xl font-bold text-white mb-2 transition-colors outline-none focus-visible:text-primary-400"
-        :class="homePage ? 'hover:text-primary-400' : ''"
-        :role="homePage ? 'button' : undefined"
-        :tabindex="homePage ? 0 : undefined"
-        :aria-expanded="homePage ? isOpen : undefined"
-        @keydown.enter.prevent="toggle"
-        @keydown.space.prevent="toggle"
+        :class="homePage ? 'hover:text-primary-400 line-clamp-2 h-[3.5rem] overflow-hidden' : ''"
     >
         {{ article.title }}
-        <UIcon
-            v-if="homePage"
-            :name="isOpen ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'"
-            class="w-5 h-5 inline-block ml-2 text-gray-500"
-        />
     </h3>
 
     <div
-        class="grid transition-[grid-template-rows] duration-500 ease-out"
-        :class="isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'"
+        v-if="homePage"
+        class="mb-4 text-gray-400 text-sm overflow-hidden h-[6rem]"
     >
-        <div class="overflow-hidden">
-            <div class="text-gray-400 prose prose-invert prose-sm max-w-none mb-4">
-                <ContentRenderer :value="article" />
-            </div>
+        <div class="line-clamp-4 prose prose-sm prose-invert max-w-none prose-p:my-0 prose-headings:hidden prose-img:hidden prose-hr:hidden">
+            <ContentRenderer :value="article" />
         </div>
     </div>
 
-    <div v-if="homePage && !isOpen" class="mt-2">
+    <div
+        v-else
+        class="text-gray-400 prose prose-invert prose-sm max-w-none mb-4"
+    >
+        <ContentRenderer :value="article" />
+    </div>
+
+    <div v-if="homePage" class="mt-2 pt-2">
          <UButton
             :to="`${localePath('/news')}#${slug}`"
             variant="link"
@@ -52,8 +48,10 @@
         </UButton>
     </div>
 
+    <div v-if="homePage" class="flex-1"/>
+
     <template v-if="article.links && article.links.length > 0" #footer>
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2 overflow-hidden">
         <UButton
           v-for="link in article.links"
           :key="link.url"
@@ -63,8 +61,9 @@
           size="xs"
           icon="i-heroicons-arrow-top-right-on-square"
           color="neutral"
+          class="max-w-full"
         >
-          {{ link.title }}
+          <span class="truncate">{{ link.title }}</span>
         </UButton>
       </div>
     </template>
@@ -73,15 +72,18 @@
 
 <script setup lang="ts">
 const localePath = useLocalePath();
+const router = useRouter();
 
 interface Article {
   title: string;
+  description?: string;
   date?: string;
   category?: string;
   links?: { title: string; url: string }[];
   path?: string;
   _path?: string;
 }
+
 
 const props = defineProps<{
   article: Article;
@@ -94,26 +96,19 @@ const slug = computed(() => {
   return id ? id.replace(/[^a-z0-9]/gi, '-').replace(/^-+|-+$/g, '').toLowerCase() : undefined;
 });
 
-const isOpen = ref(!props.homePage);
-
-const toggle = () => {
-  if (props.homePage) {
-    isOpen.value = !isOpen.value;
-  }
-};
-
 const handleCardClick = (e: MouseEvent) => {
   if (!props.homePage) return;
 
-  // Prevent toggle if user is selecting text
+  // Prevent navigation if user is selecting text
   const selection = window.getSelection();
   if (selection && selection.toString().length > 0) return;
 
   const target = e.target as HTMLElement;
-  // Prevent toggle if clicking on interactive elements (links, buttons)
+  // Prevent if clicking on interactive elements
   if (target.closest('a, button')) return;
 
-  isOpen.value = !isOpen.value;
+  // Navigate to news page
+  router.push(`${localePath('/news')}#${slug.value}`);
 };
 
 const formatDate = (dateStr?: string) => {
