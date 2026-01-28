@@ -186,7 +186,8 @@
     "book_club": {
         "title": "Late Night Book Club",
         "description": "Breaking down basic theories, regularly discussing books like 'Build a Large Language Model'."
-    }
+    },
+    "join": "Join on Discord"
   },
   "media": {
     "description": "Press releases, media kit, and resources"

@@ -26,6 +26,20 @@
              <div class="prose prose-invert prose-lg max-w-none prose-primary prose-a:text-primary-400 flex-grow">
                  <ContentRenderer :value="item" />
              </div>
+
+             <div class="mt-6 pt-6 border-t border-gray-700/50 flex justify-end">
+                <UButton
+                  to="/discord"
+                  target="_blank"
+                  variant="ghost"
+                  color="neutral"
+                  class="group-hover:text-primary-400 transition-colors"
+                  icon="i-simple-icons-discord"
+                >
+                  {{ $t('education.join') }}
+                  <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 ml-1" />
+                </UButton>
+             </div>
           </div>
         </div>
       </div>

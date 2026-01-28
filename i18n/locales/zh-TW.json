@@ -186,7 +186,8 @@
     "book_club": {
         "title": "熬夜書坊",
         "description": "把基礎理論拆開來看，固定討論《Build a Large Language Model》等書籍。"
-    }
+    },
+    "join": "加入 Discord 討論"
   },
   "media": {
     "description": "新聞稿、媒體素材與資源"
