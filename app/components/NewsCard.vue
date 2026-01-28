@@ -91,9 +91,11 @@ const props = defineProps<{
 }>();
 
 const slug = computed(() => {
-  // Generate a safe ID from the path or title
-  const id = props.article.path || props.article._path;
-  return id ? id.replace(/[^a-z0-9]/gi, '-').replace(/^-+|-+$/g, '').toLowerCase() : undefined;
+  // Generate a safe ID from the path, _path or title fallback
+  const id = props.article.path || props.article._path || props.article.title;
+  return id ?
+    id.replace(/[^a-z0-9]/gi, '-').replace(/^-+|-+$/g, '').toLowerCase() :
+    'unknown-article';
 });
 
 const handleCardClick = (e: MouseEvent) => {
