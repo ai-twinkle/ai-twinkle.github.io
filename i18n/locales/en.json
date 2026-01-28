@@ -17,6 +17,7 @@
   "nav": {
     "about": "About Us",
     "leaderboard": "Leaderboard",
+    "leaderboard_desc": "Model performance rankings and benchmarks",
     "models": "Models",
     "models_desc": "Instruction-tuned models optimized for Traditional Chinese",
     "datasets": "Datasets",
@@ -185,7 +186,8 @@
     "book_club": {
         "title": "Late Night Book Club",
         "description": "Breaking down basic theories, regularly discussing books like 'Build a Large Language Model'."
-    }
+    },
+    "join": "Join on Discord"
   },
   "media": {
     "description": "Press releases, media kit, and resources"

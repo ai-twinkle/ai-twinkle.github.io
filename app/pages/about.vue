@@ -27,7 +27,7 @@
                 <!-- Dot -->
                 <div class="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-primary-500 ring-4 ring-gray-900 md:left-1/2 z-10 mt-6 md:mt-0"/>
 
-                <div class="ml-12 md:ml-0 md:flex md:justify-between md:items-center w-full">
+                <div class="ml-12 md:ml-0 md:flex md:justify-between md:items-center md:w-full">
                      <!-- Content Wrapper -->
                     <div
 :class="[

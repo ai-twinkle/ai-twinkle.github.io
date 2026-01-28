@@ -92,7 +92,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <template v-if="latestNews && latestNews.length > 0">
-                <NewsCard v-for="item in latestNews" :key="item.path" :article="item" />
+                <NewsCard v-for="item in latestNews" :key="item.path" :article="item" :home-page="true" />
             </template>
             <div v-else class="col-span-3 text-center text-gray-400">
                 {{ $t('news.noNews') }}

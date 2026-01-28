@@ -31,6 +31,7 @@
               :description="$t(child.description)"
               :icon="child.icon"
               :to="child.to"
+              :external="child.external"
               :variant="props.variant"
               @click="onClickItem(child)"
             />
@@ -63,6 +64,7 @@
               :description="$t(child.description)"
               :icon="child.icon"
               :to="child.to"
+              :external="child.external"
               :variant="props.variant"
               @click="onClickItem(child)"
             />

@@ -10,19 +10,34 @@
       <!-- Model Series Highlights -->
       <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
          <!-- T1 -->
-         <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all">
+         <a
+           href="https://huggingface.co/collections/twinkle-ai/t1-series"
+           target="_blank"
+           class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all block group"
+         >
             <UIcon name="i-heroicons-cpu-chip" class="w-10 h-10 text-primary-400 mb-4" />
-            <h3 class="text-xl font-bold text-white mb-2">{{ $t('models.intro.t1.title') }}</h3>
+            <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+              {{ $t('models.intro.t1.title') }}
+              <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4 text-gray-500 group-hover:text-primary-400 transition-colors" />
+            </h3>
             <p class="text-gray-400">{{ $t('models.intro.t1.description') }}</p>
-         </div>
+         </a>
          <!-- Formosa -->
-         <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all">
+         <a
+           href="https://huggingface.co/collections/twinkle-ai/formosa-1-series"
+           target="_blank"
+           class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all block group"
+         >
             <UIcon name="i-heroicons-chat-bubble-left-right" class="w-10 h-10 text-primary-400 mb-4" />
-            <h3 class="text-xl font-bold text-white mb-2">{{ $t('models.intro.formosa.title') }}</h3>
+            <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+              {{ $t('models.intro.formosa.title') }}
+              <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4 text-gray-500 group-hover:text-primary-400 transition-colors" />
+            </h3>
             <p class="text-gray-400">{{ $t('models.intro.formosa.description') }}</p>
-         </div>
+         </a>
          <!-- Voice -->
-         <div class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all">
+         <div class="relative p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800/50 cursor-not-allowed opacity-75">
+            <UBadge label="Soon" color="neutral" variant="solid" class="absolute top-6 right-6" />
             <UIcon name="i-heroicons-microphone" class="w-10 h-10 text-primary-400 mb-4" />
             <h3 class="text-xl font-bold text-white mb-2">{{ $t('models.intro.voice.title') }}</h3>
             <p class="text-gray-400">{{ $t('models.intro.voice.description') }}</p>
@@ -34,12 +49,12 @@
          <h2 class="text-3xl font-bold text-white mb-4">{{ $t('models.eval.title') }}</h2>
          <p class="text-gray-300 max-w-2xl mx-auto mb-8">{{ $t('models.eval.description') }}</p>
          <UButton
-            to="/leaderboard"
+            :to="leaderboardLink"
             target="_blank"
             size="xl"
             icon="i-heroicons-chart-bar"
-            color="white"
             variant="solid"
+            class="!bg-[#ffd500] hover:!bg-[#e6c000] !text-gray-900 border-none font-bold ring-0"
          >
             {{ $t('models.eval.leaderboard_action') }}
          </UButton>
@@ -56,7 +71,9 @@
           size="lg"
           icon="i-heroicons-arrow-top-right-on-square"
           trailing
-          color="primary"
+          variant="ghost"
+          color="secondary"
+          class="font-bold"
         />
       </div>
 
@@ -99,18 +116,18 @@
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-800 bg-gray-900/30">
-                <template v-for="(group, seriesName) in groupedModels" :key="seriesName">
+                <template v-for="group in groupedModels" :key="group.name">
                   <!-- Series Header Row -->
                   <tr class="bg-gray-800/50">
                     <td colspan="5" class="py-4 px-6">
                       <h3 class="text-lg font-bold text-primary-400">
-                        {{ seriesName }}
+                        {{ group.name }}
                       </h3>
                     </td>
                   </tr>
                   <!-- Model Rows -->
                   <tr
-                    v-for="model in group"
+                    v-for="model in group.models"
                     :key="model.id"
                     class="hover:bg-gray-800/30 transition-colors"
                   >
@@ -166,6 +183,9 @@ const {
   public: {hfOrgName},
 } = useRuntimeConfig();
 
+const {locale} = useI18n();
+const leaderboardLink = computed(() => `/leaderboard?lang=${locale.value}`);
+
 interface HuggingFaceModel {
   id: string;
   likes?: number;
@@ -220,7 +240,7 @@ const getSeriesName = (modelId: string): string => {
 };
 
 const groupedModels = computed(() => {
-  if (!hfModels.value) return {};
+  if (!hfModels.value) return [];
 
   const groups: Record<string, Array<HuggingFaceModel & {
     modelName: string;
@@ -256,7 +276,26 @@ const groupedModels = computed(() => {
     groups[key].sort((a, b) => (b.likes || 0) - (a.likes || 0));
   });
 
-  return groups;
+  // Define priority order for display
+  const priority = ['T1 Series', 'Formosa-1 Series', 'Llama Series', 'Gemma Series', 'Other Models'];
+
+  // Convert to array and sort by priority
+  return Object.entries(groups)
+      .sort(([keyA], [keyB]) => {
+        const idxA = priority.indexOf(keyA);
+        const idxB = priority.indexOf(keyB);
+
+        // If both in priority list, sort by index
+        if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+        // If only A in priority, A comes first
+        if (idxA !== -1) return -1;
+        // If only B in priority, B comes first
+        if (idxB !== -1) return 1;
+
+        // Otherwise sort alphabetically
+        return keyA.localeCompare(keyB);
+      })
+      .map(([name, models]) => ({name, models}));
 });
 </script>
 
