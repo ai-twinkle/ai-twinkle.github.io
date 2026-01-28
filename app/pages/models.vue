@@ -11,7 +11,7 @@
       <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
          <!-- T1 -->
          <a
-           href="https://huggingface.co/collections/twinkle-ai/t1-series-67984f1807755057fe847253"
+           href="https://huggingface.co/collections/twinkle-ai/t1-series"
            target="_blank"
            class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all block group"
          >
@@ -24,7 +24,7 @@
          </a>
          <!-- Formosa -->
          <a
-           href="https://huggingface.co/collections/twinkle-ai/formosa-1-series-67984f47f277a80b0647321e"
+           href="https://huggingface.co/collections/twinkle-ai/formosa-1-series"
            target="_blank"
            class="p-8 rounded-2xl bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500 transition-all block group"
          >
