@@ -2,6 +2,8 @@
   <UCard
     :id="slug"
     class="bg-gray-900 ring-1 ring-gray-800 hover:ring-primary-500/50 transition-all duration-300"
+    :class="{ 'cursor-pointer': homePage }"
+    @click="handleCardClick"
   >
     <template #header>
       <div class="flex items-center justify-between">
@@ -11,8 +13,13 @@
     </template>
 
     <h3
-        class="text-xl font-bold text-white mb-2 cursor-pointer hover:text-primary-400 transition-colors"
-        @click="toggle"
+        class="text-xl font-bold text-white mb-2 transition-colors outline-none focus-visible:text-primary-400"
+        :class="homePage ? 'hover:text-primary-400' : ''"
+        :role="homePage ? 'button' : undefined"
+        :tabindex="homePage ? 0 : undefined"
+        :aria-expanded="homePage ? isOpen : undefined"
+        @keydown.enter.prevent="toggle"
+        @keydown.space.prevent="toggle"
     >
         {{ article.title }}
         <UIcon
@@ -93,6 +100,20 @@ const toggle = () => {
   if (props.homePage) {
     isOpen.value = !isOpen.value;
   }
+};
+
+const handleCardClick = (e: MouseEvent) => {
+  if (!props.homePage) return;
+
+  // Prevent toggle if user is selecting text
+  const selection = window.getSelection();
+  if (selection && selection.toString().length > 0) return;
+
+  const target = e.target as HTMLElement;
+  // Prevent toggle if clicking on interactive elements (links, buttons)
+  if (target.closest('a, button')) return;
+
+  isOpen.value = !isOpen.value;
 };
 
 const formatDate = (dateStr?: string) => {
