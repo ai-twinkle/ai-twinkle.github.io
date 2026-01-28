@@ -3,6 +3,7 @@ export interface MenuDropdownChild {
   description: string;
   icon: string;
   to?: string;
+  external?: boolean;
   onClick?: () => void;
 }
 
@@ -31,20 +32,40 @@ export type MenuItem = MenuDropdownItem | MenuFunctionItem | MenuLinkItem;
 
 export const menuItems: MenuItem[] = [
   {
-    name: 'nav.models',
+    name: 'nav.about',
     type: 'link',
-    to: '/models',
+    to: '/about',
   },
   {
-    name: 'nav.leaderboard',
-    type: 'link',
-    to: '/leaderboard',
-    external: true, // Server redirect, don't add locale prefix
+    name: 'nav.resources',
+    type: 'dropdown',
+    status: 'primary',
+    children: [
+      {
+        name: 'nav.models',
+        description: 'nav.models_desc',
+        icon: 'i-heroicons-cpu-chip',
+        to: '/models',
+      },
+      {
+        name: 'nav.datasets',
+        description: 'nav.datasets_desc',
+        icon: 'i-heroicons-circle-stack',
+        to: '/datasets',
+      },
+      {
+        name: 'nav.leaderboard',
+        description: 'nav.leaderboard_desc',
+        icon: 'i-heroicons-chart-bar',
+        to: '/leaderboard',
+        external: true,
+      },
+    ],
   },
   {
     name: 'nav.community',
     type: 'dropdown',
-    status: '',
+    status: 'primary',
     children: [
       {
         name: 'nav.news',
@@ -52,13 +73,6 @@ export const menuItems: MenuItem[] = [
         icon: 'i-heroicons-newspaper',
         to: '/news',
       },
-    ],
-  },
-  {
-    name: 'nav.resources',
-    type: 'dropdown',
-    status: '',
-    children: [
       {
         name: 'nav.education',
         description: 'nav.education_desc',
@@ -68,7 +82,7 @@ export const menuItems: MenuItem[] = [
       {
         name: 'nav.media',
         description: 'nav.media_desc',
-        icon: 'i-heroicons-photo',
+        icon: 'i-heroicons-megaphone',
         to: '/media',
       },
     ],

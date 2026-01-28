@@ -1,6 +1,33 @@
 <template>
+  <a
+    v-if="props.to && props.external"
+    :href="localizedExternalUrl"
+    :class="buttonClass"
+  >
+    <div v-if="props.icon" class="shrink-0">
+      <dynamic-hero-icon
+        v-if="isHeroIcon"
+        :name="props.icon"
+        class="rounded-full w-6 h-6 mr-3"
+      />
+      <UIcon
+        v-else
+        :name="props.icon"
+        class="w-6 h-6 mr-3 text-primary-400"
+      />
+    </div>
+    <slot name="prepend" />
+    <div class="text-left">
+      <div class="text-base font-medium text-gray-200">
+        {{ props.name }}
+      </div>
+      <div class="mt-1 text-sm text-gray-400">
+        {{ props.description }}
+      </div>
+    </div>
+  </a>
   <NuxtLinkLocale
-    v-if="props.to"
+    v-else-if="props.to"
     :to="props.to"
     :class="buttonClass"
   >
@@ -57,6 +84,9 @@
 
 <script setup lang="ts">
 import {computed} from 'vue';
+import {useI18n} from 'vue-i18n';
+
+const {locale} = useI18n();
 
 const props = defineProps<{
   name: string;
@@ -64,7 +94,17 @@ const props = defineProps<{
   icon?: string;
   to?: string;
   variant?: 'mobile' | 'normal';
+  external?: boolean;
 }>();
+
+const localizedExternalUrl = computed(() => {
+  if (!props.to) return '';
+  // If it's a full URL, return as is
+  if (props.to.startsWith('http')) return props.to;
+  // If it's a relative path (likely server route), append locale
+  const separator = props.to.includes('?') ? '&' : '?';
+  return `${props.to}${separator}lang=${locale.value}`;
+});
 
 const isHeroIcon = props.icon?.endsWith('Icon') ||
   props.icon?.startsWith('i-heroicons-') ||

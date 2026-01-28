@@ -36,10 +36,10 @@
         <div class="grid grid-cols-2 gap-6 text-center">
           <div>
             <h3 class="font-semibold text-white mb-3 text-xs uppercase tracking-wider">
-              {{ $t('footer.navigation') }}
+              {{ $t('nav.resources') }}
             </h3>
             <ul class="space-y-2">
-              <li v-for="link in navigationLinks" :key="link.to">
+              <li v-for="link in resourceLinks" :key="link.to">
                 <a
                   v-if="link.external"
                   :href="getExternalUrl(link.to)"
@@ -60,11 +60,19 @@
 
           <div>
             <h3 class="font-semibold text-white mb-3 text-xs uppercase tracking-wider">
-              {{ $t('footer.resources') }}
+              {{ $t('nav.community') }}
             </h3>
             <ul class="space-y-2">
-              <li v-for="link in resourceLinks" :key="link.to">
+              <li v-for="link in communityLinks" :key="link.to">
+                <a
+                  v-if="link.external"
+                  :href="getExternalUrl(link.to)"
+                  class="text-gray-400 hover:text-twinkle transition-colors text-sm"
+                >
+                  {{ $t(link.name) }}
+                </a>
                 <NuxtLinkLocale
+                  v-else
                   :to="link.to"
                   class="text-gray-400 hover:text-twinkle transition-colors text-sm"
                 >
@@ -108,13 +116,13 @@
           </div>
         </div>
 
-        <!-- Navigation Column -->
+        <!-- Resources Column -->
         <div>
           <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
-            {{ $t('footer.navigation') }}
+            {{ $t('nav.resources') }}
           </h3>
           <ul class="space-y-3">
-            <li v-for="link in navigationLinks" :key="link.to">
+            <li v-for="link in resourceLinks" :key="link.to">
               <a
                 v-if="link.external"
                 :href="getExternalUrl(link.to)"
@@ -133,16 +141,24 @@
           </ul>
         </div>
 
-        <!-- Resources Column -->
+        <!-- Community Column -->
         <div>
           <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
-            {{ $t('footer.resources') }}
+            {{ $t('nav.community') }}
           </h3>
           <ul class="space-y-3">
-            <li v-for="link in resourceLinks" :key="link.to">
+            <li v-for="link in communityLinks" :key="link.to">
+              <a
+                v-if="link.external"
+                :href="getExternalUrl(link.to)"
+                class="text-gray-400 hover:text-twinkle transition-colors inline-flex items-center gap-1"
+              >
+                {{ $t(link.name) }}
+              </a>
               <NuxtLinkLocale
+                v-else
                 :to="link.to"
-                class="text-gray-400 hover:text-twinkle transition-colors"
+                class="text-gray-400 hover:text-twinkle transition-colors inline-flex items-center gap-1"
               >
                 {{ $t(link.name) }}
               </NuxtLinkLocale>
@@ -207,15 +223,16 @@ const socialLinks = [
   {id: 'discord', href: '/discord', labelKey: 'social.discord', icon: 'i-simple-icons-discord'},
 ] as const;
 
-const navigationLinks = [
+const resourceLinks = [
   {name: 'nav.models', to: '/models', external: false},
+  {name: 'nav.datasets', to: '/datasets', external: false},
   {name: 'nav.leaderboard', to: '/leaderboard', external: true},
-  {name: 'nav.news', to: '/news', external: false},
 ] as const;
 
-const resourceLinks = [
-  {name: 'nav.education', to: '/education'},
-  {name: 'nav.media', to: '/media'},
+const communityLinks = [
+  {name: 'nav.news', to: '/news', external: false},
+  {name: 'nav.education', to: '/education', external: false},
+  {name: 'nav.media', to: '/media', external: false},
 ] as const;
 
 const connectLinks = [

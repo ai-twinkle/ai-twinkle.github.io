@@ -7,25 +7,39 @@
         icon="i-heroicons-academic-cap"
       />
 
-      <div v-if="items && items.length > 0" class="mt-16 space-y-16">
-        <div v-for="item in items" :key="item.path" class="relative">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <!-- Icon/Title Column -->
-            <div class="md:col-span-4 lg:col-span-3">
-              <div class="flex items-center gap-4 mb-4">
-                <div v-if="item.icon" class="p-2 rounded-lg bg-gray-800 ring-1 ring-gray-700">
-                  <UIcon :name="item.icon" class="w-6 h-6 text-primary-400" />
-                </div>
-                <h3 class="text-xl font-bold text-white">{{ item.title }}</h3>
-              </div>
-            </div>
+      <div v-if="items && items.length > 0" class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div
+          v-for="item in items"
+          :key="item.path"
+          :class="['relative overflow-hidden rounded-2xl ring-1 ring-gray-800 transition-all hover:ring-primary-500 group bg-gray-900/50',
+                   item.path.includes('podcast') ? 'lg:col-span-2 bg-gradient-to-r from-gray-900 to-gray-800' : '']"
+        >
 
-            <!-- Content Column -->
-            <div class="md:col-span-8 lg:col-span-9">
-               <div class="prose prose-invert prose-lg max-w-none prose-primary bg-gray-900/50 p-6 rounded-xl ring-1 ring-gray-800 hover:ring-primary-500/30 transition-all">
+          <div class="p-8 md:p-10 h-full flex flex-col">
+             <div class="flex items-center gap-4 mb-6">
+                <div v-if="item.icon" class="p-3 rounded-xl bg-gray-800 ring-1 ring-gray-700 group-hover:bg-primary-500/20 group-hover:text-primary-400 transition-all">
+                  <UIcon :name="item.icon" class="w-8 h-8" />
+                </div>
+                <h3 class="text-2xl font-bold text-white">{{ item.title }}</h3>
+             </div>
+
+             <div class="prose prose-invert prose-lg max-w-none prose-primary prose-a:text-primary-400 flex-grow">
                  <ContentRenderer :value="item" />
-               </div>
-            </div>
+             </div>
+
+             <div class="mt-6 pt-6 border-t border-gray-700/50 flex justify-end">
+                <UButton
+                  to="/discord"
+                  target="_blank"
+                  variant="ghost"
+                  color="neutral"
+                  class="group-hover:text-primary-400 transition-colors"
+                  icon="i-simple-icons-discord"
+                >
+                  {{ $t('education.join') }}
+                  <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 ml-1" />
+                </UButton>
+             </div>
           </div>
         </div>
       </div>
