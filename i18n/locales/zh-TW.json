@@ -17,6 +17,7 @@
   "nav": {
     "about": "關於我們",
     "leaderboard": "排行榜",
+    "leaderboard_desc": "模型效能排行與基準測試",
     "models": "模型",
     "models_desc": "針對繁體中文優化的指令微調模型",
     "datasets": "資料集",

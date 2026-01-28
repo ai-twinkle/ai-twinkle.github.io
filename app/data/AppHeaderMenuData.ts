@@ -3,6 +3,7 @@ export interface MenuDropdownChild {
   description: string;
   icon: string;
   to?: string;
+  external?: boolean;
   onClick?: () => void;
 }
 
@@ -51,6 +52,13 @@ export const menuItems: MenuItem[] = [
         description: 'nav.datasets_desc',
         icon: 'i-heroicons-circle-stack',
         to: '/datasets',
+      },
+      {
+        name: 'nav.leaderboard',
+        description: 'nav.leaderboard_desc',
+        icon: 'i-heroicons-chart-bar',
+        to: '/leaderboard',
+        external: true,
       },
     ],
   },

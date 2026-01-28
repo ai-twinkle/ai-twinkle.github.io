@@ -17,6 +17,7 @@
   "nav": {
     "about": "About Us",
     "leaderboard": "Leaderboard",
+    "leaderboard_desc": "Model performance rankings and benchmarks",
     "models": "Models",
     "models_desc": "Instruction-tuned models optimized for Traditional Chinese",
     "datasets": "Datasets",
