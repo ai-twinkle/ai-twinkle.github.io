@@ -1,11 +1,11 @@
 ---
-title: Midnight Book Club
+title: Midnight Deep Dives
 order: 3
 icon: i-heroicons-book-open
 ---
 
-**Deconstructing the fundamentals.**
+**Stripping It Down to the Studs**
 
-We are currently studying **"Build a Large Language Model (From Scratch)"**. We don't just skim the pages; we deconstruct the content and synthesize it into accessible notes during our online sessions.
+In this reading group, moving beyond just flipping pages means taking theory apart to see what makes it tick. Systematically deconstructing **"Build a Large Language Model (From Scratch)"** provides a real handle on the foundations before ever writing a single line of code.
 
-This is a space for sharing insights. We discuss implementation details and clarify confused concepts together, aiming to help everyone understand the logic behind the code. If you want to understand LLMs from the ground up, you are welcome to join us.
+Translating dense technical concepts into digestible, community-driven notes happens in every meetup. It’s about clearing the path from raw theory to actual understanding, ensuring the underlying logic is transparent for everyone involved.
