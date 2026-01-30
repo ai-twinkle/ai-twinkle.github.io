@@ -16,8 +16,12 @@
              {{ $t('datasets.philosophy.content') }}
            </div>
         </div>
-        <div class="bg-gray-800/50 p-8 rounded-xl ring-1 ring-gray-700 flex items-center justify-center aspect-video">
-           <UIcon name="i-heroicons-funnel" class="w-24 h-24 text-primary-500/50" />
+        <div class="bg-gray-800/50 p-8 rounded-xl ring-1 ring-gray-700 flex items-center justify-center aspect-video overflow-hidden">
+           <NuxtImg
+             src="/images/dataconvert.webp"
+             alt="Illustration showing correct Traditional Chinese terminology"
+             class="w-full h-full object-contain"
+           />
         </div>
       </div>
 
@@ -29,8 +33,12 @@
              {{ $t('datasets.vision.content') }}
            </div>
         </div>
-        <div class="md:order-1 bg-gray-800/50 p-8 rounded-xl ring-1 ring-gray-700 flex items-center justify-center aspect-video">
-           <UIcon name="i-heroicons-photo" class="w-24 h-24 text-primary-500/50" />
+        <div class="md:order-1 bg-gray-800/50 p-8 rounded-xl ring-1 ring-gray-700 flex items-center justify-center aspect-video overflow-hidden">
+           <NuxtImg
+             src="/images/formosavision.webp"
+             alt="Taiwanese traditional architecture illustration"
+             class="w-full h-full object-contain"
+           />
         </div>
       </div>
 
