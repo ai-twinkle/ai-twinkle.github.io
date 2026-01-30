@@ -16,16 +16,16 @@
   },
   "nav": {
     "about": "About Us",
-    "leaderboard": "Leaderboard",
+    "leaderboard": "Twinkle Eval Leaderboard",
     "leaderboard_desc": "Model performance rankings and benchmarks",
     "models": "Models",
-    "models_desc": "Instruction-tuned models optimized for Traditional Chinese",
+    "models_desc": "Models trained with Traditional Chinese context at their core.",
     "datasets": "Datasets",
-    "datasets_desc": "High-quality, curated local training datasets",
+    "datasets_desc": "Refined government, community, and literary archives.",
     "community": "Community",
     "resources": "Resources",
     "education": "Education",
-    "education_desc": "Tutorials, workshops, and promotional content",
+    "education_desc": "Twinkle Podcasts, Midnight Tinkering, and Late-night Reading Groups.",
     "news": "News & Events",
     "news_desc": "Latest news, events, and announcements",
     "media": "Media",
@@ -37,14 +37,14 @@
   },
   "home": {
     "badge": "🌟 Taiwan open-source LLM community",
-    "titleStart": "Light up the starry sky of ",
+    "titleStart": "Illuminating the Future of ",
     "titleHighlight": "Traditional Chinese AI",
     "titleEnd": "",
     "lead": "Twinkle AI is a community focused on building open-source Traditional Chinese language models. We bring together passionate contributors to implement, share, and drive the adoption of AI technologies in Taiwan.",
     "about": {
       "title": "About Twinkle AI: Why Are We Doing This?",
       "description": "Building AI that speaks our language and understands our culture.",
-      "content": "AI is moving faster than a scooter in Taipei rush hour. While global models are geniuses, they often talk to us using a vocabulary that sounds like it’s from across the sea—filled with terms that just don't belong in Taiwan. At Twinkle AI, we’re fixing that cultural mismatch to build AI that actually speaks our language.\n\nWe believe Language is Life. If AI doesn't get our local vibe, our unique way of speaking will just fade into the algorithm. Since 2025, we’ve been curating data and fine-tuning models so they actually \"get\" us—natural, precise, and distinctly local."
+      "content": "AI is moving faster than a scooter weaving through Taipei traffic. While global models are incredibly powerful, they often feel disconnected from our daily lives—speaking to us in a way that’s technically correct but culturally distant. \n\nWe believe Language is Life—it’s the soul of our identity. But without AI that understands our local nuance, the way we speak risks being washed away by generic data. At Twinkle AI, we’re here to bridge that gap. Since 2025, we’ve been curating local data and refining models with a single mission: to build an AI that actually \"gets\" us—one that feels natural, intuitive, and authentically local."
     },
     "models": {
       "title": "Training Traditional Chinese Models",
@@ -52,11 +52,11 @@
       "items": [
         {
           "title": "T1 Model",
-          "description": "Built on Gemma-3-4B with a local tune-up. It handles our logic surprisingly well for a model of its size."
+          "description": "A fine-tuned Gemma-3-4B built for precision reasoning. It masters local nuances to deliver natural, reliable dialogue without the generic fluff."
         },
         {
           "title": "Formosa-1",
-          "description": "Based on Llama-3.2-3B. Our first real step toward fixing the \"translation\" feel in AI."
+          "description": "The model that started it all. Based on Llama-3.2-3B, it sparked our early growth and proved that compact models can handle Traditional Chinese with a natural flow."
         },
         {
           "title": "Twinkle Voice",
@@ -66,7 +66,7 @@
     },
     "datasets": {
       "title": "Open Source Datasets",
-      "content": "High-quality data is everything. We prioritize \"Data Cleansing and Linguistic Calibration\" over sheer volume.\n\nOur sources range from public government archives to local community discussions and literature. We use an automated pipeline to filter out non-local idioms."
+      "content": "Quality beats quantity, every time. Instead of chasing sheer volume, we focus on rigorous curation to ensure our data reflects how people in Taiwan truly speak.\n\nBy curating data from government open data, local community discussions, and Taiwanese literary archives, our pipeline filters out non-local idioms to keep the context accurate. In our world, it’s always '資訊', never '信息'—because asking for the 'Soccer' score in a London pub is a guaranteed way to lose the room."
     },
     "eval": {
       "title": "Evaluation & Benchmarking",
@@ -74,85 +74,95 @@
       "items": [
         {
           "title": "Twinkle Eval",
-          "description": "A benchmark suite for local law, geography, and general knowledge."
+          "description": "A dedicated utility for benchmark execution. Instead of hosting questions, it plugs models into localized datasets like TMMLU+ to automate testing and generate standardized logs."
         },
         {
           "title": "Eval-analyzer",
-          "description": "A diagnostic tool that spots weird grammar or cultural mismatches so we can refine our models."
+          "description": "The diagnostic layer for Eval logs. It maps out where a model excels and where it trips up, pinpointing knowledge gaps for precise calibration."
         },
         {
           "title": "Leaderboard",
-          "description": "A visual platform to see how models actually perform in a local context at a glance."
+          "description": "The public dashboard for Eval results. We turn raw data into clear rankings, making it easy to compare how models perform against local benchmarks at a glance."
         }
       ]
     },
     "teaser": {
-      "education": "Explore Education Programs",
-      "media": "Visit Media Zone",
-      "title": "Explore Our Ecosystem",
-      "description": "Dive deeper into our community resources and programs."
+      "education": "Learning & Tinkering",
+      "media": "Latest Sparks",
+      "title": "Beyond the Models",
+      "description": "Peek behind the scenes at the projects and people shaping our community."
     },
     "highlights": {
-        "models": "Local Models",
-        "datasets": "Curated Data",
-        "education": "Talent Incubator"
+        "models": "Meet the Models",
+        "datasets": "Explore the Data",
+        "education": "Let’s Learn"
     }
   },
   "about": {
     "vision": {
       "title": "Our Vision",
-      "content": "Twinkle AI's idea is simple: Language is part of life. If future digital tools cannot understand these details, our familiar way of speaking will slowly fade in the algorithms.\n\nTherefore, starting from early 2025, we began organizing local data and investing in fine-tuning, with a clear goal: to create a model that truly understands us and responds naturally and smoothly."
+      "content": "Twinkle AI started with a simple conviction: language is the heartbeat of culture. If future digital tools can't grasp the nuances of how we actually speak, our identity risks being diluted by one-size-fits-all algorithms.\n\nSince early 2025, we’ve been curating local datasets and training models with one clear goal — to build an AI that truly 'gets' us and feels like a natural conversation partner."
     },
     "story": {
-        "title": "Origin Story",
-        "content": "From 2024 to 2025, the development of AI has been so fast that it's hard to keep up. Although current models are already very strong, we found in actual use that many models still cannot accurately capture our usual sense of language, common knowledge, or subtle logic when processing Traditional Chinese."
+        "title": "How It All Started",
+        "content": "We noticed that AI responses often feel disconnected, largely because they’re trained on an influx of external data that misses the local perspective. Whether it's legal nuances or cultural context, general-purpose models often miss the mark. That’s why we decided to start from the ground up, building the first Llama-based model specifically for Taiwan."
     },
     "timeline": {
         "title": "Milestones",
         "events": [
             {
                 "date": "2025.01",
-                "title": "Community Origin (Llama Taiwan)",
-                "description": "Founded initially to collect user feedback for Llama-3.2-Taiwan model."
+                "title": "Founding Llama Taiwan",
+                "description": "A small group of us gathered with a single mission: to build a model that speaks our language. This was the birth of the Llama Taiwan community."
+            },
+            {
+                "date": "2025.03",
+                "title": "Rebranded to Twinkle AI",
+                "description": "We officially became Twinkle AI, symbolizing a community of bright minds coming together to build next-gen models."
+            },
+            {
+                "date": "2025.03",
+                "title": "Fineweb-edu-zhtw Project",
+                "description": "Partnered with Taiwan Mobile to build educational datasets, sharpening the model's performance on local knowledge."
             },
             {
                 "date": "2025.04",
-                "title": "Formosa-1 Released",
-                "description": "Taiwan's first 3B parameter inference model executable on mobile devices."
+                "title": "Releasing Formosa-1",
+                "description": "Collaborated with APMIC and National Center for High-Performance Computing to build Formosa-1, a 3B-parameter model built for the local context."
             },
             {
                 "date": "2025.07",
-                "title": "Awards & Recognition",
-                "description": "Formosa-1 selected as the test basis for the Cyber Security Annual Conference."
+                "title": "Cybersecurity in Action",
+                "description": "CyCraft integrated Formosa-1 as a Guardrail for their XecGuard enterprise product."
             },
             {
                 "date": "2025.11",
-                "title": "Formosa Vision Released",
-                "description": "Addressing VLM cultural misinterpretation issues, combining with the National Cultural Memory Bank."
+                "title": "Releasing Formosa Vision Dataset",
+                "description": "Partnered with the Taiwan Cultural Memory Bank to curate visual datasets, aligning the model's perception with local culture."
             },
              {
                 "date": "2025.11",
-                "title": "IT Matters Open Source Community Contribution Award",
-                "description": "Won the 2025 IT Matters Awards Open Source Community Contribution Award."
+                "title": "IT Matters Award",
+                "description": "Winning the Open Source Contribution Award. This trophy belongs to the community — every single one of you. Enjoy!"
             },
             {
                 "date": "2026.01",
-                "title": "1st Anniversary Physical Meetup",
-                "description": "Moving from online to offline, gathering the power of local developers."
+                "title": "1st Anniversary Meetup Party",
+                "description": "Our first in-person meetup. Seeing all that energy in the room gave us the fuel to keep pushing forward."
             }
         ]
     }
   },
   "datasets": {
     "title": "Open Source Datasets",
-    "description": "High-quality data is the soul of the model.",
+    "description": "Curated datasets sourced from government records, community discourse, and literary archives, vetted specifically for training.",
     "philosophy": {
-        "title": "Data Cleansing & Context Calibration",
-        "content": "We do not just accumulate data volume, but focus on 'Data Cleansing and Context Calibration'. Current data sources cover public government information, local community discussions, and Taiwanese literature archives. In data organization, we developed an automated filtering mechanism to precisely screen out non-local idioms (such as misuse of terms), and established a structured database to ensure the model learns the most authentic and correct Traditional Chinese."
+        "title": "Data Vetting & Linguistic Alignment",
+        "content": "We don’t just stockpile data; we curate it. Our focus is on data vetting and linguistic alignment. By sourcing from government records, community discourse, and literary archives, and applying automated filters to strip away non-local phrasing, we ensure our models learn from authentic Taiwanese context rather than generic linguistic imports."
     },
     "vision": {
         "title": "Formosa Vision",
-        "content": "Combining with the National Cultural Memory Bank to solve the problem of VLM being unfamiliar with local images and prone to cultural misjudgment (such as historic trails, military villages, Matsu battlefield landscapes, etc.)."
+        "content": "In collaboration with the Taiwan Cultural Memory Bank, we are building vision datasets that teach AI to decode local cultural symbols — from historic trails and military villages to the landscapes of Matsu. It’s about teaching the model to see the world through a local lens"
     }
   },
   "news": {
@@ -174,18 +184,18 @@
     }
   },
   "education": {
-    "description": "Tutorials, workshops, and promotional content",
+    "description": "From podcasts to midnight tinkering, we’re all about getting hands-on. It’s about sparking curiosity and turning big ideas into actual code.",
     "podcast": {
         "title": "Twinkle Podcast",
-        "description": "Practical experiences and insights from developers."
+        "description": "Real-world developer stories and lessons learned from the trenches."
     },
     "labs": {
-        "title": "Late Night Labs",
-        "description": "Still at the computer at 22:00? Why not take a class? We focus on the research and implementation of Traditional Chinese models."
+        "title": "Midnight Tinkering",
+        "description": "Still at your desk at 10 PM? Might as well build something. We’re doing deep dives into Traditional Chinese models and hands-on implementation."
     },
     "book_club": {
-        "title": "Late Night Book Club",
-        "description": "Breaking down basic theories, regularly discussing books like 'Build a Large Language Model'."
+        "title": "Midnight Deep Dives",
+        "description": "Taking theory apart to see how it works. We’re currently tearing through 'Build a Large Language Model' and other essentials."
     },
     "join": "Join on Discord"
   },
@@ -245,17 +255,17 @@
     }
   },
   "models": {
-    "title": "Technology & Models",
-    "description": "Instruction-tuned models optimized for Traditional Chinese",
+    "title": "Our Models",
+    "description": "Trained on Traditional Chinese linguistic context, these models bring reasoning and dialogue closer to the way we actually live and speak",
     "explore_hf": "Explore on Hugging Face",
     "intro": {
         "t1": {
             "title": "T1 Model",
-            "description": "Built on Gemma-3-4B with a local tune-up. It handles our logic surprisingly well for a model of its size."
+            "description": "A high-speed favorite based on Gemma-3-4B. Deep-rooted Taiwan knowledge makes it the go-to for natural, precise local dialogue."
         },
         "formosa": {
             "title": "Formosa-1",
-            "description": "Based on Llama-3.2-3B. Our first real step toward fixing the 'translation' feel in AI."
+            "description": "Logic-first model grounded in Llama-3.2-3B. Engineered for deep reasoning and robust answers to complex prompts."
         },
         "voice": {
             "title": "Twinkle Voice",
@@ -264,8 +274,8 @@
     },
     "eval": {
         "title": "Evaluation System",
-        "description": "To quantify the model's depth of understanding of Taiwanese culture, we developed specialized tools.",
-        "leaderboard_action": "View Leaderboard"
+        "description": "To quantify how deeply a model understands Taiwan, we built a specialized evaluation tool that measures cultural nuances.",
+        "leaderboard_action": "Twinkle Eval Leaderboard"
     },
     "table": {
       "name": "Name",
