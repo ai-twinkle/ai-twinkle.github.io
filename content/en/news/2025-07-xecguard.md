@@ -1,16 +1,16 @@
 ---
 title: "Strengthening AI Resilience: XecGuard Launch & F1 Benchmarks"
 date: 2025-07-02
-category: Product
+category: News
 image: 
 links: 
-  - title: CyCraft and APMIC Launch XecGuard | TechNice
-    url: https://www.technice.com.tw/techmanage/infosecurity/180084/
-  - title: APMIC and CyCraft Launch XecGuard | UDN Money
-    url: https://money.udn.com/money/story/5640/8842394
+- title: "TechNice | Guarding Against Prompt Injection: CyCraft and APMIC Launch XecGuard AI Model"
+  url: https://www.technice.com.tw/techmanage/infosecurity/180084/
+- title: "Economic Daily News | APMIC and CyCraft Join Forces to Launch XecGuard"
+  url: https://money.udn.com/money/story/5640/8842394
 ---
 
-**CyCraft** and **APMIC** entered a strategic partnership to unveil **XecGuard**, the industry's first defense-oriented AI security module. Powered by a proprietary multi-stage fine-tuning process (**SFT+GRPO**), this "plug-and-play" solution provides essential security for AI systems, helping organizations defend against malicious attacks during localized deployments.
+**[CyCraft](https://www.cycraft.com/)** and **[APMIC](https://www.apmic.ai/)** entered a strategic partnership to unveil **XecGuard**, the industry's first defense-oriented AI security module. Powered by a proprietary multi-stage fine-tuning process (**SFT+GRPO**), this "plug-and-play" solution provides essential security for AI systems, helping organizations defend against malicious attacks during localized deployments.
 
 In technical trials, the R&D team used **F1 (Formosa-1)**—the 3B model co-developed with Twinkle AI—as the testing benchmark. Verified through **LLM Red Teaming**, the results demonstrated exceptional defensive capabilities:
 

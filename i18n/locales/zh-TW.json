@@ -8,15 +8,24 @@
     "explore_projects": "探索專案",
     "explore_models": "探索模型",
     "huggingface": "Hugging Face",
-    "explore_datasets": "探索資料集"
+    "explore_datasets": "探索資料集",
+    "read_more": "閱讀更多",
+    "download_press_kit": "媒體資源下載",
+    "download_pdf_zh": "繁體中文版 - PDF",
+    "download_pdf_en": "英文版 - PDF"
   },
   "nav": {
-    "leaderboard": "排行榜",
-    "models": "模型",
+    "about": "關於我們",
+    "leaderboard": "Twinkle Eval 排行榜",
+    "leaderboard_desc": "模型評測與效能排行榜",
+    "models": "開源模型",
+    "models_desc": "以繁體中文語境為核心訓練的模型",
+    "datasets": "開源資料集",
+    "datasets_desc": "整合政府資訊、社群與文學檔案的語料",
     "community": "社群",
     "resources": "資源",
     "education": "教育與推廣",
-    "education_desc": "教學、工作坊與推廣內容",
+    "education_desc": "Podcast、深夜實堂與熬夜讀書會",
     "news": "新聞與活動",
     "news_desc": "最新消息、活動與公告",
     "media": "媒體專區",
@@ -25,15 +34,6 @@
   "pages": {
     "coming_soon": "即將推出...",
     "coming_soon_badge": "即將推出"
-  },
-  "news": {
-    "description": "最新消息、活動與公告"
-  },
-  "education": {
-    "description": "教學、工作坊與推廣內容"
-  },
-  "media": {
-    "description": "新聞稿、媒體素材與資源"
   },
   "home": {
     "badge": "🌟 台灣生成式 AI 開源社群",
@@ -44,7 +44,7 @@
     "about": {
       "title": "關於 Twinkle AI：我們為什麼要做這件事？",
       "description": "打造會說我們語言、理解我們文化的 AI。",
-      "content": "2024 到 2025 這兩年，AI 的發展快到讓人有點跟不上。雖然現在的模型已經很強，但我們在實際使用中發現，很多模型在處理繁體中文時，還是沒辦法精準抓到我們平常說話的語感、生活常識或那些細微的邏輯。\n\nTwinkle AI 的想法很簡單：語言就是生活的一部分。如果未來的數位工具沒辦法理解這些細節，我們熟悉的說話方式就會在演算法中慢慢變淡。因此從 2025 年初開始，我們著手整理在地資料並投入訓練調校，目標很明確，就是要做出一個真正聽得懂我們、對答起來自然且順手的模型。"
+      "content": "2024 到 2025 這兩年，AI 的發展快到讓人有點跟不上。雖然現在的模型已經很強，但我們在實際使用中發現，很多模型在處理繁體中文時，還是沒辦法精準抓到我們平常說話的語感、生活常識或那些細微的邏輯。\n\nTwinkle AI 的想法很簡單：語言就是生活的一部分。如果未來的數位工具沒辦法理解這些細節，我們熟悉的說話方式就會在演算法中慢慢變淡。因此從 2025 年初開始，我們著手整理在地資料並投入訓練，目標很明確，就是要做出一個真正聽得懂我們、對答起來自然且順手的模型。"
     },
     "models": {
       "title": "訓練繁體中文模型",
@@ -52,37 +52,33 @@
       "items": [
         {
           "title": "T1 模型",
-          "description": "基於 Gemma-3-4B 架構進行深入訓練調校，針對台灣在地知識與邏輯推理進行強化。"
+          "description": "基於 Gemma-3-4B 架構進行全方位訓練，針對台灣在地知識與邏輯推理進行強化，提供流暢且精準的對話品質。"
         },
         {
           "title": "Formosa-1",
-          "description": "以 Llama-3.2-3B 為核心基礎，是我們早期對繁體中文語境探索的重要里程碑。"
-        },
-        {
-          "title": "Twinkle Voice",
-          "description": "第四號太空人誕生：新的模型支線，專注於語音互動。"
+          "description": "以 Llama-3.2-3B 為基礎架構，這是我們邁出的第一步。當時因為這款模型的出現，引發了最初的媒體關注與討論，進而帶動社群從無到有的成長。它實質驗證了 AI 處理繁體中文的潛力，在對話與邏輯處理上，能給出穩定且讓人放心的回答。"
         }
       ]
     },
     "datasets": {
       "title": "打造開源繁體中文資料集",
-      "content": "高品質的資料是模型的靈魂。我們並非單純累積資料量，而是專注於「資料淨化與語境校準」。\n\n目前的資料來源涵蓋公開政府資訊、在地社群討論及台灣文學檔案。在資料整理上，我們開發了一套自動化過濾機制，精準篩選掉非在地慣用語，並建立結構化的資料庫，確保模型學習到的是最道地、最正確的台灣繁體中文。"
+      "content": "高品質的資料是模型的靈魂。我們並非單純累積資料量，而是專注於「資料淨化與語境校準」。\n\n目前的資料來源涵蓋公開政府資訊、在地社群討論及台灣文學檔案。在資料整理上，我們開發了一套自動化過濾機制，精準篩選掉非在地慣用語（例如將常用的「資訊」誤稱為「信息」的用法），並建立結構化的資料集，確保模型學習到的是符合台灣日常習慣且精確的語感。"
     },
     "eval": {
       "title": "評測模型在繁體語境能力",
-      "content": "由於現有的國際評測多半缺乏對台灣文化與語言特性的考量，我們建立了這套貼近日常生活的評核標準。",
+      "content": "國際標準測不出台灣人的日常語感。我們建立自己的評測方式，是為了讓 AI 的表現能真正接軌我們的生活習慣。",
       "items": [
         {
-          "title": "Eval 框架",
-          "description": "針對台灣法律、地理、生活常識設計的評測集。"
+          "title": "Eval",
+          "description": "這是專門執行評測的工具。它本身不包含題目，而是透過串接多樣化的在地資料集（如 TMMLU+），讓評測過程自動化，並穩定產出標準化的紀錄檔（logs）。"
         },
         {
           "title": "Eval-analyzer",
-          "description": "能分析模型輸出的詞彙分佈與語法結構在台灣語境下的知識強弱之分。"
+          "description": "Eval-analyzer：負責分析 Eval 紀錄檔的診斷工具。透過辨識模型在各領域的表現分佈，精準找出特定知識的不足之處，並進行針對性的改良與校正。"
         },
         {
-          "title": "Leaderboard",
-          "description": "AI 評測視覺化平台，透過直觀的動態圖表與詳細的數據表格，輕鬆比較不同模型表現。"
+          "title": "Twinkle Eval Leaderboard",
+          "description": "Eval 評測結果的視覺化展示平台。將數據轉化為直觀圖表與排名，協助使用者一目了然地比較各個模型在台灣在地指標下的實戰表現。"
         }
       ]
     },
@@ -90,8 +86,117 @@
       "education": "了解更多教育推廣",
       "media": "探索媒體專區",
       "title": "探索我們的生態",
-      "description": "深入了解我們的社群資源與計劃。"
+      "description": "看看我們正在推動的各項計畫與資源。"
+    },
+    "highlights": {
+        "models": "開源模型",
+        "datasets": "開源資料集",
+        "education": "社群共學"
     }
+  },
+  "about": {
+    "vision": {
+      "title": "我們的願景",
+      "content": "Twinkle AI 的想法很簡單：語言就是生活的一部分。如果未來的數位工具沒辦法理解這些細節，我們熟悉的說話方式就會在演算法中慢慢淡化。\n\n因此從 2025 年初開始，我們著手整理在地資料並投入訓練，目標很明確，就是要做出一個真正聽得懂我們、對答起來自然且順手的模型。"
+    },
+    "story": {
+        "title": "是這樣開始的...",
+        "content": "我們發現，AI 的對答常因為大量的外來資料灌輸，而沒辦法準確地從台灣在地角度來回應。尤其在法律或文化議題上，通用模型給出的答案往往不夠貼切。這促使我們決定從零開始，做出了第一款基於 Llama 的台灣模型。"
+    },
+    "timeline": {
+        "title": "我們的每一步腳印",
+        "events": [
+            {
+                "date": "2025.01",
+                "title": "成立社群 Llama Taiwan",
+                "description": "「想做出懂台灣的模型」這份簡單的目標，讓我們這群夥伴聚在一起成立了 Llama Taiwan。"
+            },
+            {
+                "date": "2025.03",
+                "title": "更名為 Twinkle AI",
+                "description": "更名為 Twinkle AI，象徵每位閃耀的群友聚在一起開發新時代模型。"
+            }, 
+           {
+                "date": "2025.03",
+                "title": "Fineweb-edu-zhtw 計畫",
+                "description": "與台灣大哥大聯手投入高品質教育語料建置，強化在地知識評測表現。"
+            },               
+            {
+                "date": "2025.04",
+                "title": "發表 Formosa-1",
+                "description": "與 APMIC 合作研發並獲國網中心技術支援，打造 3B 級別在地模型。"
+            },
+            {
+                "date": "2025.07",
+                "title": "走入資安實戰",
+                "description": "奧義智慧整合 Formosa-1 作為 Guardrail，推出 XecGuard 商業產品。"
+            },
+            {
+                "date": "2025.11",
+                "title": "Formosa Vision 資料集發表",
+                "description": "與國家文化記憶庫合作建置視覺語料，校正模型對在地文化的認知。"
+            },
+             {
+                "date": "2025.12",
+                "title": "IT Matters 開源社群貢獻獎",
+                "description": "「這份獎盃屬於每一位夥伴，因為有你們，社群才能得到這份肯定。榮耀歸屬於大家，Enjoy！」"
+            },
+            {
+                "date": "2026.01",
+                "title": "一週年生日派對",
+                "description": "第一次辦實體聚會，沒想到大家這麼熱心參與。這份能量讓我們更有信心走下去。"
+            }
+        ]
+    }
+  },
+  "datasets": {
+    "title": "開源資料集",
+    "description": "彙集政府資訊、社群對話與文學檔案，並過濾淨化成我們可以用來訓練的資料集內容。",
+    "philosophy": {
+        "title": "資料淨化與語境校準",
+        "content": "我們並非單純累積資料量，而是專注於「資料淨化與語境校準」。目前的資料來源涵蓋公開政府資訊、在地社群討論及台灣文學檔案。在資料整理上，我們開發了一套自動化過濾機制，精準篩選掉非在地慣用語（例如將常用的「資訊」誤稱為「信息」的用法），並建立結構化的資料集，確保模型學習到的是符合台灣日常習慣且精確的語感。"
+    },
+    "vision": {
+        "title": "Formosa Vision 資料集",
+        "content": "與國家文化記憶庫合作建置視覺模型資料集。透過針對古道、眷村與馬祖戰地的影像校正，教 AI 認出台灣特有的文化符號，讓模型的在地辨識更精準。"
+    }
+  },
+  "news": {
+    "description": "最新消息、活動與公告",
+    "filters": {
+        "all": "全部",
+        "media": "媒體報導",
+        "event": "活動紀錄",
+        "tech": "技術發表",
+        "award": "獲獎榮耀"
+    },
+    "noNews": "目前沒有相關消息",
+    "press_kit": {
+        "title": "媒體資源與素材下載",
+        "description": "為了方便媒體朋友報導與引用，我們提供了本篇新聞相關的高解析度素材。所有檔案均採用 CC BY 4.0 授權使用。",
+        "press_release": "新聞稿下載 (Press Release)",
+        "images": "高解析度圖片 (High-Res Images)",
+        "identity": "社群 Logo (Brand Identity)"
+    }
+  },
+  "education": {
+    "description": "透過 Podcast、深夜實堂與讀書會，讓夥伴們有參與感，啟發大家的想像力與行動力。",
+    "podcast": {
+        "title": "Twinkle Podcast",
+        "description": "開發者的實戰經驗與體會。"
+    },
+    "labs": {
+        "title": "深夜實堂",
+        "description": "晚上 22:00 還在電腦前？不如來上課吧。我們專注於繁中模型的研究與實作。"
+    },
+    "book_club": {
+        "title": "熬夜書坊",
+        "description": "把基礎理論拆開來看，固定討論《Build a Large Language Model》等書籍。"
+    },
+    "join": "加入 Discord 討論"
+  },
+  "media": {
+    "description": "新聞稿、媒體素材與資源"
   },
   "features": {
     "optimized": {
@@ -146,8 +251,28 @@
     }
   },
   "models": {
-    "description": "針對繁體中文優化的指令微調模型",
+    "title": "我們的模型",
+    "description": "以繁體中文語境訓練而成，讓模型在邏輯推理與對話上能更貼近我們的生活。",
     "explore_hf": "在 Hugging Face 上探索",
+    "intro": {
+        "t1": {
+            "title": "T1 模型",
+            "description": "基於 Gemma-3-4B 架構，追求回覆速度與效能的平衡。我們注入了更深厚的台灣在地知識，是兼顧流暢感與精準對話的在地首選。"
+        },
+        "formosa": {
+            "title": "Formosa-1",
+            "description": "以 Llama-3.2-3B 為底，專精於深層推理與邏輯應對。它能進行更細緻的思考與推論，雖然回應需時較長，卻能提供更穩健且紮實的回答。"
+        },
+        "voice": {
+            "title": "Twinkle Voice",
+            "description": "第四號太空人誕生：新的模型支線，專注於語音互動。"
+        }
+    },
+    "eval": {
+        "title": "評測系統",
+        "description": "我們開發了專門的評測工具，用來量化模型對台灣文化的理解深度。",
+        "leaderboard_action": "Twinkle Eval 排行榜"
+    },
     "table": {
       "name": "名稱",
       "version": "版本",

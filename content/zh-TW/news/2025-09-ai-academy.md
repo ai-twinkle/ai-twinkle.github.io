@@ -1,7 +1,7 @@
 ---
 title: 2025 台灣人工智慧年會 (Taiwan AI Academy Annual Conference)
 date: 2025-09-10
-category: Talk
+category: Event
 image: 
 links: 
   - title: 活動議程

@@ -1,6 +1,6 @@
 ---
 title: "IT Matters Awards: Open Source Community Contribution"
-date: 2025-12-01
+date: 2025-12-09
 category: Awards
 image: 
 links: 
@@ -8,12 +8,12 @@ links:
     url: https://award.ima.org.tw/awardlist.html
 ---
 
-**"This recognition belongs to every single contributor."**
+> "This Win belongs to Every One of You"
 
-Twinkle AI made its debut at the IT Matters Awards, organized by the [**IMA (Information Manager Association)**](http://ima.org.tw/), and was honored to walk away with the **Open Source Community Contribution Award**. This win was sparked by our deep collaboration with **Taiwan Mobile** on open-source projects, where we compiled and submitted our collective results from earlier in the year.
+Twinkle AI just hit a major milestone at the **IT Matters Awards**, hosted by the [**IMA (Information Manager Association)**](http://ima.org.tw/). We’re incredibly proud to take home the **Open Source Community Contribution Award**. This achievement was driven by our tight collaboration with **Taiwan Mobile** on open-source initiatives, where we joined forces to turn months of hard work into a winning submission.
 
-Standing alongside veteran communities like **PyCon** and **SITCON** at the award ceremony was a massive boost for us. It’s more than just a trophy; it validates our technical efforts and marks a solid step forward in our mission to build a local AI ecosystem.
+Sharing the stage with veteran communities like **PyCon** and **SITCON** was a massive reality check and a huge confidence boost. This award isn’t just a trophy; it’s a validation of our technical grind and a bold step toward our goal of building a resilient, local AI ecosystem.
 
-"This trophy belongs to every partner. Because of you, our community received this recognition. The glory goes to all of you. Enjoy!"
+> **"This trophy belongs to every single partner. Your energy is why this community was recognized. The glory is all yours. Enjoy it!"**
 
-After connecting with many experienced communities at the event, we’re reminded that Twinkle AI is still very young. This award is an opportunity to reflect on our future—how we can tackle challenges like **talent retention** and **knowledge transfer** while building more resilient partnerships that keep our technical energy alive.
+Connecting with so many OG communities reminded us that Twinkle AI is still just getting started. This win gives us the momentum to tackle the real challenges ahead — figuring out **talent retention**, streamlining **knowledge transfer**, and building the kind of deep-rooted partnerships that keep our technical energy alive.

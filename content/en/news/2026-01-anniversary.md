@@ -6,19 +6,19 @@ image:
 links: []
 ---
 
-January 2026 marked a major milestone for Twinkle AI. This wasn’t just a birthday; it was our first official physical meetup, taking our technical syncs from the Discord server and **turning our online passion into real-world action.**
+### Turning Passion into Protocol
 
-#### Our Roots and Evolution
+January 2026 marked a **defining moment** for Twinkle AI. This wasn’t just an anniversary; it was our first official physical meetup — the day we took our technical syncs out of Discord and **turned our online energy into real-world impact.**
 
-We started as **Llama Taiwan** on January 2, 2025, initially to gather feedback for the Llama-3.2-Taiwan model. As more people joined, we quickly evolved into a dedicated technical community for Traditional Chinese AI models, bringing together minds for various open-source projects.
+#### Our Evolution: From Feedback to Framework
+We originally hit the scene as **Llama Taiwan** on January 2, 2025, with a simple mission: gather feedback for the Llama-3.2-Taiwan model. But as the community grew, so did our ambitions. We quickly evolved into a dedicated technical hub for Traditional Chinese AI models, bringing together the brightest minds to build out the local open-source ecosystem.
 
-#### Unexpected Enthusiasm (40 vs. 70)
+#### 70+ Strong: A Community Without Borders
+We initially prepped for 40 friends, but **70+ passionate partners** showed up. Seeing members travel all the way from Kaohsiung to Taipei just to talk tech — that’s the kind of community spirit that keeps us going.
 
-We expected 40 friends; we got **70+ passionate partners**. We even had members travel across the country from Kaohsiung to Taipei—that’s some serious community spirit.
+#### Event Lowdown:
+* **The Roadmap Ahead:** We looked back at a year of collective building and laid out the blueprint for where we’re heading next.
+* **Beyond the Screen:** We finally turned those Discord avatars into real-life collaborators, building the kind of deep-rooted partnerships that can't be forged through a screen.
+* **Lightning Talks:** From deep-dives into model training to the latest in AI Agent implementation, our contributors showcased the raw technical expertise that defines this community.
 
-* **Event Highlights：**
-  * **Milestones & Roadmap：** We walked through the community’s journey over the past year—sharing what we’ve built together and giving a sneak peek into where we’re heading next.
-  * **Beyond the Screen：** Through face-to-face interaction, we turned our online avatars into real-life partners, building genuine collaborations that go beyond the Discord server.
-  * **Lightning Talks：** From model training to Agent implementation, our members shared deep-dives into the tech that powers our community, showcasing the real-world expertise of our contributors.
-
-A huge thank you to everyone who contributed over the past year. We’ve had our challenges, and while some have moved on, many more of you stayed because you believe in the power of open source. Every milestone we’ve reached is a result of our **shared efforts**—a foundation built by the hands of every single contributor.
+A massive thank you to everyone who’s been part of this journey. We’ve faced our fair share of challenges, but the people who stayed are here because they believe in the power of open source. Every breakthrough we've achieved is the result of **collective grind** — a foundation built by the hands of every single contributor.

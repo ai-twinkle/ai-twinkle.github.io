@@ -1,7 +1,7 @@
 ---
 title: Generative AI 小聚 (September 2025)
 date: 2025-09-17
-category: Talk
+category: Event
 image: 
 links: 
   - title: 活動議程內容

@@ -4,7 +4,7 @@ order: 1
 icon: i-heroicons-microphone
 ---
 
-**Real-world experiences from developers.**
+**Real-world developer stories and lessons learned from the trenches.**
 
 * **EP00** | Learning LoRA the Hard Way - *Ah-Qian*
 * **EP01** | The Real Life of a Freelance Developer: Challenges & Achievements - *Phidias*
