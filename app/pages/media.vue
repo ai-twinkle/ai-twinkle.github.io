@@ -21,7 +21,7 @@
                 <h3 class="text-lg font-bold text-white mb-4">{{ $t('news.press_kit.press_release') }}</h3>
                 <div class="space-y-3">
                     <UButton
-                        to="#"
+                        to="/resources/presses/Twinkle%20AI%20-%20zh-TW.pdf"
                         target="_blank"
                         icon="i-heroicons-document-text"
                         variant="soft"
@@ -31,7 +31,7 @@
                         {{ $t('actions.download_pdf_zh') }}
                     </UButton>
                     <UButton
-                        to="#"
+                        to="/resources/presses/Twinkle%20AI%20-%20en.pdf"
                         target="_blank"
                         icon="i-heroicons-document-text"
                         variant="soft"
@@ -48,24 +48,24 @@
                 <h3 class="text-lg font-bold text-white mb-4">{{ $t('news.press_kit.identity') }}</h3>
                 <div class="space-y-3">
                     <UButton
-                        to="#"
+                        to="/resources/brands/Twinkle%20AI%20-%20Star%20Logo.zip"
                         target="_blank"
                         icon="i-heroicons-photo"
                         variant="soft"
                         color="primary"
                         class="w-full justify-start"
                     >
-                        Twinkle AI Logo (SVG)
+                        Twinkle AI Logo (Star Icon)
                     </UButton>
                     <UButton
-                        to="#"
+                        to="/resources/brands/Twinkle%20AI%20-%20Title.zip"
                         target="_blank"
                         icon="i-heroicons-photo"
                         variant="soft"
                         color="primary"
                         class="w-full justify-start"
                     >
-                        Twinkle AI Logo (PNG)
+                        Twinkle AI Logo (With Title)
                     </UButton>
                 </div>
             </div>
