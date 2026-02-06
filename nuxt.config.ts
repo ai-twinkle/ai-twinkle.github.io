@@ -69,7 +69,7 @@ export default defineNuxtConfig({
       hfOrgName: 'twinkle-ai',
     },
     externalUrls: {
-      discord: 'https://discord.com/servers/twinkle-ai-1310544431983759450',
+      discord: 'https://discord.gg/twinkle-ai',
       github: 'https://github.com/ai-twinkle',
       huggingface: 'https://huggingface.co/twinkle-ai',
     },
