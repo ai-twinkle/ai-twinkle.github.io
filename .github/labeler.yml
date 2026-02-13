@@ -1,0 +1,29 @@
+# Add 'frontend' label to any changes within 'app' or 'public' directories
+frontend:
+  - changed-files:
+    - any-glob-to-any-file: ['app/**/*', 'public/**/*']
+
+# Add 'backend' label to any changes within 'server' directory
+backend:
+  - changed-files:
+    - any-glob-to-any-file: 'server/**/*'
+
+# Add 'content' label to any changes within 'content' directory
+content:
+  - changed-files:
+    - any-glob-to-any-file: 'content/**/*'
+
+# Add 'documentation' label to any changes to markdown files or 'docs' directory
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: ['docs/**/*', '**/*.md']
+
+# Add 'ci' label to any changes within '.github' or '.husky' directories
+ci:
+  - changed-files:
+    - any-glob-to-any-file: ['.github/**/*', '.husky/**/*']
+
+# Add 'config' label to any changes to configuration files
+config:
+  - changed-files:
+    - any-glob-to-any-file: ['nuxt.config.ts', 'package.json', 'bun.lock', 'tsconfig.json']
