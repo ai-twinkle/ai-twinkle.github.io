@@ -13,7 +13,7 @@
             v-for="filter in filters"
             :key="filter.value"
             :label="$t(`news.filters.${filter.value}`)"
-            :variant="activeFilter === filter.value ? 'solid' : 'ghost'"
+            :variant="activeFilter === filter.value ? 'outline' : 'ghost'"
             :color="activeFilter === filter.value ? 'primary' : 'white'"
             @click="activeFilter = filter.value"
          />
