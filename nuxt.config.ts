@@ -18,6 +18,18 @@ export default defineNuxtConfig({
         {name: 'description', content: '致力於構建開源正體中文語言模型的研究社群，推動台灣生成式 AI 發展。'},
       ],
       link: [{rel: 'icon', type: 'image/x-icon', href: '/logo.png'}],
+      script: [
+        {
+          src: 'https://rbt.w-w.club/api/script.js',
+          'data-site-id': 'd841e3322e18',
+          defer: true,
+        },
+        {
+          src: 'https://um.w-w.club/script.js',
+          'data-website-id': 'a6aaac72-1b21-4b45-9d8f-192903e30299',
+          defer: true,
+        },
+      ],
     },
   },
 

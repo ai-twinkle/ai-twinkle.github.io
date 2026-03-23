@@ -115,12 +115,7 @@
                 "date": "2025.03",
                 "title": "更名為 Twinkle AI",
                 "description": "更名為 Twinkle AI，象徵每位閃耀的群友聚在一起開發新時代模型。"
-            }, 
-           {
-                "date": "2025.03",
-                "title": "Fineweb-edu-zhtw 計畫",
-                "description": "與台灣大哥大聯手投入高品質教育語料建置，強化在地知識評測表現。"
-            },               
+            },            
             {
                 "date": "2025.04",
                 "title": "發表 Formosa-1",
@@ -131,6 +126,11 @@
                 "title": "走入資安實戰",
                 "description": "奧義智慧整合 Formosa-1 作為 Guardrail，推出 XecGuard 商業產品。"
             },
+           {
+                "date": "2025.07",
+                "title": "Fineweb-edu-zhtw 計畫",
+                "description": "與台灣大哥大聯手投入高品質教育語料建置，強化在地知識評測表現。"
+            },    
             {
                 "date": "2025.11",
                 "title": "Formosa Vision 資料集發表",
