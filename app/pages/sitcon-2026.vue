@@ -108,7 +108,7 @@ const communityLinks = [
 ];
 
 const projectLinks = [
-  {to: 'https://twinkle-voice.vercel.app/', icon: 'i-heroicons-microphone', label: 'Twinkle Voice'},
+  {to: 'https://twinkle-voice.vercel.app/?utm_source=twinkleai&utm_campaign=2026&utm_medium=referral&utm_content=sitcon-page', icon: 'i-heroicons-microphone', label: 'Twinkle Voice'},
   {to: 'https://huggingface.co/spaces/lianghsun/fine-vision-album', icon: 'i-heroicons-eye', label: 'Twinkle Vision'},
 ];
 
