@@ -12,7 +12,9 @@
     "read_more": "Read More",
     "download_press_kit": "Download Press Kit",
     "download_pdf_zh": "Traditional Chinese - PDF",
-    "download_pdf_en": "English - PDF"
+    "download_pdf_en": "English - PDF",
+    "copy": "Copy",
+    "copied": "Copied"
   },
   "nav": {
     "about": "About Us",
@@ -34,6 +36,10 @@
   "pages": {
     "coming_soon": "Coming soon...",
     "coming_soon_badge": "Coming Soon"
+  },
+  "theme": {
+    "toggle_light": "Switch to light mode",
+    "toggle_dark": "Switch to dark mode"
   },
   "home": {
     "badge": "🌟 Taiwan open-source LLM community",
@@ -121,11 +127,6 @@
                 "description": "We officially became Twinkle AI, symbolizing a community of bright minds coming together to build next-gen models."
             },
             {
-                "date": "2025.03",
-                "title": "Fineweb-edu-zhtw Project",
-                "description": "Partnered with Taiwan Mobile to build educational datasets, sharpening the model's performance on local knowledge."
-            },
-            {
                 "date": "2025.04",
                 "title": "Releasing Formosa-1",
                 "description": "Collaborated with APMIC and National Center for High-Performance Computing to build Formosa-1, a 3B-parameter model built for the local context."
@@ -134,6 +135,11 @@
                 "date": "2025.07",
                 "title": "Cybersecurity in Action",
                 "description": "CyCraft integrated Formosa-1 as a Guardrail for their XecGuard enterprise product."
+            },
+            {
+                "date": "2025.07",
+                "title": "Fineweb-edu-zhtw Project",
+                "description": "Partnered with Taiwan Mobile to build educational datasets, sharpening the model's performance on local knowledge."
             },
             {
                 "date": "2025.11",

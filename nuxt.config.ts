@@ -5,6 +5,14 @@ const nitroPreset = process.env.NITRO_PRESET ?? (
 );
 console.info(`Using Nitro preset: ${nitroPreset}`);
 
+// Tracing configuration
+const dataSiteId = process.env.
+    NUXT_PUBLIC_RYBBIT_SITE_ID || 'd841e3322e18';
+const websiteId = process.env.
+    NUXT_PUBLIC_UMAMI_WEBSITE_ID || 'a6aaac72-1b21-4b45-9d8f-192903e30299';
+console.info(`Using Rybbit data-site-id: ${dataSiteId}`);
+console.info(`Using Umami website-id: ${websiteId}`);
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -18,6 +26,18 @@ export default defineNuxtConfig({
         {name: 'description', content: '致力於構建開源正體中文語言模型的研究社群，推動台灣生成式 AI 發展。'},
       ],
       link: [{rel: 'icon', type: 'image/x-icon', href: '/logo.png'}],
+      script: [
+        {
+          'src': 'https://rbt.w-w.club/api/script.js',
+          'data-site-id': dataSiteId,
+          'defer': true,
+        },
+        {
+          'src': 'https://um.w-w.club/script.js',
+          'data-website-id': websiteId,
+          'defer': true,
+        },
+      ],
     },
   },
 
@@ -67,6 +87,7 @@ export default defineNuxtConfig({
     public: {
       githubOrgName: 'ai-twinkle',
       hfOrgName: 'twinkle-ai',
+      sitconApiKey: 'sk-ROyTlHXQ3AdBdO4SSQIvzA',
     },
     externalUrls: {
       discord: 'https://discord.com/servers/twinkle-ai-1310544431983759450',

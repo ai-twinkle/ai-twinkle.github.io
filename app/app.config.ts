@@ -1,12 +1,8 @@
 export default defineAppConfig({
   ui: {
-    // Brand colours: use exact HEX for consistent branding
-    primary: '#ffd500',
-    gray: 'zinc',
+    // Reference the primary colour scale registered via @theme in main.css
     colors: {
-      // explicit hex primary so Nuxt UI and any consumers get the exact tint
-      primary: '#ffd500',
-      secondary: 'white',
+      primary: 'primary',
       neutral: 'zinc',
     },
     notifications: {

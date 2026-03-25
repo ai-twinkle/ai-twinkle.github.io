@@ -12,7 +12,9 @@
     "read_more": "閱讀更多",
     "download_press_kit": "媒體資源下載",
     "download_pdf_zh": "繁體中文版 - PDF",
-    "download_pdf_en": "英文版 - PDF"
+    "download_pdf_en": "英文版 - PDF",
+    "copy": "複製",
+    "copied": "已複製"
   },
   "nav": {
     "about": "關於我們",
@@ -34,6 +36,10 @@
   "pages": {
     "coming_soon": "即將推出...",
     "coming_soon_badge": "即將推出"
+  },
+  "theme": {
+    "toggle_light": "切換淺色模式",
+    "toggle_dark": "切換深色模式"
   },
   "home": {
     "badge": "🌟 台灣生成式 AI 開源社群",
@@ -115,12 +121,7 @@
                 "date": "2025.03",
                 "title": "更名為 Twinkle AI",
                 "description": "更名為 Twinkle AI，象徵每位閃耀的群友聚在一起開發新時代模型。"
-            }, 
-           {
-                "date": "2025.03",
-                "title": "Fineweb-edu-zhtw 計畫",
-                "description": "與台灣大哥大聯手投入高品質教育語料建置，強化在地知識評測表現。"
-            },               
+            },            
             {
                 "date": "2025.04",
                 "title": "發表 Formosa-1",
@@ -131,6 +132,11 @@
                 "title": "走入資安實戰",
                 "description": "奧義智慧整合 Formosa-1 作為 Guardrail，推出 XecGuard 商業產品。"
             },
+           {
+                "date": "2025.07",
+                "title": "Fineweb-edu-zhtw 計畫",
+                "description": "與台灣大哥大聯手投入高品質教育語料建置，強化在地知識評測表現。"
+            },    
             {
                 "date": "2025.11",
                 "title": "Formosa Vision 資料集發表",

@@ -2,6 +2,23 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* Register the Twinkle AI brand yellow as the primary colour scale for Tailwind CSS v4 and Nuxt UI v4.
+   Without @theme, `color="primary"` on Nuxt UI components has no resolved CSS variables and falls back
+   to a default/broken appearance. This block is the authoritative source of the primary palette. */
+@theme {
+  --color-primary-50:  #fffbe6;
+  --color-primary-100: #fff4bf;
+  --color-primary-200: #ffee99;
+  --color-primary-300: #ffe873;
+  --color-primary-400: #ffe040;
+  --color-primary-500: #ffd500; /* brand base */
+  --color-primary-600: #e6c000;
+  --color-primary-700: #bfa000;
+  --color-primary-800: #8c7500;
+  --color-primary-900: #665500;
+  --color-primary-950: #4d3f00;
+}
+
 /* Brand tokens + Twinkle AI — starry background and dark defaults */
 :root {
   color-scheme: dark;
