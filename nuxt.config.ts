@@ -21,12 +21,12 @@ export default defineNuxtConfig({
       script: [
         {
           src: 'https://rbt.w-w.club/api/script.js',
-          'data-site-id': 'd841e3322e18',
+          'data-site-id': process.env.NUXT_PUBLIC_RYBBIT_SITE_ID || 'd841e3322e18',
           defer: true,
         },
         {
           src: 'https://um.w-w.club/script.js',
-          'data-website-id': 'a6aaac72-1b21-4b45-9d8f-192903e30299',
+          'data-website-id': process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID || 'a6aaac72-1b21-4b45-9d8f-192903e30299',
           defer: true,
         },
       ],
