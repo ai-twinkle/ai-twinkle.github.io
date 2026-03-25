@@ -52,7 +52,7 @@
             <span class="row__circle row__circle--green">↗</span>
           </NuxtLink>
           <div class="api-key-row">
-            <samp class="api-key-value">sk-ROyTlHXQ3AdBdO4SSQIvzA</samp>
+            <samp class="api-key-value">{{ apiKey }}</samp>
             <button class="copy-btn" :class="{ copied }" @click="copyApiInfo">
               {{ copied ? 'Copied' : 'Copy' }}
             </button>
@@ -98,6 +98,9 @@ useHead({
   ],
 });
 
+const runtimeConfig = useRuntimeConfig();
+const apiKey = runtimeConfig.public.sitconApiKey || 'None';
+
 const copied = ref(false);
 const isLight = ref(false);
 
@@ -116,7 +119,7 @@ const projectLinks = [
  *
  */
 function copyApiInfo() {
-  navigator.clipboard.writeText('sk-ROyTlHXQ3AdBdO4SSQIvzA');
+  navigator.clipboard.writeText(apiKey);
   copied.value = true;
   setTimeout(() => {
     copied.value = false;
