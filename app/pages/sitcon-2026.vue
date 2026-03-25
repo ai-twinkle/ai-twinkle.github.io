@@ -4,7 +4,11 @@
     <div class="hero-glow" />
     <div class="green-glow" />
 
-    <button class="theme-toggle" :title="isLight ? '切換深色模式' : '切換淺色模式'" @click="isLight = !isLight">
+    <button
+      class="theme-toggle"
+      :title="isLight ? $t('theme.toggle_dark') : $t('theme.toggle_light')"
+      @click="isLight = !isLight"
+    >
       <UIcon :name="isLight ? 'i-heroicons-moon' : 'i-heroicons-sun'" class="theme-toggle__icon" />
     </button>
 
@@ -54,7 +58,7 @@
           <div class="api-key-row">
             <samp class="api-key-value">{{ apiKey }}</samp>
             <button class="copy-btn" :class="{ copied }" @click="copyApiInfo">
-              {{ copied ? 'Copied' : 'Copy' }}
+              {{ copied ? $t('actions.copied') : $t('actions.copy') }}
             </button>
           </div>
         </div>
@@ -101,8 +105,15 @@ useHead({
 const runtimeConfig = useRuntimeConfig();
 const apiKey = runtimeConfig.public.sitconApiKey || 'None';
 
+const colorMode = useColorMode();
+const isLight = computed({
+  get: () => colorMode.value === 'light',
+  set: (val: boolean) => {
+    colorMode.preference = val ? 'light' : 'dark';
+  },
+});
+
 const copied = ref(false);
-const isLight = ref(false);
 
 const communityLinks = [
   {to: 'https://discord.com/servers/twinkle-ai-1310544431983759450', icon: 'i-simple-icons-discord', label: 'Discord 社群', accent: '#7289DA'},
@@ -119,7 +130,8 @@ const projectLinks = [
  *
  */
 function copyApiInfo() {
-  navigator.clipboard.writeText(apiKey);
+  const keyToCopy = String(apiKey || '').trim();
+  navigator.clipboard.writeText(keyToCopy);
   copied.value = true;
   setTimeout(() => {
     copied.value = false;

@@ -12,7 +12,9 @@
     "read_more": "Read More",
     "download_press_kit": "Download Press Kit",
     "download_pdf_zh": "Traditional Chinese - PDF",
-    "download_pdf_en": "English - PDF"
+    "download_pdf_en": "English - PDF",
+    "copy": "Copy",
+    "copied": "Copied"
   },
   "nav": {
     "about": "About Us",
@@ -34,6 +36,10 @@
   "pages": {
     "coming_soon": "Coming soon...",
     "coming_soon_badge": "Coming Soon"
+  },
+  "theme": {
+    "toggle_light": "Switch to light mode",
+    "toggle_dark": "Switch to dark mode"
   },
   "home": {
     "badge": "🌟 Taiwan open-source LLM community",

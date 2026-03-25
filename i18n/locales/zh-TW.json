@@ -12,7 +12,9 @@
     "read_more": "閱讀更多",
     "download_press_kit": "媒體資源下載",
     "download_pdf_zh": "繁體中文版 - PDF",
-    "download_pdf_en": "英文版 - PDF"
+    "download_pdf_en": "英文版 - PDF",
+    "copy": "複製",
+    "copied": "已複製"
   },
   "nav": {
     "about": "關於我們",
@@ -34,6 +36,10 @@
   "pages": {
     "coming_soon": "即將推出...",
     "coming_soon_badge": "即將推出"
+  },
+  "theme": {
+    "toggle_light": "切換淺色模式",
+    "toggle_dark": "切換深色模式"
   },
   "home": {
     "badge": "🌟 台灣生成式 AI 開源社群",
