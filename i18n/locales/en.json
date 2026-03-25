@@ -121,11 +121,6 @@
                 "description": "We officially became Twinkle AI, symbolizing a community of bright minds coming together to build next-gen models."
             },
             {
-                "date": "2025.03",
-                "title": "Fineweb-edu-zhtw Project",
-                "description": "Partnered with Taiwan Mobile to build educational datasets, sharpening the model's performance on local knowledge."
-            },
-            {
                 "date": "2025.04",
                 "title": "Releasing Formosa-1",
                 "description": "Collaborated with APMIC and National Center for High-Performance Computing to build Formosa-1, a 3B-parameter model built for the local context."
@@ -134,6 +129,11 @@
                 "date": "2025.07",
                 "title": "Cybersecurity in Action",
                 "description": "CyCraft integrated Formosa-1 as a Guardrail for their XecGuard enterprise product."
+            },
+            {
+                "date": "2025.07",
+                "title": "Fineweb-edu-zhtw Project",
+                "description": "Partnered with Taiwan Mobile to build educational datasets, sharpening the model's performance on local knowledge."
             },
             {
                 "date": "2025.11",
