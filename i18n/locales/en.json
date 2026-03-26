@@ -297,5 +297,17 @@
     "heading": "Page not found",
     "message": "The page you requested is gone, or never existed.",
     "home": "Back to home"
+  },
+  "sitcon2026": {
+    "heroIn": "in",
+    "sectionProjects": "Contribute",
+    "voiceSub": "Lend Your Voice",
+    "visionSub": "Visual Data Contribution",
+    "sectionApi": "Free LLM API",
+    "apiTitle": "Twinkle AI offers a free API — try it out!",
+    "apiDocBtn": "LLM API Docs",
+    "copyApiKey": "Copy API KEY",
+    "copiedApiKey": "API KEY Copied!",
+    "backHome": "Back to Twinkle AI"
   }
 }
