@@ -127,7 +127,7 @@ const communityLinks = [
 
 const projectLinks = [
   { to: 'https://twinkle-voice.vercel.app/?utm_source=twinkleai&utm_campaign=2026&utm_medium=referral&utm_content=sitcon-page', label: 'Twinkle Voice', subKey: 'sitcon2026.voiceSub', accent: '#A3E4D7', bgHover: 'rgba(255,255,255,0.08)' },
-  { to: 'https://huggingface.co/spaces/lianghsun/fine-vision-album', label: 'Twinkle Vision', subKey: 'sitcon2026.visionSub', accent: '#FFDCA8', bgHover: 'rgba(255,255,255,0.08)' },
+  { to: 'https://huggingface.co/spaces/twinkle-ai/finevision-zhtw-upload', label: 'Twinkle Vision', subKey: 'sitcon2026.visionSub', accent: '#FFDCA8', bgHover: 'rgba(255,255,255,0.08)' },
 ];
 
 function copyApiInfo() {
