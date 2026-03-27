@@ -293,5 +293,17 @@
     "heading": "頁面不存在",
     "message": "您所請求的頁面不見了，或者是從來沒有存在過。",
     "home": "回首頁"
+  },
+  "sitcon2026": {
+    "heroIn": "in",
+    "sectionProjects": "一起來貢獻",
+    "voiceSub": "獻出你的聲音",
+    "visionSub": "視覺資料貢獻",
+    "sectionApi": "免費 LLM API",
+    "apiTitle": "Twinkle AI 提供免費 API，歡迎使用",
+    "apiDocBtn": "LLM API 說明",
+    "copyApiKey": "複製 API KEY",
+    "copiedApiKey": "已成功複製 API KEY！",
+    "backHome": "回到 Twinkle AI 官網"
   }
 }

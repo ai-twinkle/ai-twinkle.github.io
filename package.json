@@ -34,6 +34,7 @@
     "@nuxt/ui": "4.1.0",
     "@nuxtjs/i18n": "^10.2.1",
     "@unhead/vue": "^2.0.3",
+    "better-sqlite3": "^12.8.0",
     "eslint": "^9.0.0",
     "jwt-decode": "^4.0.0",
     "ky": "^1.7.2",
@@ -53,6 +54,7 @@
     "lint-staged": "^13.2.0",
     "nitro-cloudflare-dev": "^0.2.2",
     "nitropack": "^2.13.1",
+    "vite": "^7.0.0",
     "wrangler": "^4.59.2"
   }
 }
