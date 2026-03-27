@@ -2,20 +2,20 @@
   <div class="sitcon-page">
     <div class="night-sky-gradient" />
     <div class="noise-overlay" />
-    
+
     <!-- STARRY SKY (Small ambient stars) -->
     <div class="starry-sky">
-      <div class="static-stars"></div>
-      <div class="static-stars-2"></div>
+      <div class="static-stars"/>
+      <div class="static-stars-2"/>
     </div>
 
     <!-- SHOOTING STARS -->
     <div class="shooting-stars">
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
+      <div class="star"/>
+      <div class="star"/>
+      <div class="star"/>
     </div>
-    
+
     <main class="main-container" @touchstart.passive="() => {}">
       <!-- HERO -->
       <header class="hero anim-fade-up" style="--d: 0s">
@@ -35,6 +35,7 @@
           <NuxtLink
             v-for="link in projectLinks"
             :key="link.label"
+            v-track="link.trackEvent"
             :to="link.to"
             target="_blank"
             class="project-card"
@@ -53,10 +54,10 @@
         <div class="api-box">
           <p class="api-box-title">{{ $t('sitcon2026.apiTitle') }}</p>
           <div class="api-actions">
-            <NuxtLink to="https://litellm.lianghsun.dev/" target="_blank" class="btn btn--api-doc">
+            <NuxtLink v-track="'SITCON_API_Doc_Click'" to="https://litellm.lianghsun.dev/" target="_blank" class="btn btn--api-doc">
               <span class="btn-text">{{ $t('sitcon2026.apiDocBtn') }}</span>
             </NuxtLink>
-            <button class="btn btn--api-copy" :class="{ 'is-copied': copied }" @click="copyApiInfo">
+            <button v-track="'SITCON_Copy_API_Key'" class="btn btn--api-copy" :class="{ 'is-copied': copied }" @click="copyApiInfo">
               <span class="btn-text">{{ copied ? $t('sitcon2026.copiedApiKey') : $t('sitcon2026.copyApiKey') }}</span>
               <UIcon :name="copied ? 'i-heroicons-check' : 'i-heroicons-key'" class="btn-icon-right" />
             </button>
@@ -69,14 +70,15 @@
         <div class="mascot-social-layout">
           <!-- Mascot -->
           <div class="mascot-wrapper">
-            <img src="/mascot.png" alt="SITCON Mascot Leopard Cat" class="mascot-img" />
+            <img src="/mascot.png" alt="SITCON Mascot Leopard Cat" class="mascot-img" >
           </div>
-          
+
           <!-- Socials -->
           <div class="social-list">
             <NuxtLink
               v-for="link in communityLinks"
               :key="link.label"
+              v-track="link.trackEvent"
               :to="link.to"
               target="_blank"
               class="social-btn"
@@ -102,11 +104,11 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: false });
+definePageMeta({layout: false});
 
 useHead({
   link: [
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    {rel: 'preconnect', href: 'https://fonts.googleapis.com'},
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap',
@@ -120,21 +122,26 @@ const apiKey = runtimeConfig.public.sitconApiKey || 'None';
 const copied = ref(false);
 
 const communityLinks = [
-  { to: 'https://discord.com/servers/twinkle-ai-1310544431983759450', icon: 'i-simple-icons-discord', label: 'Discord', accent: '#5865F2' },
-  { to: 'https://github.com/ai-twinkle', icon: 'i-simple-icons-github', label: 'GitHub', accent: '#24292F' },
-  { to: 'https://huggingface.co/twinkle-ai', icon: 'i-simple-icons-huggingface', label: 'HuggingFace', accent: '#1F1712' },
+  {to: 'https://discord.com/servers/twinkle-ai-1310544431983759450', icon: 'i-simple-icons-discord', label: 'Discord', accent: '#5865F2', trackEvent: 'SITCON_Discord_Click'},
+  {to: 'https://github.com/ai-twinkle', icon: 'i-simple-icons-github', label: 'GitHub', accent: '#24292F', trackEvent: 'SITCON_GitHub_Click'},
+  {to: 'https://huggingface.co/twinkle-ai', icon: 'i-simple-icons-huggingface', label: 'HuggingFace', accent: '#1F1712', trackEvent: 'SITCON_HuggingFace_Click'},
 ];
 
 const projectLinks = [
-  { to: 'https://twinkle-voice.vercel.app/?utm_source=twinkleai&utm_campaign=2026&utm_medium=referral&utm_content=sitcon-page', label: 'Twinkle Voice', subKey: 'sitcon2026.voiceSub', accent: '#A3E4D7', bgHover: 'rgba(255,255,255,0.08)' },
-  { to: 'https://huggingface.co/spaces/twinkle-ai/finevision-zhtw-upload', label: 'Twinkle Vision', subKey: 'sitcon2026.visionSub', accent: '#FFDCA8', bgHover: 'rgba(255,255,255,0.08)' },
+  {to: 'https://twinkle-voice.vercel.app/?utm_source=twinkleai&utm_campaign=2026&utm_medium=referral&utm_content=sitcon-page', label: 'Twinkle Voice', subKey: 'sitcon2026.voiceSub', accent: '#A3E4D7', bgHover: 'rgba(255,255,255,0.08)', trackEvent: 'SITCON_Voice_Click'},
+  {to: 'https://huggingface.co/spaces/twinkle-ai/fine-vision-album', label: 'Twinkle Vision', subKey: 'sitcon2026.visionSub', accent: '#FFDCA8', bgHover: 'rgba(255,255,255,0.08)', trackEvent: 'SITCON_Vision_Click'},
 ];
 
+/**
+ *
+ */
 function copyApiInfo() {
   const keyToCopy = String(apiKey || '').trim();
   navigator.clipboard.writeText(keyToCopy);
   copied.value = true;
-  setTimeout(() => { copied.value = false; }, 2000);
+  setTimeout(() => {
+    copied.value = false;
+  }, 2000);
 }
 </script>
 
@@ -667,13 +674,13 @@ function copyApiInfo() {
   position: absolute;
   width: 1px; height: 1px;
   background: transparent;
-  box-shadow: 
-    10vw 2vh #fff, 20vw 8vh rgba(255,255,255,0.5), 30vw 4vh #fff, 
-    40vw 12vh rgba(255,255,255,0.8), 50vw 1vh #fff, 60vw 15vh rgba(255,255,255,0.4), 
-    70vw 6vh #fff, 80vw 20vh rgba(255,255,255,0.9), 90vw 3vh #fff, 
-    95vw 25vh rgba(255,255,255,0.3), 5vw 30vh #fff, 15vw 18vh rgba(255,255,255,0.7), 
-    25vw 35vh #fff, 35vw 22vh rgba(255,255,255,0.6), 45vw 40vh #fff, 
-    55vw 28vh rgba(255,255,255,0.5), 65vw 45vh #fff, 75vw 32vh rgba(255,255,255,0.8), 
+  box-shadow:
+    10vw 2vh #fff, 20vw 8vh rgba(255,255,255,0.5), 30vw 4vh #fff,
+    40vw 12vh rgba(255,255,255,0.8), 50vw 1vh #fff, 60vw 15vh rgba(255,255,255,0.4),
+    70vw 6vh #fff, 80vw 20vh rgba(255,255,255,0.9), 90vw 3vh #fff,
+    95vw 25vh rgba(255,255,255,0.3), 5vw 30vh #fff, 15vw 18vh rgba(255,255,255,0.7),
+    25vw 35vh #fff, 35vw 22vh rgba(255,255,255,0.6), 45vw 40vh #fff,
+    55vw 28vh rgba(255,255,255,0.5), 65vw 45vh #fff, 75vw 32vh rgba(255,255,255,0.8),
     85vw 50vh #fff, 100vw 38vh rgba(255,255,255,0.4);
   animation: slowTwinkle 8s ease-in-out infinite alternate;
 }
@@ -682,9 +689,9 @@ function copyApiInfo() {
   width: 2px; height: 2px;
   border-radius: 50%;
   background: transparent;
-  box-shadow: 
-    15vw 5vh #fff, 28vw 15vh rgba(255,255,255,0.6), 48vw 8vh #fff, 
-    68vw 22vh rgba(255,255,255,0.9), 88vw 10vh #fff, 92vw 40vh rgba(255,255,255,0.5), 
+  box-shadow:
+    15vw 5vh #fff, 28vw 15vh rgba(255,255,255,0.6), 48vw 8vh #fff,
+    68vw 22vh rgba(255,255,255,0.9), 88vw 10vh #fff, 92vw 40vh rgba(255,255,255,0.5),
     12vw 42vh #fff, 38vw 48vh rgba(255,255,255,0.7), 58vw 38vh #fff, 78vw 50vh rgba(255,255,255,0.8);
   animation: slowTwinkle 12s ease-in-out infinite alternate-reverse;
 }
