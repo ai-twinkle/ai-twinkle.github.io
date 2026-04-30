@@ -122,7 +122,7 @@ const socialLinks = [
 ];
 
 // Fetch latest 3 news
-const {data: latestNews} = await useAsyncData(`latest-news-${locale.value}`, async () => {
+const {data: latestNews} = await useAsyncData(() => `latest-news-${locale.value}`, async () => {
   const pathPrefix = locale.value === 'en' ? '/en/news' : '/zh-TW/news';
   const result = await queryCollection('news')
       .where('path', 'LIKE', `${pathPrefix}%`)
