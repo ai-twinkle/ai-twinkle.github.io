@@ -61,7 +61,7 @@ const categoryMap: Record<string, string[]> = {
   award: ['Awards'],
 };
 
-const {data: news} = await useAsyncData(`news-${locale.value}`, async () => {
+const {data: news} = await useAsyncData(() => `news-${locale.value}`, async () => {
   const pathPrefix = locale.value === 'en' ? '/en/news' : '/zh-TW/news';
   const result = await queryCollection('news')
       .where('path', 'LIKE', `${pathPrefix}%`)
