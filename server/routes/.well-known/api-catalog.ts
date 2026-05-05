@@ -1,5 +1,3 @@
-const BASE_URL = 'https://www.twinkleai.tw';
-
 interface LinkRelation {
   href: string;
   type?: string;
@@ -11,15 +9,17 @@ interface LinksetEntry {
 }
 
 export default defineEventHandler((event) => {
+  const {siteUrl} = useRuntimeConfig();
   setHeader(event, 'Content-Type', 'application/linkset+json');
 
   const linkset: LinksetEntry[] = [
     {
-      'anchor': BASE_URL,
-      'service-doc': [{href: `${BASE_URL}/api/healthz`, type: 'text/plain'}],
-      'status': [{href: `${BASE_URL}/api/healthz`}],
+      'anchor': siteUrl,
+      'service-doc': [{href: `${siteUrl}/api/healthz`, type: 'text/plain'}],
+      'status': [{href: `${siteUrl}/api/healthz`}],
     },
   ];
 
   return {linkset};
 });
+

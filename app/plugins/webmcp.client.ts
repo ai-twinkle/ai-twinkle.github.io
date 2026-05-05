@@ -34,6 +34,10 @@ export default defineNuxtPlugin(() => {
 
   const router = useRouter();
 
+  // Derive navigable paths from the shared sitePages list
+  // (default locale only — the router handles locale switching separately).
+  const navigablePaths = defaultLocalePages.map((p) => p.loc);
+
   const tools: ModelContextTool[] = [
     {
       name: 'navigate',
@@ -44,17 +48,7 @@ export default defineNuxtPlugin(() => {
           page: {
             type: 'string',
             description: 'The path to navigate to.',
-            enum: [
-              '/',
-              '/about',
-              '/models',
-              '/datasets',
-              '/education',
-              '/projects',
-              '/news',
-              '/media',
-              '/sitcon-2026',
-            ],
+            enum: navigablePaths,
           },
         },
         required: ['page'],
@@ -85,3 +79,4 @@ export default defineNuxtPlugin(() => {
 
   navigator.modelContext.provideContext({tools});
 });
+

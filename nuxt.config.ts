@@ -84,6 +84,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     githubAccessToken: '',
+    siteUrl: 'https://www.twinkleai.tw',
     public: {
       githubOrgName: 'ai-twinkle',
       hfOrgName: 'twinkle-ai',

@@ -40,9 +40,24 @@
       "description": "Educational resources for generative AI"
     },
     {
+      "uri": "https://www.twinkleai.tw/projects",
+      "name": "Projects",
+      "description": "Open-source projects by Twinkle AI"
+    },
+    {
       "uri": "https://www.twinkleai.tw/news",
       "name": "News",
       "description": "Latest news from the Twinkle AI community"
+    },
+    {
+      "uri": "https://www.twinkleai.tw/media",
+      "name": "Media",
+      "description": "Media coverage and press releases"
+    },
+    {
+      "uri": "https://www.twinkleai.tw/sitcon-2026",
+      "name": "SITCON 2026",
+      "description": "Twinkle AI at SITCON 2026"
     }
   ]
 }

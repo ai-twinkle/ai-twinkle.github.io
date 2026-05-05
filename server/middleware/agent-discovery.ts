@@ -4,9 +4,31 @@
  * 1. Adds RFC 8288 Link response headers so agents can discover key resources.
  * 2. Returns a Markdown representation of the site when the client sends
  *    `Accept: text/markdown` (Markdown for Agents).
+ *
+ * Both behaviours are scoped to HTML page routes only — static assets,
+ * API endpoints, and /.well-known/* files are left untouched.
  */
 
-const SITE_MARKDOWN = `\
+const LINK_HEADERS = [
+  '</.well-known/api-catalog>; rel="api-catalog"',
+  '</.well-known/agent-skills/index.json>; rel="agent-skills"',
+  '</.well-known/mcp/server-card.json>; rel="mcp-server-card"',
+  '</sitemap.xml>; rel="sitemap"; type="application/xml"',
+].join(', ');
+
+/**
+ * Build the site markdown overview from the centralized pages list.
+ * @returns The full site overview in Markdown format.
+ */
+function buildMarkdown(): string {
+  const zhPages = defaultLocalePages
+      .map((p) => `- [${p.name}](${p.loc})`)
+      .join('\n');
+  const enPages = enLocalePages
+      .map((p) => `- [${p.name}](${p.loc})`)
+      .join('\n');
+
+  return `\
 # Twinkle AI — 正體中文開源語言模型社群
 
 > Twinkle AI is an open-source Traditional Chinese language model research
@@ -14,26 +36,11 @@ const SITE_MARKDOWN = `\
 
 ## Pages
 
-- [Home](/)
-- [About](/about)
-- [Models](/models)
-- [Datasets](/datasets)
-- [Education](/education)
-- [Projects](/projects)
-- [News](/news)
-- [Media](/media)
-- [SITCON 2026](/sitcon-2026)
+${zhPages}
 
 ## English Pages
 
-- [Home (English)](/en)
-- [About](/en/about)
-- [Models](/en/models)
-- [Datasets](/en/datasets)
-- [Education](/en/education)
-- [Projects](/en/projects)
-- [News](/en/news)
-- [Media](/en/media)
+${enPages}
 
 ## Community Links
 
@@ -52,24 +59,14 @@ const SITE_MARKDOWN = `\
 - [Agent Skills](/.well-known/agent-skills/index.json)
 - [MCP Server Card](/.well-known/mcp/server-card.json)
 `;
+}
 
-const LINK_HEADERS = [
-  '</.well-known/api-catalog>; rel="api-catalog"',
-  '</.well-known/agent-skills/index.json>; rel="agent-skills"',
-  '</.well-known/mcp/server-card.json>; rel="mcp-server-card"',
-  '</sitemap.xml>; rel="sitemap"; type="application/xml"',
-].join(', ');
+const SITE_MARKDOWN = buildMarkdown();
 
 export default defineEventHandler((event) => {
-  // Add RFC 8288 Link headers to every response.
-  appendResponseHeader(event, 'Link', LINK_HEADERS);
-
-  // Markdown for Agents: return Markdown when Accept: text/markdown.
-  const accept = getRequestHeader(event, 'accept') ?? '';
-  if (!accept.includes('text/markdown')) return;
-
   const requestPath = event.path ?? '';
-  // Only intercept HTML pages — skip API, assets, and well-known files.
+
+  // Only target HTML pages — skip API, assets, and well-known files.
   if (
     requestPath.startsWith('/api/') ||
     requestPath.startsWith('/_nuxt/') ||
@@ -77,6 +74,14 @@ export default defineEventHandler((event) => {
     requestPath.includes('.')
   ) return;
 
-  setResponseHeader(event, 'Content-Type', 'text/markdown; charset=utf-8');
-  return SITE_MARKDOWN;
+  // Add RFC 8288 Link headers to page responses.
+  appendResponseHeader(event, 'Link', LINK_HEADERS);
+
+  // Markdown for Agents: return Markdown when Accept: text/markdown.
+  const accept = getRequestHeader(event, 'accept') ?? '';
+  if (accept.includes('text/markdown')) {
+    setResponseHeader(event, 'Content-Type', 'text/markdown; charset=utf-8');
+    return SITE_MARKDOWN;
+  }
 });
+
