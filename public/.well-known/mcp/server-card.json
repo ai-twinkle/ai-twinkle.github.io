@@ -1,0 +1,48 @@
+{
+  "serverInfo": {
+    "name": "Twinkle AI Website",
+    "version": "1.0.0",
+    "description": "Twinkle AI official community website — open-source Traditional Chinese language model research."
+  },
+  "transport": {
+    "type": "http",
+    "url": "https://www.twinkleai.tw"
+  },
+  "capabilities": {
+    "tools": false,
+    "resources": true,
+    "prompts": false
+  },
+  "resources": [
+    {
+      "uri": "https://www.twinkleai.tw/",
+      "name": "Homepage",
+      "description": "Twinkle AI community homepage"
+    },
+    {
+      "uri": "https://www.twinkleai.tw/about",
+      "name": "About",
+      "description": "About the Twinkle AI community"
+    },
+    {
+      "uri": "https://www.twinkleai.tw/models",
+      "name": "Models",
+      "description": "Open-source Traditional Chinese language models"
+    },
+    {
+      "uri": "https://www.twinkleai.tw/datasets",
+      "name": "Datasets",
+      "description": "Traditional Chinese language datasets"
+    },
+    {
+      "uri": "https://www.twinkleai.tw/education",
+      "name": "Education",
+      "description": "Educational resources for generative AI"
+    },
+    {
+      "uri": "https://www.twinkleai.tw/news",
+      "name": "News",
+      "description": "Latest news from the Twinkle AI community"
+    }
+  ]
+}

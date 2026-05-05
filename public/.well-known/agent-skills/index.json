@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "sitemap",
+      "type": "sitemap",
+      "description": "XML sitemap listing all canonical URLs of the Twinkle AI website.",
+      "url": "https://www.twinkleai.tw/sitemap.xml"
+    },
+    {
+      "name": "api-catalog",
+      "type": "api-catalog",
+      "description": "API catalog (RFC 9727) advertising available API endpoints.",
+      "url": "https://www.twinkleai.tw/.well-known/api-catalog"
+    },
+    {
+      "name": "mcp-server-card",
+      "type": "mcp-server-card",
+      "description": "MCP Server Card describing this site's Model Context Protocol capabilities.",
+      "url": "https://www.twinkleai.tw/.well-known/mcp/server-card.json"
+    }
+  ]
+}
