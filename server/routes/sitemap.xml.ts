@@ -1,5 +1,7 @@
+import {sitePages} from '../../shared/utils/sitePages';
+
 export default defineEventHandler((event) => {
-  const {siteUrl} = useRuntimeConfig();
+  const {public: {siteUrl}} = useRuntimeConfig();
   const today = new Date().toISOString().split('T')[0];
 
   const urlEntries = sitePages.map(({loc, priority, changefreq}) => `  <url>

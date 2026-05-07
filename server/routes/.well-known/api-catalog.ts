@@ -9,7 +9,7 @@ interface LinksetEntry {
 }
 
 export default defineEventHandler((event) => {
-  const {siteUrl} = useRuntimeConfig();
+  const {public: {siteUrl}} = useRuntimeConfig();
   setHeader(event, 'Content-Type', 'application/linkset+json');
 
   const linkset: LinksetEntry[] = [

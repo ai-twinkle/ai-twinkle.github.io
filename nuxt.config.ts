@@ -84,16 +84,16 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     githubAccessToken: '',
-    siteUrl: 'https://www.twinkleai.tw',
     public: {
+      siteUrl: 'https://www.twinkleai.tw',
       githubOrgName: 'ai-twinkle',
       hfOrgName: 'twinkle-ai',
       sitconApiKey: 'sk-ROyTlHXQ3AdBdO4SSQIvzA',
-    },
-    externalUrls: {
-      discord: 'https://discord.com/servers/twinkle-ai-1310544431983759450',
-      github: 'https://github.com/ai-twinkle',
-      huggingface: 'https://huggingface.co/twinkle-ai',
+      externalUrls: {
+        discord: 'https://discord.com/servers/twinkle-ai-1310544431983759450',
+        github: 'https://github.com/ai-twinkle',
+        huggingface: 'https://huggingface.co/twinkle-ai',
+      },
     },
   },
 });

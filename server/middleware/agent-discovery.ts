@@ -1,3 +1,5 @@
+import {defaultLocalePages, enLocalePages} from '../../shared/utils/sitePages';
+
 /**
  * Agent discovery middleware.
  *
@@ -71,7 +73,7 @@ export default defineEventHandler((event) => {
     requestPath.startsWith('/api/') ||
     requestPath.startsWith('/_nuxt/') ||
     requestPath.startsWith('/.well-known/') ||
-    requestPath.includes('.')
+    /\.[a-z0-9]+$/.test(requestPath.split('?')[0])
   ) return;
 
   // Add RFC 8288 Link headers to page responses.

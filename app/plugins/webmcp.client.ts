@@ -1,3 +1,5 @@
+import {defaultLocalePages} from '../../shared/utils/sitePages';
+
 /**
  * WebMCP plugin — exposes site actions to AI agents via the browser's
  * navigator.modelContext API.
@@ -33,6 +35,7 @@ export default defineNuxtPlugin(() => {
   if (typeof navigator === 'undefined' || !navigator.modelContext) return;
 
   const router = useRouter();
+  const {public: {siteUrl, externalUrls}} = useRuntimeConfig();
 
   // Derive navigable paths from the shared sitePages list
   // (default locale only — the router handles locale switching separately).
@@ -68,10 +71,10 @@ export default defineNuxtPlugin(() => {
         return {
           name: 'Twinkle AI',
           description: '致力於構建開源正體中文語言模型的研究社群，推動台灣生成式 AI 發展。',
-          url: 'https://www.twinkleai.tw',
-          github: 'https://github.com/ai-twinkle',
-          huggingface: 'https://huggingface.co/twinkle-ai',
-          discord: 'https://discord.com/servers/twinkle-ai-1310544431983759450',
+          url: siteUrl,
+          github: externalUrls.github,
+          huggingface: externalUrls.huggingface,
+          discord: externalUrls.discord,
         };
       },
     },
