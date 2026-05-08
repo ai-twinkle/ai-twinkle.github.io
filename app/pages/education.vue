@@ -54,7 +54,7 @@
 <script setup lang="ts">
 const {locale} = useI18n();
 
-const {data: items} = await useAsyncData(`education-${locale.value}`, () => {
+const {data: items} = await useAsyncData(() => `education-${locale.value}`, () => {
   const pathPrefix = locale.value === 'en' ? '/en/education' : '/zh-TW/education';
   return queryCollection('education')
       .where('path', 'LIKE', `${pathPrefix}%`)
