@@ -1,11 +1,11 @@
-import {defaultLocalePages} from '../../../../shared/utils/sitePages';
+import {sitePages} from '../../../../shared/utils/sitePages';
 
 export default defineEventHandler((event) => {
   const {public: {siteUrl}} = useRuntimeConfig();
 
   setHeader(event, 'Content-Type', 'application/json; charset=utf-8');
 
-  const resources = defaultLocalePages.map((page) => ({
+  const resources = sitePages.map((page) => ({
     uri: `${siteUrl}${page.loc}`,
     name: page.name,
     description: page.description,

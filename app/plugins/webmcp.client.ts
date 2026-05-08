@@ -1,4 +1,4 @@
-import {defaultLocalePages} from '../../shared/utils/sitePages';
+import {sitePages} from '../../shared/utils/sitePages';
 
 /**
  * WebMCP plugin — exposes site actions to AI agents via the browser's
@@ -39,7 +39,7 @@ export default defineNuxtPlugin(() => {
 
   // Derive navigable paths from the shared sitePages list
   // (default locale only — the router handles locale switching separately).
-  const navigablePaths = defaultLocalePages.map((p) => p.loc);
+  const navigablePaths = sitePages.map((p) => p.loc);
 
   const tools: ModelContextTool[] = [
     {

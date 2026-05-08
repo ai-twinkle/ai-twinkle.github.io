@@ -23,6 +23,7 @@ const LINK_HEADERS = [
  * @returns The full site overview in Markdown format.
  */
 function buildMarkdown(): string {
+  const {public: {externalUrls}} = useRuntimeConfig();
   const zhPages = defaultLocalePages
       .map((p) => `- [${p.name}](${p.loc})`)
       .join('\n');
@@ -46,9 +47,9 @@ ${enPages}
 
 ## Community Links
 
-- [Discord](https://discord.com/servers/twinkle-ai-1310544431983759450)
-- [HuggingFace](https://huggingface.co/twinkle-ai)
-- [GitHub](https://github.com/ai-twinkle)
+- [Discord](${externalUrls.discord})
+- [HuggingFace](${externalUrls.huggingface})
+- [GitHub](${externalUrls.github})
 
 ## API
 
@@ -63,7 +64,7 @@ ${enPages}
 `;
 }
 
-const SITE_MARKDOWN = buildMarkdown();
+let SITE_MARKDOWN: string | undefined;
 
 export default defineEventHandler((event) => {
   const requestPath = event.path ?? '';
@@ -73,7 +74,7 @@ export default defineEventHandler((event) => {
     requestPath.startsWith('/api/') ||
     requestPath.startsWith('/_nuxt/') ||
     requestPath.startsWith('/.well-known/') ||
-    /\.[a-z0-9]+$/.test(requestPath.split('?')[0])
+    /\.[a-z0-9]+$/i.test(requestPath.split('?')[0])
   ) return;
 
   // Add RFC 8288 Link headers to page responses.
@@ -83,6 +84,9 @@ export default defineEventHandler((event) => {
   const accept = getRequestHeader(event, 'accept') ?? '';
   if (accept.includes('text/markdown')) {
     setResponseHeader(event, 'Content-Type', 'text/markdown; charset=utf-8');
+    if (!SITE_MARKDOWN) {
+      SITE_MARKDOWN = buildMarkdown();
+    }
     return SITE_MARKDOWN;
   }
 });
