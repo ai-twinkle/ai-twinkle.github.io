@@ -1,5 +1,9 @@
 const {
-  externalUrls: {huggingface: url},
+  public: {
+    externalUrls: {
+      huggingface: url,
+    },
+  },
 } = useRuntimeConfig();
 
 export default defineEventHandler(

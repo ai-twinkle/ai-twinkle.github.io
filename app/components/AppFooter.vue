@@ -207,9 +207,11 @@
 </template>
 
 <script setup lang="ts">
+import {computed} from 'vue';
 import {useI18n} from 'vue-i18n';
 
 const {locale} = useI18n();
+const config = useRuntimeConfig();
 
 const year = new Date().getFullYear();
 
@@ -217,11 +219,14 @@ const getExternalUrl = (path: string): string => {
   return `${path}?lang=${locale.value}`;
 };
 
-const socialLinks = [
-  {id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface', icon: 'i-simple-icons-huggingface'},
-  {id: 'github', href: '/github', labelKey: 'social.github', icon: 'i-simple-icons-github'},
-  {id: 'discord', href: '/discord', labelKey: 'social.discord', icon: 'i-simple-icons-discord'},
-] as const;
+const socialLinks = computed(() => {
+  const urls = config.public.externalUrls as {discord: string; github: string; huggingface: string};
+  return [
+    {id: 'huggingface', href: urls.huggingface, labelKey: 'social.huggingface', icon: 'i-simple-icons-huggingface'},
+    {id: 'github', href: urls.github, labelKey: 'social.github', icon: 'i-simple-icons-github'},
+    {id: 'discord', href: urls.discord, labelKey: 'social.discord', icon: 'i-simple-icons-discord'},
+  ];
+});
 
 const resourceLinks = [
   {name: 'nav.models', to: '/models', external: false},
@@ -235,9 +240,12 @@ const communityLinks = [
   {name: 'nav.media', to: '/media', external: false},
 ] as const;
 
-const connectLinks = [
-  {id: 'discord', href: '/discord', labelKey: 'social.discord', icon: 'i-simple-icons-discord'},
-  {id: 'github', href: '/github', labelKey: 'social.github', icon: 'i-simple-icons-github'},
-  {id: 'huggingface', href: '/huggingface', labelKey: 'social.huggingface', icon: 'i-simple-icons-huggingface'},
-] as const;
+const connectLinks = computed(() => {
+  const urls = config.public.externalUrls as {discord: string; github: string; huggingface: string};
+  return [
+    {id: 'discord', href: urls.discord, labelKey: 'social.discord', icon: 'i-simple-icons-discord'},
+    {id: 'github', href: urls.github, labelKey: 'social.github', icon: 'i-simple-icons-github'},
+    {id: 'huggingface', href: urls.huggingface, labelKey: 'social.huggingface', icon: 'i-simple-icons-huggingface'},
+  ];
+});
 </script>
