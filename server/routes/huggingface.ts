@@ -6,3 +6,6 @@ const {
   },
 } = useRuntimeConfig();
 
+export default defineEventHandler(
+    () => Response.redirect(url, 302),
+);
