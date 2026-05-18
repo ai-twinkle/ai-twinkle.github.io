@@ -1,5 +1,9 @@
 const {
-  externalUrls: {discord: url},
+  public: {
+    externalUrls: {
+      discord: url,
+    },
+  },
 } = useRuntimeConfig();
 
 export default defineEventHandler(
