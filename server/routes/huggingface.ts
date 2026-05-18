@@ -1,7 +1,5 @@
-const {
-  externalUrls: {huggingface: url},
-} = useRuntimeConfig();
+export default defineEventHandler(() => {
+  const {public: {externalUrls: {huggingface: url}}} = useRuntimeConfig();
+  return Response.redirect(url, 302);
+});
 
-export default defineEventHandler(
-    () => Response.redirect(url, 302),
-);
