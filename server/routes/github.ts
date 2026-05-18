@@ -1,5 +1,9 @@
 const {
-  externalUrls: {github: url},
+  public: {
+    externalUrls: {
+      github: url,
+    },
+  },
 } = useRuntimeConfig();
 
 export default defineEventHandler(
