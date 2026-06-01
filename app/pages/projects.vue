@@ -1,44 +1,60 @@
 <template>
-  <UContainer class="py-16">
-    <div class="mb-6">
-      <h2 class="text-3xl font-bold text-white">{{ $t('projects.title') }}</h2>
-      <p class="mt-2 text-gray-400">{{ $t('projects.lead') }}</p>
-    </div>
+  <div class="relative starry-bg text-white min-h-[calc(100vh-4rem)]">
+    <UContainer class="py-16">
 
-    <!-- Source tabs (framework UTabs) -->
-    <div class="mb-6">
-      <UTabs :items="activeSource" color="warning">
-        <template #huggingface>
-          <ProjectTab
-            :title="$t('projects.hf.title')"
-            :lead="$t('projects.hf.lead')"
-            :items="hfProjects"
-            :pending="hfPending"
-            :error="hfError"
-            :on-retry="onClickRetryHF"
-            :empty-text="$t('projects.hf.noModels')"
-            :loading-text="$t('projects.hf.loading')"
-            :retry-label="$t('projects.hf.retry')"
-            :error-title="$t('projects.hf.errorTitle')"
-          />
-        </template>
-        <template #github>
-          <ProjectTab
-            :title="$t('projects.github.title')"
-            :lead="$t('projects.github.lead')"
-            :items="projects"
-            :pending="pending"
-            :error="error"
-            :on-retry="onClickRetry"
-            :empty-text="$t('projects.github.noProjects')"
-            :loading-text="$t('projects.github.loading')"
-            :retry-label="$t('projects.github.retry')"
-            :error-title="$t('projects.github.errorTitle')"
-          />
-        </template>
-      </UTabs>
-    </div>
-  </UContainer>
+      <!-- Core Open Source Repositories Section -->
+      <div class="mb-12">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <UBadge variant="subtle" size="lg" class="mb-4 rounded-full badge-twinkle uppercase tracking-wider font-semibold">
+            💻 {{ $t('projects.title') }}
+          </UBadge>
+          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6">
+            {{ $t('projects.title') }}
+          </h1>
+          <p class="mt-6 text-base md:text-lg leading-relaxed text-gray-300">
+            {{ $t('projects.lead') }}
+          </p>
+        </div>
+
+        <!-- Source tabs (framework UTabs) -->
+        <UTabs :items="activeSource" color="warning" class="w-full">
+          <template #huggingface>
+            <div class="mt-6">
+              <ProjectTab
+                :title="$t('projects.hf.title')"
+                :lead="$t('projects.hf.lead')"
+                :items="hfProjects"
+                :pending="hfPending"
+                :error="hfError"
+                :on-retry="onClickRetryHF"
+                :empty-text="$t('projects.hf.noModels')"
+                :loading-text="$t('projects.hf.loading')"
+                :retry-label="$t('projects.hf.retry')"
+                :error-title="$t('projects.hf.errorTitle')"
+              />
+            </div>
+          </template>
+          <template #github>
+            <div class="mt-6">
+              <ProjectTab
+                :title="$t('projects.github.title')"
+                :lead="$t('projects.github.lead')"
+                :items="projects"
+                :pending="pending"
+                :error="error"
+                :on-retry="onClickRetry"
+                :empty-text="$t('projects.github.noProjects')"
+                :loading-text="$t('projects.github.loading')"
+                :retry-label="$t('projects.github.retry')"
+                :error-title="$t('projects.github.errorTitle')"
+              />
+            </div>
+          </template>
+        </UTabs>
+      </div>
+
+    </UContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -86,15 +102,12 @@ const {data: repositories, pending, error, refresh} = useAsyncData<GitHubReposit
       const headers: Record<string, string> = {
         'Accept': 'application/vnd.github.v3+json',
       };
-      // GitHub requires a User-Agent header for API requests
       if (import.meta.server) {
         headers['User-Agent'] = 'curl/8.14.1';
       }
-      // Add Authorization header if access token is provided
       if (githubAccessToken && import.meta.server) {
         headers['Authorization'] = `Bearer ${githubAccessToken}`;
       }
-
       return $fetch<GitHubRepository[]>(toGitHubReposUrl(githubOrgName), {headers});
     },
 );
@@ -112,11 +125,9 @@ const {data: hfModels, pending: hfPending, error: hfError, refresh: hfRefresh} =
     'hfModels',
     () => {
       const headers: Record<string, string> = {'Accept': 'application/json'};
-      // Hugging Face requires a User-Agent header for API requests
       if (import.meta.server) {
         headers['User-Agent'] = 'curl/8.14.1';
       }
-      // Add Authorization header if access token is provided
       if (huggingfaceAccessToken && import.meta.server) {
         headers['Authorization'] = `Bearer ${huggingfaceAccessToken}`;
       }
@@ -126,7 +137,6 @@ const {data: hfModels, pending: hfPending, error: hfError, refresh: hfRefresh} =
 );
 
 const hfProjects = computed(() => {
-  console.log('HF Models:', hfModels?.value);
   const models = hfModels?.value ?? [];
   if (models.length) {
     return models
@@ -142,7 +152,6 @@ const hfProjects = computed(() => {
                 if (t) parts.push(String(t).trim());
               }
             }
-            // return up to three unique keywords as a short sentence
             const keywords = Array.from(new Set(parts)).slice(0, 3);
             return keywords.length ? `Supports ${keywords.join(', ')}.` : '';
           })(),
@@ -196,7 +205,6 @@ const projects = computed(() => {
   return [];
 });
 
-// Click handler to retry fetching data
 const onClickRetry = async () => {
   try {
     await refresh?.();
@@ -205,3 +213,9 @@ const onClickRetry = async () => {
   }
 };
 </script>
+
+<style scoped>
+.relative.starry-bg {
+  background-color: #0b1220; /* deep night */
+}
+</style>

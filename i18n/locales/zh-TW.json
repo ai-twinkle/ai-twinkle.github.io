@@ -11,6 +11,7 @@
     "explore_datasets": "探索資料集",
     "read_more": "閱讀更多",
     "download_press_kit": "媒體資源下載",
+    "download_press_release": "前往 Google Drive 下載",
     "download_pdf_zh": "繁體中文版 - PDF",
     "download_pdf_en": "英文版 - PDF",
     "copy": "複製",
@@ -25,7 +26,11 @@
     "datasets": "開源資料集",
     "datasets_desc": "整合政府資訊、社群與文學檔案的語料",
     "community": "社群",
-    "resources": "資源",
+    "resources": "主要專案",
+    "repos": "專案資源",
+    "repos_desc": "官方開源程式碼與模型資源庫",
+    "constellation": "星群專案",
+    "constellation_desc": "源自社群的共創版圖，由社群夥伴延伸出的專案。",
     "education": "教育與推廣",
     "education_desc": "Podcast、深夜實堂與熬夜讀書會",
     "news": "新聞與活動",
@@ -202,7 +207,8 @@
     "join": "加入 Discord 討論"
   },
   "media": {
-    "description": "新聞稿、媒體素材與資源"
+    "description": "新聞稿、媒體素材與資源",
+    "pressReleaseDesc": "點擊前往 Google 雲端硬碟，即可檢視與下載 Twinkle AI 最新發表的繁體中文及英文官方新聞稿與相關媒體素材。"
   },
   "features": {
     "optimized": {
@@ -228,13 +234,16 @@
     "recommendedPrefix": "或許你會有興趣... 我們的：",
     "copyright": "© {year} Twinkle AI",
     "navigation": "導覽",
-    "resources": "資源",
+    "resources": "主要專案",
+    "constellation": "星群專案",
     "connect": "社群連結",
     "open_source": "開源專案"
   },
   "projects": {
-    "title": "開源專案",
-    "lead": "我們致力於開源所有研究成果，包含模型權重、訓練數據與評測工具。",
+    "title": "專案資源",
+    "lead": "我們致力於開源官方所有研究代碼、模型資源與評測工具。",
+    "coreReposTitle": "主要開發代碼與模型庫",
+    "coreReposLead": "由 Twinkle AI 官方維護與更新的核心程式碼倉庫及 Hugging Face 資源。",
     "loading": "載入中...",
     "errorTitle": "載入專案時發生錯誤：",
     "retry": "重新載入",
@@ -305,5 +314,75 @@
     "copyApiKey": "複製 API KEY",
     "copiedApiKey": "已成功複製 API KEY！",
     "backHome": "回到 Twinkle AI 官網"
+  },
+  "constellationProjects": {
+    "title": "星群專案",
+    "subtitle": "Constellation Projects",
+    "lead": "星群專案：源自社群的共創版圖",
+    "description": "與其說 Twinkle AI 是模型開發者，不如說我們是一群仰望同一片天空的技術人。「打造台灣在地的開源模型」是我們的北極星，指引著散落在各地的開發者。這裡沒有制式的軌道，每一個專案，都是大家在 Discord 的深夜討論中，自然連線而成的星座。我們在這裡彼此對頻、修正座標，將那些原本遙遠的想像，實踐成一行行清晰運作的程式碼。這裡展現的是各位從 Twinkle AI 社群延伸出來的專案。",
+    "projects": {
+      "ailogora": {
+        "title": "AILogora",
+        "creator": "ChiChieh Huang",
+        "positioning": "華語圈 AI 知識共享平台",
+        "story": "AILogora 與 Twinkle AI 是理念契合的堅實戰友。ChiChieh 很早就洞察到市場缺乏專注於 AI 學術深度的交流空間，因而獨立打造了這個平台。這樣的願景與我們不謀而合。雙方一拍即合後，Twinkle AI 社群內高密度的技術討論，成為了 AILogora 平台上重要的知識養分；透過他的技術，我們稍縱即逝的對話被系統性地「蒸餾」與保存，讓這些技術資產能被更多人搜尋與引用，共同朝著建構華語圈最大 AI 知識庫的目標邁進。",
+        "linkText": "探索平台",
+        "url": "https://ailogora.com"
+      },
+      "littlestar": {
+        "title": "Little Star",
+        "creator": "Bobson Lin",
+        "positioning": "輕量化行動端 LLM 運行平台",
+        "story": "這是一個始於社群討論、源於「純粹好奇心」的實驗計畫。Bobson 最初僅是為了驗證一個核心命題：「我們能不能在手機上，真正離線、低延遲地運行大語言模型？」這份實驗精神促成了 MVP（最小可行性產品）的誕生，成功讓 F1 模型在雙平台流暢運作。然而，在與社群成員的密切交流中，他進一步洞察到開發者在「能跑」之外，更迫切需要「量測」效能的標準。這一關鍵轉折促使專案進化為具備基準測試功能的專業工具；目前 Little Star 正朝向「環境智能 (Ambient Intelligence)」的願景邁進，致力於讓 AI 在最貼近使用者的設備上，提供無所不在的智慧輔助。",
+        "linkText": "GitHub 倉庫",
+        "url": "https://github.com/ai-twinkle/little_star_app"
+      },
+      "aiyo": {
+        "title": "愛悠小幫手",
+        "creator": "宸泗工作室",
+        "positioning": "專屬台灣人的 AI 小幫手",
+        "story": "愛悠 AI 聊天機器人是宸泗工作室打造的「專屬台灣人的AI 小幫手」，並與 TwinkleAI 社群長期交流合作：宸泗在早期實驗產品中採用 TwinkleAI 訓練的繁中模型，進而與社群共同推動繁體中文模型從研發走向落地應用。愛悠以 LINE 頻道為主要入口，貼近台灣人日常使用習慣；在回答前可即時搜尋網路資訊，並進行「內外網同步搜尋」與交叉比對，過濾不合適內容。另提供獨立流程的新聞摘要，只取可信賴新聞來源以降低帶風向資訊；也能查詢台灣在地藝文活動（如雕刻展、畫展等）、提供即時的圖片辨識等，把實用、可靠、在地的生活資訊整合到同一個對話介面中。",
+        "linkText": "LINE 機器人",
+        "url": "https://aiyo.app"
+      },
+      "leopardcat": {
+        "title": "吉祥物石虎",
+        "creator": "Thomas",
+        "positioning": "品牌識別系統與社群文化凝聚",
+        "story": "這是一個源於 Kaggle 競賽期間的「非官方提案」。起初，Thomas 只是為了讓參賽團隊更吸睛而自製了一個網站，並懷著試探的心情向社群發起人亮勳提出一個核心比喻：「在 API 應用當道的時代，願意深耕底層模型訓練的開發者，就像台灣石虎一樣稀有且珍貴。」 這份洞察瞬間引發了共鳴，兩人一拍即合。這隻石虎因此從一個參賽素材，成為凝聚社群共識的吉祥物；如今，牠更是社群活動「熬夜書坊」的守護者，在深夜陪伴每一位與艱澀程式碼奮戰的夥伴，無聲地傳遞著：「在這條稀有的路上，我們並不孤單。」"
+      },
+      "website": {
+        "title": "Twinkle AI 網站",
+        "creator": "臺灣網際網路技術推廣組織",
+        "positioning": "承載社群心血的靜謐夜空",
+        "story": "「官網本身沒有故事，它的存在，是為了承載你們的故事。」\n為了讓社群夥伴的心血不再流浪，不知火打造了這個「家」。他刻意選擇深邃的夜色，只為襯托每一顆星光。這不是展現技術的平台，而是溫柔的載體；它靜謐地守候在遠方，讓正體中文 AI 的每一分努力，都能在此匯聚，閃耀屬於自己的光芒。",
+        "linkText": "GitHub 倉庫",
+        "url": "https://github.com/ai-twinkle/ai-twinkle.github.io"
+      },
+      "hub": {
+        "title": "Twinkle Hub",
+        "creator": "黃亮勳",
+        "positioning": "讓 AI 能用起來台灣的資料",
+        "story": "雖然台灣政府提供了豐富的開放資料（Open Data），但這些原始資料的格式分散且未經結構化，AI 很難直接理解與利用。Twinkle Hub 透過資料清洗與標準化，將台灣在地的公開資訊轉化為 AI 友好的格式。藉由 Anthropic 推出的 MCP 架構，讓各類 AI 工具與 Agent 能無縫讀取、分析台灣的即時與在地資料，打破地緣資訊的限制。",
+        "linkText": "訪問平台",
+        "url": "https://hub.twinkleai.tw/"
+      },
+      "costaff": {
+        "title": "CoStaff",
+        "creator": "Simon Liu",
+        "positioning": "把 AI 變成可以分工協作的工作團隊",
+        "story": "因應現代企業對於效率的追求，CoStaff 旨在打造「即插即用」的 AI Staff。它不僅僅是簡單的對話機器人，而是能深度整合進企業日常辦公場景的虛擬夥伴。透過理解複雜的業務邏輯，CoStaff 可以協助處理重複性高的行政、排程、資料整理等工作，讓團隊成員能專注在更有價值的決策與規劃上。",
+        "linkText": "探索平台",
+        "url": "https://costaffs.app"
+      },
+      "cairn": {
+        "title": "Cairn",
+        "creator": "ChiChieh Huang",
+        "positioning": "打造 AI 社群的共享記憶體",
+        "story": "在使用 Claude、Cursor、Codex、Gemini CLI 等 agent 工具時，許多重要經驗都發生在實際工作流程中：一次除錯、一個架構選擇、一段踩過坑的紀錄，或是一個還沒有答案的問題。但這些知識常常散落在聊天紀錄、Discord 討論串或個人筆記裡，很快就消失了。Cairn 希望把這些社群累積出來的經驗，整理成可以被人閱讀、也可以被 AI agent 查詢的共享知識地圖。它保留人類的判斷、脈絡與署名，同時讓 agent 能透過 MCP 取用這些內容。Cairn 的重點不是單純搜尋資料，而是讓社群的經驗可以被保存、被引用，並在下一次工作流程中重新發揮價值。",
+        "linkText": "探索平台",
+        "url": "https://chichieh-huang.com"
+      }
+    }
   }
 }
