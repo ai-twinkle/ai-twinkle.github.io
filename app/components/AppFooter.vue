@@ -231,6 +231,7 @@ const socialLinks = computed(() => {
 const resourceLinks = [
   {name: 'nav.models', to: '/models', external: false},
   {name: 'nav.datasets', to: '/datasets', external: false},
+  {name: 'nav.repos', to: '/projects', external: false},
   {name: 'nav.leaderboard', to: '/leaderboard', external: true},
 ] as const;
 
@@ -238,6 +239,7 @@ const communityLinks = [
   {name: 'nav.news', to: '/news', external: false},
   {name: 'nav.education', to: '/education', external: false},
   {name: 'nav.media', to: '/media', external: false},
+  {name: 'nav.constellation', to: '/constellation', external: false},
 ] as const;
 
 const connectLinks = computed(() => {

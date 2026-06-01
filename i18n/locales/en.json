@@ -11,6 +11,7 @@
     "explore_datasets": "Explore Datasets",
     "read_more": "Read More",
     "download_press_kit": "Download Press Kit",
+    "download_press_release": "Download via Google Drive",
     "download_pdf_zh": "Traditional Chinese - PDF",
     "download_pdf_en": "English - PDF",
     "copy": "Copy",
@@ -25,7 +26,11 @@
     "datasets": "Datasets",
     "datasets_desc": "Refined government, community, and literary archives.",
     "community": "Community",
-    "resources": "Resources",
+    "resources": "Main Projects",
+    "repos": "Project Resources",
+    "repos_desc": "Official open-source code and model assets.",
+    "constellation": "Constellation Projects",
+    "constellation_desc": "Community-driven co-created projects.",
     "education": "Education",
     "education_desc": "Twinkle Podcasts, Midnight Tinkering, and Late-night Reading Groups.",
     "news": "News & Events",
@@ -206,7 +211,8 @@
     "join": "Join on Discord"
   },
   "media": {
-    "description": "Press releases, media kit, and resources"
+    "description": "Press releases, media kit, and resources",
+    "pressReleaseDesc": "Click to visit our Google Drive folder to view and download Twinkle AI's latest official press releases in Traditional Chinese and English."
   },
   "features": {
     "optimized": {
@@ -232,13 +238,16 @@
     "recommendedPrefix": "You might be interested in our:",
     "copyright": "© {year} Twinkle AI",
     "navigation": "Navigation",
-    "resources": "Resources",
+    "resources": "Main Projects",
+    "constellation": "Constellation Projects",
     "connect": "Connect",
     "open_source": "Open Source"
   },
   "projects": {
-    "title": "Open-source projects",
-    "lead": "We commit to open-source all our research outputs, including model weights, training data, and evaluation tools.",
+    "title": "Project Resources",
+    "lead": "We commit to open-sourcing all official research code, model assets, and evaluation tools.",
+    "coreReposTitle": "Core Code & Model Repositories",
+    "coreReposLead": "Core code repositories and Hugging Face resources officially maintained and updated by Twinkle AI.",
     "loading": "Loading...",
     "errorTitle": "Error loading projects:",
     "retry": "Retry",
@@ -309,5 +318,75 @@
     "copyApiKey": "Copy API KEY",
     "copiedApiKey": "API KEY Copied!",
     "backHome": "Back to Twinkle AI"
+  },
+  "constellationProjects": {
+    "title": "Constellation Projects",
+    "subtitle": "Constellation Projects",
+    "lead": "Constellation Projects: Co-created Community Map",
+    "description": "Rather than calling Twinkle AI a model developer, we are a group of technologists looking up at the same night sky. 'Building Taiwan's local open-source models' is our North Star, guiding developers scattered across different places. There is no rigid path here; each project is a constellation naturally connected during late-night Discord discussions. Here we align, adjust our coordinates, and turn distant imaginations into lines of working code. This section showcases the projects extended from the Twinkle AI community.",
+    "projects": {
+      "ailogora": {
+        "title": "AILogora",
+        "creator": "ChiChieh Huang",
+        "positioning": "AI Knowledge Sharing Platform",
+        "story": "AILogora and Twinkle AI are close allies with highly aligned visions. ChiChieh recognized early on the lack of spaces for in-depth AI academic and technical exchange, leading to the independent development of this platform. This matched our goals perfectly. Since joining forces, the high-density technical discussions within the Twinkle AI community have served as crucial knowledge nutrients for AILogora. Through this technology, our fleeting conversations are systematically 'distilled' and preserved, allowing these valuable technical assets to be easily searched and referenced, moving together toward building the largest AI knowledge base in the Traditional Chinese world.",
+        "linkText": "Explore Platform",
+        "url": "https://ailogora.com"
+      },
+      "littlestar": {
+        "title": "Little Star",
+        "creator": "Bobson Lin",
+        "positioning": "Lightweight Mobile LLM Runtime Platform",
+        "story": "This experimental project started from a casual community discussion and pure curiosity, exploring: 'Can we run an LLM fully offline on a mobile device with low latency?' This experimental spirit led to the birth of the MVP, successfully running the F1 model smoothly on both iOS and Android. Through interactions with community members, Bobson noticed that besides running models, developers urgently needed benchmarks to measure performance. This key pivot evolved the project into a professional tool with benchmarking features. Currently, Little Star is moving toward 'Ambient Intelligence', bringing ubiquitous AI assistants directly to user devices.",
+        "linkText": "GitHub Repo",
+        "url": "https://github.com/ai-twinkle/little_star_app"
+      },
+      "aiyo": {
+        "title": "Aiyo Assistant",
+        "creator": "Chensi Studio",
+        "positioning": "Taiwan's Dedicated AI Chatbot",
+        "story": "Developed by Chensi Studio, the Aiyo AI chatbot is a dedicated assistant for people in Taiwan, built in long-term collaboration with Twinkle AI. Chensi integrated Twinkle AI's fine-tuned Traditional Chinese models in early experiments, helping drive Taiwanese LLM models from research to commercial applications. Primarily based on LINE for seamless integration with Taiwanese users' daily habits, Aiyo performs real-time searches across both internal and external networks, cross-referencing sources and filtering inappropriate content. It also features a custom news summarizer utilizing trusted sources, local arts and cultural event queries, and instant image recognition, bringing practical and reliable local info into a single conversation.",
+        "linkText": "LINE Bot",
+        "url": "https://aiyo.app"
+      },
+      "leopardcat": {
+        "title": "Mascot Leopard Cat",
+        "creator": "Thomas",
+        "positioning": "Brand Identity & Community Culture Unity",
+        "story": "This unofficial proposal started during a Kaggle competition. Thomas initially designed a custom website to make the competition team stand out, proposing a powerful metaphor to community founder Liang-Hsun: 'In the era of API-driven apps, developers dedicated to training bottom-up open-source models are as rare and precious as the Taiwan Leopard Cat.' This resonance immediately sparked a connection, making the leopard cat the community's beloved mascot. Today, the mascot stands as the guardian of the community's late-night reading clubs ('Midnight Labs'), silently accompanying developers as they battle code in the early hours: 'On this rare path, we are never alone.'"
+      },
+      "website": {
+        "title": "Twinkle AI Website",
+        "creator": "Taiwan Internet Technology Promotion Organization",
+        "positioning": "Quiet Sky Hosting the Community's Heart",
+        "story": "\"The website itself has no story; its existence is to hold yours.\" To give the community's hard work a permanent home, Shiranui crafted this 'home.' Selecting deep night colors to let each star shine, the site is designed not as a display of technical showmanship, but as a gentle vessel, quietly standing watch in the distance so every contribution to Traditional Chinese AI can gather and shine.",
+        "linkText": "GitHub Repo",
+        "url": "https://github.com/ai-twinkle/ai-twinkle.github.io"
+      },
+      "hub": {
+        "title": "Twinkle Hub",
+        "creator": "Liang-Hsun Huang",
+        "positioning": "Powering AI with Taiwanese Open Data",
+        "story": "While the Taiwan government provides rich Open Data, the raw formats are scattered and unstructured, making it hard for AI to read directly. Twinkle Hub bridges this gap through data cleaning and standardization, transforming local public info into AI-friendly formats. Built on Anthropic's MCP (Model Context Protocol) architecture, it enables AI tools and agents to seamlessly read and analyze real-time local data, breaking down geographical information barriers.",
+        "linkText": "Explore Platform",
+        "url": "https://hub.twinkleai.tw/"
+      },
+      "costaff": {
+        "title": "CoStaff",
+        "creator": "Simon Liu",
+        "positioning": "Turning AI into Collaborative Teams",
+        "story": "Addressing the modern enterprise demand for efficiency, CoStaff builds 'plug-and-play' AI Staff. Moving beyond simple Q&A chatbots, it integrates deeply with daily business operations. By understanding complex workflows, CoStaff automates repetitive administrative, scheduling, and data consolidation tasks, allowing human team members to focus on high-value strategy and decision-making.",
+        "linkText": "Explore Platform",
+        "url": "https://costaffs.app"
+      },
+      "cairn": {
+        "title": "Cairn",
+        "creator": "ChiChieh Huang",
+        "positioning": "Shared Memory Layer for the AI Community",
+        "story": "When working with agents like Claude, Cursor, Codex, or Gemini CLI, much of our learning happens in real-time workflows—debugging a bug, selecting an architecture, or logging an issue. However, these insights are often lost in chat logs, Discord threads, or personal notes. Cairn curates these community experiences into a shared knowledge map readable by both humans and AI agents. It preserves human context, judgment, and ownership while allowing agents to retrieve these insights via MCP, turning community experience into active context for the next developer's workspace.",
+        "linkText": "Explore Platform",
+        "url": "https://chichieh-huang.com"
+      }
+    }
   }
 }

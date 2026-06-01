@@ -54,6 +54,12 @@ export const menuItems: MenuItem[] = [
         to: '/datasets',
       },
       {
+        name: 'nav.repos',
+        description: 'nav.repos_desc',
+        icon: 'i-heroicons-code-bracket',
+        to: '/projects',
+      },
+      {
         name: 'nav.leaderboard',
         description: 'nav.leaderboard_desc',
         icon: 'i-heroicons-chart-bar',
@@ -61,6 +67,11 @@ export const menuItems: MenuItem[] = [
         external: true,
       },
     ],
+  },
+  {
+    name: 'nav.constellation',
+    type: 'link',
+    to: '/constellation',
   },
   {
     name: 'nav.community',

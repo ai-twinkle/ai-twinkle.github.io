@@ -17,28 +17,22 @@
 
          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Press Release -->
-            <div class="p-6 rounded-xl bg-gray-800/50 ring-1 ring-gray-700">
-                <h3 class="text-lg font-bold text-white mb-4">{{ $t('news.press_kit.press_release') }}</h3>
-                <div class="space-y-3">
+            <div class="p-6 rounded-xl bg-gray-800/50 ring-1 ring-gray-700 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">{{ $t('news.press_kit.press_release') }}</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">{{ $t('media.pressReleaseDesc') }}</p>
+                </div>
+                <div>
                     <UButton
-                        to="/resources/presses/Twinkle%20AI%20-%20zh-TW.pdf"
+                        v-track="'Press_Kit_Drive_Click'"
+                        to="https://drive.google.com/drive/folders/1TI4na86Vs1PkKZM9IO1tWy6JeaDelot3?usp=sharing"
                         target="_blank"
-                        icon="i-heroicons-document-text"
+                        icon="i-heroicons-arrow-top-right-on-square"
                         variant="soft"
                         color="white"
-                        class="w-full justify-start"
+                        class="w-full justify-center py-2.5 font-bold hover:!bg-[#ffd500] hover:!text-gray-900 hover:!border-transparent transition-all duration-200"
                     >
-                        {{ $t('actions.download_pdf_zh') }}
-                    </UButton>
-                    <UButton
-                        to="/resources/presses/Twinkle%20AI%20-%20en.pdf"
-                        target="_blank"
-                        icon="i-heroicons-document-text"
-                        variant="soft"
-                        color="white"
-                        class="w-full justify-start"
-                    >
-                        {{ $t('actions.download_pdf_en') }}
+                        {{ $t('actions.download_press_release') }}
                     </UButton>
                 </div>
             </div>
