@@ -61,7 +61,7 @@
               size="sm"
               class="group/btn w-full justify-center gap-1.5 hover:!text-gray-900 hover:!bg-[#ffd500] hover:!border-transparent transition-all duration-200"
             >
-              {{ project.linkText || '探索專案' }}
+              {{ project.linkText || $t('actions.explore_projects') }}
               <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
             </UButton>
           </div>
